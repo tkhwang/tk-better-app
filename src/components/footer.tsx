@@ -1,3 +1,4 @@
+import { Logo } from "@/components/logo";
 import { GitHubIcon } from "@/icons/github";
 import { ThreadsIcon } from "@/icons/threads";
 import { TwitterIcon } from "@/icons/twitter";
@@ -13,12 +14,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and description */}
           <div className="space-y-4">
-            <Link
-              to="/"
-              className="text-xl font-display font-bold tracking-tight"
-            >
-              tk<span className="text-primary">Better</span>.app
-            </Link>
+            <Logo />
             <p className="text-muted-foreground text-sm max-w-xs">
               A showcase of my work, skills, and experiences as a professional
               developer.
