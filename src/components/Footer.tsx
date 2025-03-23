@@ -1,6 +1,8 @@
+import { GitHubIcon } from "@/icons/github";
+import { ThreadsIcon } from "@/icons/threads";
+import { TwitterIcon } from "@/icons/twitter";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -81,7 +83,7 @@ export const Footer: React.FC = () => {
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
-                <Github size={20} />
+                <GitHubIcon size={20} />
               </a>
               {/* <a
                 href="https://linkedin.com"
@@ -99,16 +101,16 @@ export const Footer: React.FC = () => {
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter size={20} />
+                <TwitterIcon size={20} />
               </a>
               <a
                 href="https://www.threads.net/@tkbetter.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label="Twitter"
+                aria-label="Threads"
               >
-                <Twitter size={20} />
+                <ThreadsIcon size={20} />
               </a>
               {/* <a
                 href="mailto:contact@example.com"
