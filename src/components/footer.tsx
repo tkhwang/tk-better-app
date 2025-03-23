@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
                 href="https://github.com/tkhwang"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="GitHub"
               >
                 <GitHubIcon size={20} />
@@ -90,7 +90,7 @@ export const Footer: React.FC = () => {
               >
                 <Linkedin size={20} />
               </a> */}
-              <a
+              {/* <a
                 href="https://twitter.com/tkhwang"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -98,12 +98,12 @@ export const Footer: React.FC = () => {
                 aria-label="Twitter"
               >
                 <TwitterIcon size={20} />
-              </a>
+              </a> */}
               <a
                 href="https://www.threads.net/@tkbetter.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-primary transition-colors"
+                className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                 aria-label="Threads"
               >
                 <ThreadsIcon size={20} />
