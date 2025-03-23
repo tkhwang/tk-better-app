@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
@@ -19,7 +18,8 @@ export const Footer: React.FC = () => {
               <span className="text-primary">Dev</span>Portfolio
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              A showcase of my work, skills, and experiences as a professional developer.
+              A showcase of my work, skills, and experiences as a professional
+              developer.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
             <h3 className="text-sm font-medium text-foreground">Connect</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/tkhwang"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
               >
                 <Github size={20} />
               </a>
-              <a
+              {/* <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,9 +91,9 @@ export const Footer: React.FC = () => {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
-              </a>
+              </a> */}
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/tkhwang"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -102,12 +102,21 @@ export const Footer: React.FC = () => {
                 <Twitter size={20} />
               </a>
               <a
+                href="https://www.threads.net/@tkbetter.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter size={20} />
+              </a>
+              {/* <a
                 href="mailto:contact@example.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
