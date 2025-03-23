@@ -1,7 +1,10 @@
 import React from "react";
 import { Layout } from "@/components/layout";
-import { ContactForm } from "@/components/ContactForm";
+import { ContactForm } from "@/components/contact-form";
 import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { GitHubIcon } from "@/icons/github";
+import { TwitterIcon } from "@/icons/twitter";
+import ThreadsIcon from "@/icons/threads";
 
 const Contact: React.FC = () => {
   return (
@@ -89,9 +92,9 @@ const Contact: React.FC = () => {
                       className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
                       aria-label="GitHub"
                     >
-                      <Github size={18} />
+                      <GitHubIcon size={18} />
                     </a>
-                    <a
+                    {/* <a
                       href="https://linkedin.com"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -99,15 +102,15 @@ const Contact: React.FC = () => {
                       aria-label="LinkedIn"
                     >
                       <Linkedin size={18} />
-                    </a>
+                    </a> */}
                     <a
-                      href="https://twitter.com"
+                      href="https://www.threads.net/@tkbetter.app"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 rounded-full bg-card border border-border flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                      aria-label="Twitter"
+                      aria-label="Threads"
                     >
-                      <Twitter size={18} />
+                      <ThreadsIcon size={18} />
                     </a>
                   </div>
                 </div>

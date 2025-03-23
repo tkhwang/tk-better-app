@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
+import { Logo } from "./logo";
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,14 +45,7 @@ export const Header: React.FC = () => {
       )}
     >
       {/* Logo */}
-      <Link
-        to="/"
-        className="text-xl font-display font-bold tracking-tight relative z-10 text-primary-foreground animate-fade-in"
-      >
-        <span className="text-black">tk</span>
-        <span className="text-primary">Better</span>
-        <span className="text-black">.app</span>
-      </Link>
+      <Logo />
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex space-x-8">
