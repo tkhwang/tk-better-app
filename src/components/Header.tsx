@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
         to="/"
         className="text-xl font-display font-bold tracking-tight relative z-10 text-primary-foreground animate-fade-in"
       >
-        <span className="text-primary">Dev</span>Portfolio
+        <span className="text-primary">tkBetter.app</span>Portfolio
       </Link>
 
       {/* Desktop Navigation */}
