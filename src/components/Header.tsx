@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
@@ -11,9 +10,7 @@ export const Header: React.FC = () => {
 
   const menuItems = [
     { title: "Home", path: "/" },
-    { title: "About", path: "/about" },
     { title: "Projects", path: "/projects" },
-    { title: "Blog", path: "/blog" },
     { title: "Contact", path: "/contact" },
   ];
 
@@ -42,9 +39,7 @@ export const Header: React.FC = () => {
     <header
       className={cn(
         "fixed w-full top-0 z-50 transition-all duration-300 px-6 flex items-center justify-between",
-        isScrolled
-          ? "h-16 glass shadow-sm"
-          : "h-20 bg-transparent"
+        isScrolled ? "h-16 glass shadow-sm" : "h-20 bg-transparent"
       )}
     >
       {/* Logo */}
