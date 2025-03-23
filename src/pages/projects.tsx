@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Layout } from "@/components/Layout";
-import { ProjectCard } from "@/components/ProjectCard";
+import { Layout } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import { Filter } from "lucide-react";
 import { projects } from "@/consts/projects";
+import { ProjectCard } from "@/components/project-card";
 
 const Projects: React.FC = () => {
   // Categories for filtering

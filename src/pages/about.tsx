@@ -1,16 +1,15 @@
-
 import React from "react";
-import { Layout } from "@/components/Layout";
+import { Layout } from "@/components/layout";
 import { Progress } from "@/components/ui/progress";
-import { 
-  Award, 
-  Book, 
-  BriefcaseBusiness, 
-  Code2, 
-  GraduationCap, 
+import {
+  Award,
+  Book,
+  BriefcaseBusiness,
+  Code2,
+  GraduationCap,
   Heart,
-  Mail, 
-  User
+  Mail,
+  User,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -83,30 +82,36 @@ const About: React.FC = () => {
                 Passionate developer creating impactful solutions
               </h1>
               <p className="text-muted-foreground mb-6">
-                I'm a full-stack developer with over 6 years of experience building
-                websites and web applications. My journey in tech started with a
-                curiosity about how things work online, which led me to explore web
-                development and eventually turn it into a career.
+                I'm a full-stack developer with over 6 years of experience
+                building websites and web applications. My journey in tech
+                started with a curiosity about how things work online, which led
+                me to explore web development and eventually turn it into a
+                career.
               </p>
               <p className="text-muted-foreground mb-8">
-                I'm passionate about creating clean, efficient, and user-friendly
-                applications that solve real-world problems. When I'm not coding,
-                you can find me exploring new technologies, contributing to
-                open-source projects, or sharing knowledge through my blog and tech
-                community.
+                I'm passionate about creating clean, efficient, and
+                user-friendly applications that solve real-world problems. When
+                I'm not coding, you can find me exploring new technologies,
+                contributing to open-source projects, or sharing knowledge
+                through my blog and tech community.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild size="lg" className="rounded-full">
                   <Link to="/projects">View My Work</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="rounded-full">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full"
+                >
                   <a href="/path-to-resume.pdf" download>
                     Download Resume
                   </a>
                 </Button>
               </div>
             </div>
-            
+
             <div className="order-1 lg:order-2 relative mx-auto max-w-md animate-fade-in animation-delay-400">
               <div className="aspect-square relative z-10 rounded-2xl overflow-hidden shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-2xl transform rotate-3 scale-105"></div>
@@ -124,7 +129,9 @@ const About: React.FC = () => {
                   <Heart className="text-primary" size={20} />
                   <div>
                     <p className="text-sm font-medium">Passionate about</p>
-                    <p className="text-xs text-muted-foreground">Clean code & User experience</p>
+                    <p className="text-xs text-muted-foreground">
+                      Clean code & User experience
+                    </p>
                   </div>
                 </div>
               </div>
@@ -158,7 +165,9 @@ const About: React.FC = () => {
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between">
                       <span className="font-medium">{skill.name}</span>
-                      <span className="text-muted-foreground">{skill.proficiency}%</span>
+                      <span className="text-muted-foreground">
+                        {skill.proficiency}%
+                      </span>
                     </div>
                     <Progress value={skill.proficiency} className="h-2" />
                   </div>
@@ -179,37 +188,41 @@ const About: React.FC = () => {
                   </div>
                   <h4 className="font-bold mb-2">Problem Solving</h4>
                   <p className="text-sm text-muted-foreground">
-                    Analytical approach to identifying and resolving complex technical challenges.
+                    Analytical approach to identifying and resolving complex
+                    technical challenges.
                   </p>
                 </div>
-                
+
                 <div className="bg-card p-6 rounded-xl border border-border">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                     <Book size={20} className="text-primary" />
                   </div>
                   <h4 className="font-bold mb-2">Continuous Learning</h4>
                   <p className="text-sm text-muted-foreground">
-                    Dedicated to staying updated with the latest technologies and industry trends.
+                    Dedicated to staying updated with the latest technologies
+                    and industry trends.
                   </p>
                 </div>
-                
+
                 <div className="bg-card p-6 rounded-xl border border-border">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                     <BriefcaseBusiness size={20} className="text-primary" />
                   </div>
                   <h4 className="font-bold mb-2">Project Management</h4>
                   <p className="text-sm text-muted-foreground">
-                    Experience managing technical projects and coordinating with cross-functional teams.
+                    Experience managing technical projects and coordinating with
+                    cross-functional teams.
                   </p>
                 </div>
-                
+
                 <div className="bg-card p-6 rounded-xl border border-border">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                     <Mail size={20} className="text-primary" />
                   </div>
                   <h4 className="font-bold mb-2">Communication</h4>
                   <p className="text-sm text-muted-foreground">
-                    Clear and effective communication of complex technical concepts to diverse audiences.
+                    Clear and effective communication of complex technical
+                    concepts to diverse audiences.
                   </p>
                 </div>
               </div>
@@ -226,8 +239,8 @@ const About: React.FC = () => {
               Experience & Education
             </h2>
             <p className="text-muted-foreground">
-              My professional journey and academic background that have shaped my
-              expertise and approach to development.
+              My professional journey and academic background that have shaped
+              my expertise and approach to development.
             </p>
           </div>
 
@@ -240,10 +253,15 @@ const About: React.FC = () => {
               </h3>
               <div className="space-y-12">
                 {experiences.map((experience, index) => (
-                  <div key={index} className="relative pl-8 border-l border-border">
+                  <div
+                    key={index}
+                    className="relative pl-8 border-l border-border"
+                  >
                     <div className="absolute w-4 h-4 rounded-full bg-primary top-0 -left-2"></div>
                     <div className="bg-card rounded-xl p-6 border border-border shadow-sm">
-                      <h4 className="font-bold text-lg">{experience.position}</h4>
+                      <h4 className="font-bold text-lg">
+                        {experience.position}
+                      </h4>
                       <div className="flex items-center gap-2 text-muted-foreground text-sm mb-4">
                         <span>{experience.company}</span>
                         <span>•</span>
@@ -266,7 +284,10 @@ const About: React.FC = () => {
               </h3>
               <div className="space-y-12">
                 {education.map((item, index) => (
-                  <div key={index} className="relative pl-8 border-l border-border">
+                  <div
+                    key={index}
+                    className="relative pl-8 border-l border-border"
+                  >
                     <div className="absolute w-4 h-4 rounded-full bg-primary top-0 -left-2"></div>
                     <div className="bg-card rounded-xl p-6 border border-border shadow-sm">
                       <h4 className="font-bold text-lg">{item.degree}</h4>
@@ -293,7 +314,7 @@ const About: React.FC = () => {
           <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl p-12 relative overflow-hidden animate-on-scroll">
             <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-3xl"></div>
             <div className="absolute bottom-0 left-0 translate-y-1/4 -translate-x-1/4 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl"></div>
-            
+
             <div className="relative z-10 text-center max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold font-display mb-6">
                 Interested in Working Together?

@@ -1,7 +1,8 @@
-
+import { GitHubIcon } from "@/icons/github";
+import { ThreadsIcon } from "@/icons/threads";
+import { TwitterIcon } from "@/icons/twitter";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -16,10 +17,11 @@ export const Footer: React.FC = () => {
               to="/"
               className="text-xl font-display font-bold tracking-tight"
             >
-              <span className="text-primary">Dev</span>Portfolio
+              tk<span className="text-primary">Better</span>.app
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
-              A showcase of my work, skills, and experiences as a professional developer.
+              A showcase of my work, skills, and experiences as a professional
+              developer.
             </p>
           </div>
 
@@ -35,14 +37,14 @@ export const Footer: React.FC = () => {
                   Home
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/about"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   About
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/projects"
@@ -51,14 +53,14 @@ export const Footer: React.FC = () => {
                   Projects
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/blog"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/contact"
@@ -75,15 +77,15 @@ export const Footer: React.FC = () => {
             <h3 className="text-sm font-medium text-foreground">Connect</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/tkhwang"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="GitHub"
               >
-                <Github size={20} />
+                <GitHubIcon size={20} />
               </a>
-              <a
+              {/* <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -91,23 +93,32 @@ export const Footer: React.FC = () => {
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
-              </a>
+              </a> */}
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/tkhwang"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter size={20} />
+                <TwitterIcon size={20} />
               </a>
               <a
+                href="https://www.threads.net/@tkbetter.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Threads"
+              >
+                <ThreadsIcon size={20} />
+              </a>
+              {/* <a
                 href="mailto:contact@example.com"
                 className="text-muted-foreground hover:text-primary transition-colors"
                 aria-label="Email"
               >
                 <Mail size={20} />
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

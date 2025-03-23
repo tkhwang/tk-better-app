@@ -1,8 +1,7 @@
-
 import React from "react";
-import { Header } from "./Header";
-import { Footer } from "./Footer";
 import { cn } from "@/lib/utils";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,7 +15,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, className }) => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-slide-in');
+            entry.target.classList.add("animate-slide-in");
             observer.unobserve(entry.target);
           }
         });
@@ -24,12 +23,12 @@ export const Layout: React.FC<LayoutProps> = ({ children, className }) => {
       { threshold: 0.1 }
     );
 
-    document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
       observer.observe(el);
     });
 
     return () => {
-      document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
         observer.unobserve(el);
       });
     };
@@ -38,9 +37,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, className }) => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      <main className={cn("flex-1", className)}>
-        {children}
-      </main>
+      <main className={cn("flex-1", className)}>{children}</main>
       <Footer />
     </div>
   );

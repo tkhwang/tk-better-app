@@ -1,5 +1,4 @@
 import React from "react";
-import { Layout } from "@/components/Layout";
 import { Link } from "react-router-dom";
 import {
   ChevronDown,
@@ -11,6 +10,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/consts/projects";
+import { Layout } from "@/components/layout";
 
 // Sample blog posts
 const recentPosts = [
@@ -43,7 +43,7 @@ const Index = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
               <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1.5 text-sm font-medium">
-                Software Developer
+                One-Person Development
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display tracking-tight text-balance">
                 Creating digital solutions with{" "}

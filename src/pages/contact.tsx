@@ -1,6 +1,5 @@
-
 import React from "react";
-import { Layout } from "@/components/Layout";
+import { Layout } from "@/components/layout";
 import { ContactForm } from "@/components/ContactForm";
 import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
@@ -15,9 +14,9 @@ const Contact: React.FC = () => {
               Get in Touch
             </h1>
             <p className="text-lg text-muted-foreground">
-              Have a project in mind or want to discuss a potential collaboration?
-              I'd love to hear from you. Fill out the form below or reach out
-              through any of my contact channels.
+              Have a project in mind or want to discuss a potential
+              collaboration? I'd love to hear from you. Fill out the form below
+              or reach out through any of my contact channels.
             </p>
           </div>
         </div>
@@ -32,7 +31,7 @@ const Contact: React.FC = () => {
               <h2 className="text-3xl font-bold font-display mb-8">
                 Contact Information
               </h2>
-              
+
               <div className="space-y-10">
                 {/* Contact Details */}
                 <div className="space-y-6">
@@ -50,7 +49,7 @@ const Contact: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1">
                       <Phone size={20} className="text-primary" />
@@ -65,7 +64,7 @@ const Contact: React.FC = () => {
                       </a>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mt-1">
                       <MapPin size={20} className="text-primary" />
@@ -78,7 +77,7 @@ const Contact: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Social Links */}
                 <div>
                   <h3 className="font-bold mb-4">Connect with me</h3>
@@ -112,18 +111,19 @@ const Contact: React.FC = () => {
                     </a>
                   </div>
                 </div>
-                
+
                 {/* Availability */}
                 <div className="bg-card rounded-xl p-6 border border-border shadow-sm">
                   <h3 className="font-bold mb-2">Current Availability</h3>
                   <p className="text-muted-foreground">
-                    I'm currently available for freelance projects and consultations.
-                    My typical response time is within 24-48 hours.
+                    I'm currently available for freelance projects and
+                    consultations. My typical response time is within 24-48
+                    hours.
                   </p>
                 </div>
               </div>
             </div>
-            
+
             {/* Contact Form */}
             <div className="animate-fade-in animation-delay-200">
               <h2 className="text-3xl font-bold font-display mb-8">
