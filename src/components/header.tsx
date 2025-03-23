@@ -11,6 +11,7 @@ export const Header: React.FC = () => {
   const menuItems = [
     { title: "Home", path: "/" },
     { title: "Projects", path: "/projects" },
+
     { title: "Contact", path: "/contact" },
   ];
 
@@ -47,7 +48,9 @@ export const Header: React.FC = () => {
         to="/"
         className="text-xl font-display font-bold tracking-tight relative z-10 text-primary-foreground animate-fade-in"
       >
-        <span className="text-primary">tkBetter.app</span>Portfolio
+        <span className="text-black">tk</span>
+        <span className="text-primary">Better</span>
+        <span className="text-black">.app</span>
       </Link>
 
       {/* Desktop Navigation */}

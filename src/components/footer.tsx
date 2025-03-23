@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               to="/"
               className="text-xl font-display font-bold tracking-tight"
             >
-              <span className="text-primary">Dev</span>Portfolio
+              tk<span className="text-primary">Better</span>.app
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
               A showcase of my work, skills, and experiences as a professional
@@ -37,14 +37,14 @@ export const Footer: React.FC = () => {
                   Home
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/about"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   About
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/projects"
@@ -53,14 +53,14 @@ export const Footer: React.FC = () => {
                   Projects
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   to="/blog"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   to="/contact"
