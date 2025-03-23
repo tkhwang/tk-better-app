@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
@@ -96,7 +95,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           size="sm"
           className="group-hover:text-primary transition-colors"
         >
-          <Link to={`/projects/${id}`}>
+          <Link to={githubLink ?? liveLink}>
             View Project
             <ArrowRight
               size={16}
