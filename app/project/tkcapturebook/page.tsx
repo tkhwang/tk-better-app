@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -6,7 +5,6 @@ import {
   BookOpen,
   MessageSquare,
   ImageIcon,
-  ExternalLink,
   ArrowLeft,
 } from "lucide-react";
 import Link from "next/link";
@@ -245,46 +243,54 @@ export default function TkCaptureBookPage() {
       <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-xl mb-4">
-                <div className="w-6 h-6 bg-purple-600 rounded-md"></div>
+            <div className="mb-12">
+              <div className="flex items-center justify-center space-x-4 mb-2">
+                <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                  <div className="w-6 h-6 bg-purple-600 rounded-md"></div>
+                </div>
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    Legal Information
+                  </h3>
+                  <p className="text-gray-600">
+                    Important policies and terms for tkCaptureBook
+                  </p>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                Legal Information
-              </h3>
-              <p className="text-gray-600">
-                Important policies and terms for tkCaptureBook
-              </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6">
-              <Link href="/terms" className="group">
+              <Link href="/project/tkcapturebook/terms" className="group">
                 <Card className="p-6 h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-0 bg-white">
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-center space-x-4">
                     <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
                       <div className="w-5 h-5 bg-blue-600 rounded"></div>
                     </div>
-                    <div>
+                    <div className="text-left">
                       <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
                         Terms of Service
                       </h4>
-                      <p className="text-gray-600 text-sm">User agreements and service usage conditions</p>
+                      <p className="text-gray-600 text-sm">
+                        User agreements and service usage conditions
+                      </p>
                     </div>
                   </div>
                 </Card>
               </Link>
 
-              <Link href="/privacy" className="group">
+              <Link href="/project/tkcapturebook/privacy" className="group">
                 <Card className="p-6 h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-0 bg-white">
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-center space-x-4">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
                       <div className="w-5 h-5 bg-green-600 rounded"></div>
                     </div>
-                    <div>
+                    <div className="text-left">
                       <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
                         Privacy Policy
                       </h4>
-                      <p className="text-gray-600 text-sm">How we collect, use, and protect your personal data</p>
+                      <p className="text-gray-600 text-sm">
+                        How we collect, use, and protect your personal data
+                      </p>
                     </div>
                   </div>
                 </Card>
@@ -302,12 +308,19 @@ export default function TkCaptureBookPage() {
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">tk</span>
               </div>
-              <span className="font-bold text-xl">Better.app</span>
+              <div className="flex items-center space-x-2">
+                <Link
+                  href="/"
+                  className="font-bold text-xl hover:text-blue-400 transition-colors"
+                >
+                  Better.app
+                </Link>
+                <span className="text-gray-400">&gt;</span>
+                <span className="font-semibold text-lg">tkCaptureBook</span>
+              </div>
             </div>
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-              {/* <p className="text-gray-400 text-sm">
-                2024 tkBetter.app. Creating better mobile experiences, one app at a time.
-              </p> */}
+              <p className="text-gray-400 text-sm">2025 tkBetter.app.</p>
             </div>
           </div>
         </div>
