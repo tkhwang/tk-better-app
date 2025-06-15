@@ -60,17 +60,14 @@ export default function TkCaptureBookPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center space-x-4 mb-6">
                 <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
                   <ImageIcon className="w-6 h-6 text-purple-600" />
                 </div>
-                <Badge className="bg-purple-100 text-purple-600">
-                  Feature 1
-                </Badge>
+                <h2 className="text-3xl font-bold">
+                  Smart <span className="text-purple-600">Frame</span>
+                </h2>
               </div>
-              <h2 className="text-3xl font-bold">
-                Smart <span className="text-purple-600">Frame</span>
-              </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Create beautiful social media posts with book metadata and
                 custom frames. Transform your reading moments into shareable
@@ -150,15 +147,14 @@ export default function TkCaptureBookPage() {
               </div>
             </div>
             <div className="space-y-6 lg:order-1">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center space-x-4 mb-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
                   <BookOpen className="w-6 h-6 text-blue-600" />
                 </div>
-                <Badge className="bg-blue-100 text-blue-600">Feature 2</Badge>
+                <h2 className="text-3xl font-bold">
+                  Sentence <span className="text-blue-600">Collection</span>
+                </h2>
               </div>
-              <h2 className="text-3xl font-bold">
-                Sentence <span className="text-blue-600">Collection</span>
-              </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Capture and organize meaningful quotes by photographing book
                 pages. Build your personal library of inspiration with
@@ -188,15 +184,14 @@ export default function TkCaptureBookPage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <div className="flex items-center space-x-3 mb-4">
+              <div className="flex items-center space-x-4 mb-6">
                 <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                   <MessageSquare className="w-6 h-6 text-green-600" />
                 </div>
-                <Badge className="bg-green-100 text-green-600">Feature 3</Badge>
+                <h2 className="text-3xl font-bold">
+                  Book <span className="text-green-600">Talk</span>
+                </h2>
               </div>
-              <h2 className="text-3xl font-bold">
-                Book <span className="text-green-600">Talk</span>
-              </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Chat with AI authors about your collected sentences and get
                 personalized recommendations. Engage in meaningful discussions
