@@ -13,7 +13,7 @@ export default function TkCaptureBookTermsPage() {
             className="inline-flex items-center text-gray-600 hover:text-purple-600 transition-colors"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to tkCaptureBook
+            Back to [project] tkCaptureBook
           </Link>
         </div>
       </nav>

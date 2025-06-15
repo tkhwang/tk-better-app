@@ -23,8 +23,10 @@ export default function TkCaptureBookPage() {
               <ArrowLeft className="w-4 h-4" />
               <span>Back to Home</span>
             </Link>
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg"></div>
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">tk</span>
+              </div>
               <span className="font-bold text-xl">Better.app</span>
             </div>
           </div>
