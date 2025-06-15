@@ -195,7 +195,7 @@ export default function HomePage() {
                     <BookOpen className="w-6 h-6 text-purple-600" />
                   </div>
                   <CardTitle className="text-purple-600">
-                    tkCaptureBook
+                    tkCapture[Book]
                   </CardTitle>
                   <CardDescription>Reading Management App</CardDescription>
                 </CardHeader>
@@ -216,13 +216,13 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
                   <Camera className="w-6 h-6 text-gray-400" />
                 </div>
-                <CardTitle className="text-gray-400">tkCapture[Next]</CardTitle>
+                <CardTitle className="text-gray-400">tkCapture[Food]</CardTitle>
                 <CardDescription>Coming Soon</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-400 mb-4">
-                  The next innovative camera application in the tkCapture
-                  series. Stay tuned for more details.
+                  Capture your daily meals for analysis, insights, and
+                  personalized weight management guidance.
                 </p>
                 <Badge
                   variant="outline"
@@ -239,14 +239,13 @@ export default function HomePage() {
                   <Camera className="w-6 h-6 text-gray-400" />
                 </div>
                 <CardTitle className="text-gray-400">
-                  tkCapture[Future]
+                  tkCapture[Athlete]
                 </CardTitle>
                 <CardDescription>Future Release</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-400 mb-4">
-                  More exciting camera-powered applications are in the pipeline.
-                  The future of mobile photography awaits.
+                  Comprehensive health and exercise analysis platform with workout tracking, meal management, and performance insights.
                 </p>
                 <Badge
                   variant="outline"
@@ -277,7 +276,11 @@ export default function HomePage() {
                 Get In Touch
               </Button>
             </Link>
-            <Link href="https://github.com/tkhwang" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://github.com/tkhwang"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button size="lg" variant="outline">
                 <Github className="w-4 h-4 mr-2" />
                 View on GitHub
