@@ -69,7 +69,7 @@ export default function HomePage() {
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Solo developer specializing in innovative mobile applications.
-                  Currently building the tkCapture series - camera-powered apps
+                  Currently building the tkCapture series – camera-powered apps
                   that enhance your daily experiences.
                 </p>
               </div>
@@ -189,7 +189,7 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <Link href="/project/tkcapturebook">
-              <Card className="border-purple-200 hover:shadow-lg transition-shadow cursor-pointer">
+              <Card className="border-purple-200 hover:border-purple-400 hover:shadow-lg transition-all duration-200 cursor-pointer">
                 <CardHeader>
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                     <BookOpen className="w-6 h-6 text-purple-600" />
@@ -264,11 +264,11 @@ export default function HomePage() {
       <section id="contact" className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Let's Build Something <span className="text-blue-600">Better</span>
+            Let’s Build Something <span className="text-blue-600">Better</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
             Interested in collaborating or learning more about the tkCapture
-            series? I'd love to hear from you.
+            series? I’d love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="mailto:tkhwang.dev@gmail.com">
