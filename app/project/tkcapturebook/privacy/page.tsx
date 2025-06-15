@@ -1,13 +1,13 @@
+import { HeaderProjectTkCaptureBookPrivacy } from "@/components/header/header-project-tkcapturebook-privacy";
 import { Card } from "@/components/ui/card";
 import { Shield, Calendar, User } from "lucide-react";
 import Link from "next/link";
-import PageHeaderProjectTkbookcapturePrivacy from "@/components/header/page-header-project-tkbookcapture-privacy";
 
 export default function TkCaptureBookPrivacyPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <PageHeaderProjectTkbookcapturePrivacy />
+      <HeaderProjectTkCaptureBookPrivacy />
 
       {/* Header */}
       <header className="py-16 bg-gradient-to-br from-green-50 to-blue-50">

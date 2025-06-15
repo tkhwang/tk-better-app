@@ -1,13 +1,13 @@
+import { HeaderProjectTkCaptureBookTerms } from "@/components/header/header-project-tkcapturebook-terms";
 import { Card } from "@/components/ui/card";
 import { FileText, Calendar, User } from "lucide-react";
 import Link from "next/link";
-import PageHeaderProjectTkBookCaptureTerms from "@/components/header/page-header-project-tkbookcapture-terms";
 
 export default function TkCaptureBookTermsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <PageHeaderProjectTkBookCaptureTerms />
+      <HeaderProjectTkCaptureBookTerms />
 
       {/* Header */}
       <header className="py-16 bg-gradient-to-br from-blue-50 to-purple-50">

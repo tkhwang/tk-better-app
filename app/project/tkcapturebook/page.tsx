@@ -2,13 +2,13 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Camera, BookOpen, MessageSquare, ImageIcon } from "lucide-react";
 import Link from "next/link";
-import PageHeaderProjectTkbookcapture from "@/components/header/page-header-project-tkbookcapture";
+import { HeaderProjectTkcapturebook } from "@/components/header/header-project-tkcapturebook";
 
 export default function TkCaptureBookPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
-      <PageHeaderProjectTkbookcapture />
+      <HeaderProjectTkcapturebook />
 
       {/* Hero Section */}
       <section className="py-20 bg-white">
