@@ -1,7 +1,7 @@
 import { HeaderHome } from "@/components/header/header-home";
-import { HeaderProjectTkcapturebook } from "@/components/header/header-project-tkcapturebook";
-import { HeaderProjectTkCaptureBookPrivacy } from "@/components/header/header-project-tkcapturebook-privacy";
-import { HeaderProjectTkCaptureBookTerms } from "@/components/header/header-project-tkcapturebook-terms";
+import { HeaderProjectTkcapturebook } from "@/components/header/project/header-project-tkcapturebook";
+import { HeaderProjectTkCaptureBookPrivacy } from "@/components/header/project/header-project-tkcapturebook-privacy";
+import { HeaderProjectTkCaptureBookTerms } from "@/components/header/project/header-project-tkcapturebook-terms";
 import { useRouter } from "next/router";
 
 export function Header() {
