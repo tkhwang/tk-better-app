@@ -17,13 +17,12 @@ import {
   Mail,
 } from "lucide-react";
 import Link from "next/link";
-import { HeaderHome } from "@/components/header/header-home";
+import { Header } from "@/components/header/header";
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      {/* Header */}
-      <HeaderHome />
+      <Header />
 
       {/* Hero Section */}
       <section id="home" className="py-20 lg:py-32">
