@@ -175,7 +175,10 @@ export default function HomePage() {
       </section>
 
       {/* tkCapture Series Overview */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+      <section
+        id="projects"
+        className="py-20 bg-gradient-to-br from-slate-50 to-blue-50"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
@@ -245,7 +248,8 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-400 mb-4">
-                  Comprehensive health and exercise analysis platform with workout tracking, meal management, and performance insights.
+                  Comprehensive health and exercise analysis platform with
+                  workout tracking, meal management, and performance insights.
                 </p>
                 <Badge
                   variant="outline"
@@ -276,7 +280,7 @@ export default function HomePage() {
                 Get In Touch
               </Button>
             </Link>
-            <Link
+            <a
               href="https://github.com/tkhwang"
               target="_blank"
               rel="noopener noreferrer"
@@ -285,7 +289,7 @@ export default function HomePage() {
                 <Github className="w-4 h-4 mr-2" />
                 View on GitHub
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
