@@ -1,8 +1,23 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Camera, BookOpen, MessageSquare, ImageIcon, ChevronDown, Github, Mail, ExternalLink } from "lucide-react"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Camera,
+  BookOpen,
+  MessageSquare,
+  ImageIcon,
+  ChevronDown,
+  Github,
+  Mail,
+  ExternalLink,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
@@ -20,10 +35,16 @@ export default function HomePage() {
             <Link href="#home" className="text-blue-600 font-medium">
               Home
             </Link>
-            <Link href="#projects" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link
+              href="#projects"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
               Projects
             </Link>
-            <Link href="#contact" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <Link
+              href="#contact"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
               Contact
             </Link>
           </nav>
@@ -35,29 +56,23 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
-              <Badge variant="outline" className="text-blue-600 border-blue-200">
+              <Badge
+                variant="outline"
+                className="text-blue-600 border-blue-200"
+              >
                 One-Person Development
               </Badge>
               <div className="space-y-6">
-                <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
-                  Creating <span className="text-blue-600">better</span>
-                  <br />
-                  mobile apps with <span className="text-blue-600">precision</span>
-                  <br />
-                  and <span className="text-blue-600">passion</span>
+                <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                  Creating <span className="text-blue-600">better</span>{" "}
+                  fullstack services with{" "}
+                  <span className="text-blue-600">AI-powered creativity</span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  Solo developer specializing in innovative mobile applications. Currently building the tkCapture series
-                  - camera-powered apps that enhance your daily experiences.
+                  Solo developer specializing in innovative mobile applications.
+                  Currently building the tkCapture series - camera-powered apps
+                  that enhance your daily experiences.
                 </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  View My Work
-                </Button>
-                <Button size="lg" variant="outline">
-                  Get In Touch
-                </Button>
               </div>
             </div>
             <div className="relative">
@@ -85,7 +100,9 @@ export default function HomePage() {
                       <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-4">
                         <div className="flex items-center space-x-2 mb-3">
                           <ImageIcon className="w-5 h-5 text-purple-600" />
-                          <span className="text-sm font-medium text-purple-600">Smart Frame</span>
+                          <span className="text-sm font-medium text-purple-600">
+                            Smart Frame
+                          </span>
                         </div>
                         <div className="bg-white rounded-xl p-3 shadow-sm">
                           <div className="flex items-center space-x-3">
@@ -102,7 +119,9 @@ export default function HomePage() {
                       <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-4">
                         <div className="flex items-center space-x-2 mb-3">
                           <BookOpen className="w-5 h-5 text-blue-600" />
-                          <span className="text-sm font-medium text-blue-600">Collected Quotes</span>
+                          <span className="text-sm font-medium text-blue-600">
+                            Collected Quotes
+                          </span>
                         </div>
                         <div className="space-y-2">
                           <div className="bg-white rounded-lg p-3 shadow-sm">
@@ -120,7 +139,9 @@ export default function HomePage() {
                       <div className="bg-gradient-to-br from-green-50 to-yellow-50 rounded-2xl p-4">
                         <div className="flex items-center space-x-2 mb-3">
                           <MessageSquare className="w-5 h-5 text-green-600" />
-                          <span className="text-sm font-medium text-green-600">Book Talk</span>
+                          <span className="text-sm font-medium text-green-600">
+                            Book Talk
+                          </span>
                         </div>
                         <div className="space-y-2">
                           <div className="bg-white rounded-lg p-2 ml-8 shadow-sm">
@@ -158,15 +179,19 @@ export default function HomePage() {
       <section id="projects" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="text-purple-600 border-purple-200 mb-4">
+            <Badge
+              variant="outline"
+              className="text-purple-600 border-purple-200 mb-4"
+            >
               Featured Project
             </Badge>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               Introducing <span className="text-purple-600">tkCaptureBook</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A revolutionary reading management mobile application that transforms how you interact with books through
-              camera technology and AI.
+              A revolutionary reading management mobile application that
+              transforms how you interact with books through camera technology
+              and AI.
             </p>
           </div>
 
@@ -180,7 +205,8 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-xl font-semibold">Smart Frame</h3>
                     <p className="text-gray-600">
-                      Create beautiful social media posts with book metadata and custom frames
+                      Create beautiful social media posts with book metadata and
+                      custom frames
                     </p>
                   </div>
                 </div>
@@ -189,8 +215,13 @@ export default function HomePage() {
                     <BookOpen className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold">Sentence Collection</h3>
-                    <p className="text-gray-600">Capture and organize meaningful quotes by photographing book pages</p>
+                    <h3 className="text-xl font-semibold">
+                      Sentence Collection
+                    </h3>
+                    <p className="text-gray-600">
+                      Capture and organize meaningful quotes by photographing
+                      book pages
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -200,7 +231,8 @@ export default function HomePage() {
                   <div>
                     <h3 className="text-xl font-semibold">Book Talk</h3>
                     <p className="text-gray-600">
-                      Chat with AI authors about your collected sentences and get personalized recommendations
+                      Chat with AI authors about your collected sentences and
+                      get personalized recommendations
                     </p>
                   </div>
                 </div>
@@ -216,7 +248,9 @@ export default function HomePage() {
                   <div className="space-y-6">
                     <div className="flex items-center justify-between">
                       <h4 className="font-semibold text-lg">tkCaptureBook</h4>
-                      <Badge className="bg-purple-100 text-purple-600">Beta</Badge>
+                      <Badge className="bg-purple-100 text-purple-600">
+                        Beta
+                      </Badge>
                     </div>
                     <div className="space-y-4">
                       <Card className="border-purple-200">
@@ -234,7 +268,9 @@ export default function HomePage() {
                         <CardContent className="p-4">
                           <div className="flex items-center space-x-3">
                             <Camera className="w-6 h-6 text-blue-600" />
-                            <span className="text-sm text-gray-600">Capture & Collect</span>
+                            <span className="text-sm text-gray-600">
+                              Capture & Collect
+                            </span>
                           </div>
                         </CardContent>
                       </Card>
@@ -242,7 +278,9 @@ export default function HomePage() {
                         <CardContent className="p-4">
                           <div className="flex items-center space-x-3">
                             <MessageSquare className="w-6 h-6 text-green-600" />
-                            <span className="text-sm text-gray-600">AI Chat Ready</span>
+                            <span className="text-sm text-gray-600">
+                              AI Chat Ready
+                            </span>
                           </div>
                         </CardContent>
                       </Card>
@@ -263,8 +301,8 @@ export default function HomePage() {
               The <span className="text-blue-600">tkCapture</span> Series
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A collection of camera-powered mobile applications designed to enhance your daily experiences through
-              innovative technology.
+              A collection of camera-powered mobile applications designed to
+              enhance your daily experiences through innovative technology.
             </p>
           </div>
 
@@ -279,10 +317,12 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  Transform your reading experience with smart photo frames, sentence collection, and AI-powered book
-                  discussions.
+                  Transform your reading experience with smart photo frames,
+                  sentence collection, and AI-powered book discussions.
                 </p>
-                <Badge className="bg-purple-100 text-purple-600">In Development</Badge>
+                <Badge className="bg-purple-100 text-purple-600">
+                  In Development
+                </Badge>
               </CardContent>
             </Card>
 
@@ -296,9 +336,13 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-400 mb-4">
-                  The next innovative camera application in the tkCapture series. Stay tuned for more details.
+                  The next innovative camera application in the tkCapture
+                  series. Stay tuned for more details.
                 </p>
-                <Badge variant="outline" className="text-gray-400 border-gray-300">
+                <Badge
+                  variant="outline"
+                  className="text-gray-400 border-gray-300"
+                >
                   Planned
                 </Badge>
               </CardContent>
@@ -309,15 +353,20 @@ export default function HomePage() {
                 <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-4">
                   <Camera className="w-6 h-6 text-gray-400" />
                 </div>
-                <CardTitle className="text-gray-400">tkCapture[Future]</CardTitle>
+                <CardTitle className="text-gray-400">
+                  tkCapture[Future]
+                </CardTitle>
                 <CardDescription>Future Release</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-400 mb-4">
-                  More exciting camera-powered applications are in the pipeline. The future of mobile photography
-                  awaits.
+                  More exciting camera-powered applications are in the pipeline.
+                  The future of mobile photography awaits.
                 </p>
-                <Badge variant="outline" className="text-gray-400 border-gray-300">
+                <Badge
+                  variant="outline"
+                  className="text-gray-400 border-gray-300"
+                >
                   Concept
                 </Badge>
               </CardContent>
@@ -333,7 +382,8 @@ export default function HomePage() {
             Let's Build Something <span className="text-blue-600">Better</span>
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Interested in collaborating or learning more about the tkCapture series? I'd love to hear from you.
+            Interested in collaborating or learning more about the tkCapture
+            series? I'd love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
@@ -359,11 +409,12 @@ export default function HomePage() {
               <span className="font-bold text-xl">Better.app</span>
             </div>
             <p className="text-gray-400 text-sm">
-              © 2024 tkBetter.app. Creating better mobile experiences, one app at a time.
+              2024 tkBetter.app. Creating better mobile experiences, one app at
+              a time.
             </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
