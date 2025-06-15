@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects"
+  },
+  "hero": {
+    "title": "Creating better fullstack services with AI-powered creativity",
+    "subtitle": "Building innovative solutions with precision, passion, and cutting-edge technology."
+  },
+  "projects": {
+    "title": "tkCapture Series",
+    "subtitle": "Innovative capture applications for every aspect of life"
+  },
+  "project": {
+    "tkcapturebook": {
+      "title": "tkCapture[Book]",
+      "subtitle": "Reading Management App",
+      "description": "Transform your reading experience with smart photo frames, sentence collection, and AI-powered book discussions.",
+      "status": "In Development"
+    },
+    "tkcapturefood": {
+      "title": "tkCapture[Food]",
+      "subtitle": "Coming Soon",
+      "description": "Capture your daily meals for analysis, insights, and personalized weight management guidance.",
+      "status": "Planned"
+    },
+    "tkcaptureathlete": {
+      "title": "tkCapture[Athlete]",
+      "subtitle": "Future Release",
+      "description": "Comprehensive health and exercise analysis platform with workout tracking, meal management, and performance insights.",
+      "status": "Concept"
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Digital Experience?",
+    "description": "Join the tkCapture ecosystem and revolutionize how you capture, analyze, and manage different aspects of your life. Have ideas for the tkCapture series? I'd love to hear from you.",
+    "contact": "Get In Touch",
+    "github": "View on GitHub"
+  },
+  "footer": {
+    "copyright": "2025 tkBetter.app. All rights reserved."
+  }
+}

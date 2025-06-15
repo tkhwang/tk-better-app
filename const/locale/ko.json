@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "홈",
+    "projects": "프로젝트"
+  },
+  "hero": {
+    "title": "AI 창의력으로 더 나은 풀스택 서비스 창조",
+    "subtitle": "정밀함, 열정, 그리고 최첨단 기술로 혁신적인 솔루션을 구축합니다."
+  },
+  "projects": {
+    "title": "tkCapture 시리즈",
+    "subtitle": "삶의 모든 측면을 위한 혁신적인 캡처 애플리케이션"
+  },
+  "project": {
+    "tkcapturebook": {
+      "title": "tkCapture[Book]",
+      "subtitle": "독서 관리 앱",
+      "description": "스마트 사진 프레임, 문장 수집, AI 기반 책 토론으로 독서 경험을 혁신하세요.",
+      "status": "개발 중"
+    },
+    "tkcapturefood": {
+      "title": "tkCapture[Food]",
+      "subtitle": "출시 예정",
+      "description": "일일 식사를 촬영하여 분석, 인사이트 및 개인 맞춤형 체중 관리 가이드를 받아보세요.",
+      "status": "계획됨"
+    },
+    "tkcaptureathlete": {
+      "title": "tkCapture[Athlete]",
+      "subtitle": "향후 출시",
+      "description": "운동 추적, 식사 관리 및 성과 인사이트가 포함된 종합 건강 및 운동 분석 플랫폼입니다.",
+      "status": "컨셉"
+    }
+  },
+  "cta": {
+    "title": "디지털 경험을 혁신할 준비가 되셨나요?",
+    "description": "tkCapture 생태계에 참여하여 삶의 다양한 측면을 캡처, 분석 및 관리하는 방식을 혁신하세요. tkCapture 시리즈에 대한 아이디어가 있으시면 언제든 연락주세요.",
+    "contact": "연락하기",
+    "github": "GitHub 보기"
+  },
+  "footer": {
+    "copyright": "2025 tkBetter.app. 모든 권리 보유."
+  }
+}
