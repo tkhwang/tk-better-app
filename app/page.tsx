@@ -194,7 +194,9 @@ export default function HomePage() {
                   <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                     <BookOpen className="w-6 h-6 text-purple-600" />
                   </div>
-                  <CardTitle className="text-purple-600">tkCaptureBook</CardTitle>
+                  <CardTitle className="text-purple-600">
+                    tkCaptureBook
+                  </CardTitle>
                   <CardDescription>Reading Management App</CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -269,14 +271,18 @@ export default function HomePage() {
             series? I'd love to hear from you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-              <Mail className="w-4 h-4 mr-2" />
-              Get In Touch
-            </Button>
-            <Button size="lg" variant="outline">
-              <Github className="w-4 h-4 mr-2" />
-              View on GitHub
-            </Button>
+            <Link href="mailto:tkhwang.dev@gmail.com">
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+                <Mail className="w-4 h-4 mr-2" />
+                Get In Touch
+              </Button>
+            </Link>
+            <Link href="https://github.com/tkhwang" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" variant="outline">
+                <Github className="w-4 h-4 mr-2" />
+                View on GitHub
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
