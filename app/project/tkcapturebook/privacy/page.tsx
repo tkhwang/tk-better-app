@@ -1,22 +1,13 @@
 import { Card } from "@/components/ui/card";
-import { ArrowLeft, Shield, Calendar, User } from "lucide-react";
+import { Shield, Calendar, User } from "lucide-react";
 import Link from "next/link";
+import PageHeaderProjectTkbookcapturePrivacy from "@/components/header/page-header-project-tkbookcapture-privacy";
 
 export default function TkCaptureBookPrivacyPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="sticky top-0 z-10 bg-white border-b border-gray-200">
-        <div className="container mx-auto px-4 py-4">
-          <Link
-            href="/project/tkcapturebook"
-            className="inline-flex items-center text-gray-600 hover:text-purple-600 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to [project] tkCaptureBook
-          </Link>
-        </div>
-      </nav>
+      <PageHeaderProjectTkbookcapturePrivacy />
 
       {/* Header */}
       <header className="py-16 bg-gradient-to-br from-green-50 to-blue-50">
