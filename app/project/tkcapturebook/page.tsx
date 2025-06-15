@@ -241,22 +241,77 @@ export default function TkCaptureBookPage() {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-16 bg-purple-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Ready to Transform Your Reading Experience?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            tkCaptureBook is currently in development. <br />
-            Be the first to know when it launches!
-          </p>
-          <Button size="lg" className="bg-purple-600 hover:bg-purple-700">
-            <ExternalLink className="w-4 h-4 mr-2" />
-            Coming Soon
-          </Button>
+      {/* Legal Links */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-purple-100 rounded-xl mb-4">
+                <div className="w-6 h-6 bg-purple-600 rounded-md"></div>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Legal Information
+              </h3>
+              <p className="text-gray-600">
+                Important policies and terms for tkCaptureBook
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <Link href="/terms" className="group">
+                <Card className="p-6 h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-0 bg-white">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
+                      <div className="w-5 h-5 bg-blue-600 rounded"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+                        Terms of Service
+                      </h4>
+                      <p className="text-gray-600 text-sm">User agreements and service usage conditions</p>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+
+              <Link href="/privacy" className="group">
+                <Card className="p-6 h-full transition-all duration-300 hover:shadow-lg hover:-translate-y-1 border-0 bg-white">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center group-hover:bg-green-200 transition-colors">
+                      <div className="w-5 h-5 bg-green-600 rounded"></div>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors">
+                        Privacy Policy
+                      </h4>
+                      <p className="text-gray-600 text-sm">How we collect, use, and protect your personal data</p>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-8 bg-gray-900 text-white">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-sm">tk</span>
+              </div>
+              <span className="font-bold text-xl">Better.app</span>
+            </div>
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+              {/* <p className="text-gray-400 text-sm">
+                2024 tkBetter.app. Creating better mobile experiences, one app at a time.
+              </p> */}
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
