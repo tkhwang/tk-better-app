@@ -9,35 +9,7 @@ const features = [
     details:
       "Take control over how and when to follow up with your leads. Store and reference leads in multiple tables and, from there, automatically send them personalized emails.",
     tutorialLink: "#",
-  },
-  {
-    category: "Project Management",
-    title: "Streamline your workflows effortlessly",
-    details:
-      "Organize tasks, deadlines, and team collaboration in one place. Use customizable boards to manage projects efficiently and automate routine updates.",
-    tutorialLink: "#",
-  },
-  {
-    category: "Customer Support",
-    title: "Deliver seamless customer experiences",
-    details:
-      "Track and resolve customer queries faster with an integrated ticketing system. Set priorities, automate follow-ups, and enhance satisfaction with personalized responses.",
-    tutorialLink: "#",
-  },
-  {
-    category: "Team Collaboration",
-    title: "Stay connected with your team",
-    details:
-      "Simplify communication and align team efforts with shared boards and real-time updates. Enable transparent goal tracking and instant feedback for better results.",
-    tutorialLink: "#",
-  },
-  {
-    category: "Product Development",
-    title: "Accelerate innovation with ease",
-    details:
-      "Bring your product ideas to life by managing prototypes, feedback, and iterations in one place. Collaborate with your team to refine features and release with confidence.",
-    tutorialLink: "#",
-  },
+  }
 ];
 
 const Features06Page = () => {
