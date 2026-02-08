@@ -1,43 +1,47 @@
 {
   "nav": {
     "home": "Home",
-    "projects": "Projects"
+    "projects": "Projects",
+    "blog": "Blog"
   },
   "hero": {
-    "title": "Creating better fullstack services with AI-powered creativity",
-    "subtitle": "Building innovative solutions with precision, passion, and cutting-edge technology."
+    "badge": "AI-Powered Fullstack Developer",
+    "title": "Building the Future with AI Agents & Fullstack Excellence",
+    "subtitle": "Specializing in AI agent orchestration, modern fullstack architectures, and creating helpful, delightful digital experiences.",
+    "cta_primary": "View My Work",
+    "cta_secondary": "Get in Touch"
   },
-  "projects": {
-    "title": "tkCapture Series",
-    "subtitle": "Innovative capture applications for every aspect of life"
-  },
-  "project": {
-    "tkcapturebook": {
-      "title": "tkCapture[Book]",
-      "subtitle": "Reading Management App",
-      "description": "Transform your reading experience with smart photo frames, sentence collection, and AI-powered book discussions.",
-      "status": "In Development"
-    },
-    "tkcapturefood": {
-      "title": "tkCapture[Food]",
-      "subtitle": "Coming Soon",
-      "description": "Capture your daily meals for analysis, insights, and personalized weight management guidance.",
-      "status": "Planned"
-    },
-    "tkcaptureathlete": {
-      "title": "tkCapture[Athlete]",
-      "subtitle": "Future Release",
-      "description": "Comprehensive health and exercise analysis platform with workout tracking, meal management, and performance insights.",
-      "status": "Concept"
-    }
+  "expertise": {
+    "title": "Core Expertise",
+    "subtitle": "Combining cutting-edge AI with robust engineering to build what matters.",
+    "items": [
+      {
+        "category": "AI Development",
+        "title": "AI Agent Systems",
+        "description": "Designing and deploying autonomous AI agents that solve complex problems, automate workflows, and enhance human productivity using LLMs.",
+        "link": "#"
+      },
+      {
+        "category": "Engineering",
+        "title": "Fullstack Architecture",
+        "description": "Crafting scalable, high-performance web applications with Next.js, TypeScript, and modern backend ecosystems like Nest.js or Node.js.",
+        "link": "#"
+      },
+      {
+        "category": "Product",
+        "title": "Helpful & Fun Items",
+        "description": "Building tools and applications that aren't just functional, but bring joy and solve real everyday problems in creative ways.",
+        "link": "#"
+      }
+    ]
   },
   "cta": {
-    "title": "Ready to Transform Your Digital Experience?",
-    "description": "Join the tkCapture ecosystem and revolutionize how you capture, analyze, and manage different aspects of your life. Have ideas for the tkCapture series? I'd love to hear from you.",
-    "contact": "Get In Touch",
-    "github": "View on GitHub"
+    "title": "Let's Build Something Amazing",
+    "description": "Whether you have a specific AI agent idea or need a comprehensive fullstack solution, I'm here to bring it to life.",
+    "contact": "Contact Me",
+    "github": "Follow on GitHub"
   },
   "footer": {
-    "copyright": "2025 tkBetter.app. All rights reserved."
+    "copyright": "All rights reserved."
   }
 }

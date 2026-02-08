@@ -1,35 +1,46 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, CirclePlay } from "lucide-react";
+import { ArrowUpRight, Mail } from "lucide-react";
 import { BackgroundPattern } from "./background-pattern";
+import { useTranslation } from "react-i18next";
+import Particles from "@/components/ui/particles";
 
 const Hero06 = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center px-6">
-      <BackgroundPattern />
+  const { t } = useTranslation();
 
-      <div className="relative z-10 text-center max-w-2xl">
-        <Badge className="bg-gradient-to-br via-70% from-primary via-muted/30 to-primary rounded-full py-1 border-none">
-          Just released v1.0.0
+  return (
+    <div className="relative min-h-[calc(100dvh-7rem)] flex items-center justify-center px-6 overflow-hidden">
+      <BackgroundPattern />
+      <Particles
+        className="absolute inset-0 z-0"
+        quantity={100}
+        ease={80}
+        color="#888888"
+        refresh
+      />
+
+      <div className="relative z-10 text-center max-w-3xl">
+        <Badge className="bg-gradient-to-br via-70% from-primary via-muted/30 to-primary rounded-full py-1 px-4 border-none text-xs md:text-sm mb-6 animate-in fade-in slide-in-from-bottom-3 duration-1000">
+          {t("hero.badge")}
         </Badge>
-        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl font-bold !leading-[1.2] tracking-tight">
-          Customized Shadcn UI Blocks & Components
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold !leading-[1.1] tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-150">
+          {t("hero.title")}
         </h1>
-        <p className="mt-6 text-[17px] md:text-lg">
-          Explore a collection of Shadcn UI blocks and components, ready to
-          preview and copy. Streamline your development workflow with
-          easy-to-implement examples.
+        <p className="mt-8 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto animate-in fade-in slide-in-from-bottom-5 duration-1000 delay-300">
+          {t("hero.subtitle")}
         </p>
-        <div className="mt-12 flex items-center justify-center gap-4">
-          <Button size="lg" className="rounded-full text-base">
-            Get Started <ArrowUpRight className="!h-5 !w-5" />
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-500">
+          <Button size="lg" className="rounded-full text-base px-8 h-12">
+            {t("hero.cta_primary")} <ArrowUpRight className="ml-2 !h-5 !w-5" />
           </Button>
           <Button
             variant="outline"
             size="lg"
-            className="rounded-full text-base shadow-none"
+            className="rounded-full text-base px-8 h-12 shadow-none backdrop-blur-sm bg-background/50"
           >
-            <CirclePlay className="!h-5 !w-5" /> Watch Demo
+            <Mail className="ml-0 mr-2 !h-5 !w-5" /> {t("hero.cta_secondary")}
           </Button>
         </div>
       </div>

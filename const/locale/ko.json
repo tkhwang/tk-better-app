@@ -1,43 +1,47 @@
 {
   "nav": {
     "home": "홈",
-    "projects": "프로젝트"
+    "projects": "프로젝트",
+    "blog": "블로그"
   },
   "hero": {
-    "title": "AI 창의력으로 더 나은 풀스택 서비스 창조",
-    "subtitle": "정밀함, 열정, 그리고 최첨단 기술로 혁신적인 솔루션을 구축합니다."
+    "badge": "AI 활용 풀스택 개발자",
+    "title": "AI 에이전트와 풀스택 기술로 더 나은 미래를 만듭니다",
+    "subtitle": "AI 에이전트 오케스트레이션, 현대적인 풀스택 아키텍처, 그리고 도움이 되고 즐거운 디지털 경험을 만드는 데 전문성이 있습니다.",
+    "cta_primary": "작업물 보기",
+    "cta_secondary": "연락하기"
   },
-  "projects": {
-    "title": "tkCapture 시리즈",
-    "subtitle": "삶의 모든 측면을 위한 혁신적인 캡처 애플리케이션"
-  },
-  "project": {
-    "tkcapturebook": {
-      "title": "tkCapture[Book]",
-      "subtitle": "독서 관리 앱",
-      "description": "스마트 사진 프레임, 문장 수집, AI 기반 책 토론으로 독서 경험을 혁신하세요.",
-      "status": "개발 중"
-    },
-    "tkcapturefood": {
-      "title": "tkCapture[Food]",
-      "subtitle": "출시 예정",
-      "description": "일일 식사를 촬영하여 분석, 인사이트 및 개인 맞춤형 체중 관리 가이드를 받아보세요.",
-      "status": "계획됨"
-    },
-    "tkcaptureathlete": {
-      "title": "tkCapture[Athlete]",
-      "subtitle": "향후 출시",
-      "description": "운동 추적, 식사 관리 및 성과 인사이트가 포함된 종합 건강 및 운동 분석 플랫폼입니다.",
-      "status": "컨셉"
-    }
+  "expertise": {
+    "title": "핵심 전문성",
+    "subtitle": "최첨단 AI와 탄탄한 엔지니어링을 결합하여 가치 있는 것을 구축합니다.",
+    "items": [
+      {
+        "category": "AI 개발",
+        "title": "AI 에이전트 시스템",
+        "description": "LLM을 활용하여 복잡한 문제를 해결하고, 워크플로우를 자동화하며, 생산성을 높이는 자율형 AI 에이전트를 설계하고 배포합니다.",
+        "link": "#"
+      },
+      {
+        "category": "엔지니어링",
+        "title": "풀스택 아키텍처",
+        "description": "Next.js, TypeScript, 그리고 Nest.js나 Node.js와 같은 현대적인 백엔드 생태계를 사용하여 확장 가능하고 고성능인 웹 애플리케이션을 제작합니다.",
+        "link": "#"
+      },
+      {
+        "category": "프로덕트",
+        "title": "도움이 되고 재미있는 아이템",
+        "description": "단순히 기능적인 것을 넘어, 창의적인 방식으로 일상의 문제를 해결하고 즐거움을 주는 도구와 애플리케이션을 만듭니다.",
+        "link": "#"
+      }
+    ]
   },
   "cta": {
-    "title": "디지털 경험을 혁신할 준비가 되셨나요?",
-    "description": "tkCapture 생태계에 참여하여 삶의 다양한 측면을 캡처, 분석 및 관리하는 방식을 혁신하세요. tkCapture 시리즈에 대한 아이디어가 있으시면 언제든 연락주세요.",
+    "title": "함께 놀라운 것을 만들어봐요",
+    "description": "특정한 AI 에이전트 아이디어가 있거나 종합적인 풀스택 솔루션이 필요하시다면, 제가 실현해 드릴 수 있습니다.",
     "contact": "연락하기",
-    "github": "GitHub 보기"
+    "github": "GitHub 팔로우"
   },
   "footer": {
-    "copyright": "2025 tkBetter.app. 모든 권리 보유."
+    "copyright": "모든 권리 보유."
   }
 }
