@@ -44,3 +44,6 @@ next-env.d.ts
 
 # YoYo AI version control directory
 .yoyo/
+
+# AI : oh-my-code
+.omc
