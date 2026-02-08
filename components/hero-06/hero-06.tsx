@@ -11,7 +11,7 @@ const Hero06 = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="relative min-h-[calc(100vh-7rem)] flex items-center justify-center px-6 overflow-hidden">
+    <div className="relative min-h-[calc(100dvh-7rem)] flex items-center justify-center px-6 overflow-hidden">
       <BackgroundPattern />
       <Particles
         className="absolute inset-0 z-0"

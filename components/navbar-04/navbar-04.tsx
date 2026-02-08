@@ -11,8 +11,10 @@ const Navbar04Page = () => {
   const { t, i18n } = useTranslation();
 
   const toggleLanguage = () => {
-    const newLang = i18n.language === "en" ? "ko" : "en";
-    i18n.changeLanguage(newLang);
+    const languages = Object.keys(i18n.options.resources ?? {});
+    const currentIndex = languages.indexOf(i18n.language);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    i18n.changeLanguage(languages[nextIndex]);
   };
 
   return (
