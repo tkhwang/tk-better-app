@@ -43,7 +43,8 @@ const ExpertiseSection = () => {
                 className="group p-8 rounded-2xl border border-border/50 bg-background hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {expertiseIcons[index % expertiseIcons.length]}
+                  {expertiseIcons.length > 0 &&
+                    expertiseIcons[index % expertiseIcons.length]}
                 </div>
                 <span className="uppercase font-semibold text-xs tracking-wider text-muted-foreground">
                   {item.category}
