@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, Mail } from "lucide-react";
+import Link from "next/link";
 import { BackgroundPattern } from "./background-pattern";
 import { useTranslation } from "react-i18next";
 import Particles from "@/components/ui/particles";
@@ -32,8 +33,10 @@ const Hero06 = () => {
           {t("hero.subtitle")}
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-4 animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-500">
-          <Button size="lg" className="rounded-full text-base px-8 h-12">
-            {t("hero.cta_primary")} <ArrowUpRight className="ml-2 !h-5 !w-5" />
+          <Button asChild size="lg" className="rounded-full text-base px-8 h-12">
+            <Link href="/#projects">
+              {t("hero.cta_primary")} <ArrowUpRight className="ml-2 !h-5 !w-5" />
+            </Link>
           </Button>
           <Button
             variant="outline"

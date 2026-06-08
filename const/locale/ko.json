@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "홈",
-    "projects": "프로젝트",
+    "projects": "서비스",
     "blog": "블로그"
   },
   "hero": {
@@ -41,7 +41,121 @@
     "contact": "연락하기",
     "github": "GitHub 팔로우"
   },
+  "workbranch": {
+    "hero": {
+      "badge": "오픈소스 · CLI",
+      "title": "복잡함 없이, Git worktree 작업 공간",
+      "subtitle": "workbranch는 기능마다 작업 폴더 하나를 만들고, 단일 레포든 여러 레포든 함께 다루며, 브랜치 동기화 명령을 짧고 안전하게 유지합니다 — 더 이상 git worktree를 외울 필요가 없습니다.",
+      "cta_install": "설치하기",
+      "cta_github": "GitHub에서 스타",
+      "terminal_title": "workbranch — 빠른 시작"
+    },
+    "install": {
+      "title": "몇 초 만에 시작하기",
+      "subtitle": "Homebrew나 curl 스크립트로 설치하세요. macOS, Linux, WSL에서 동작합니다.",
+      "brew_label": "Homebrew",
+      "brew_note": "권장 · 정식 릴리스 설치",
+      "curl_label": "curl 설치 스크립트",
+      "curl_note": "최신 main 추적",
+      "copy": "복사",
+      "copied": "복사됨"
+    },
+    "features": {
+      "title": "왜 workbranch인가",
+      "subtitle": "git worktree의 번거로움 없이 병렬 작업을 돌리는 데 필요한 모든 것.",
+      "items": [
+        {
+          "title": "작업마다 폴더 하나",
+          "description": "모든 기능이 연결된 worktree로 자체 작업 공간을 가집니다. stash가 아니라 디렉터리 이동만으로 컨텍스트를 전환하세요."
+        },
+        {
+          "title": "단일 레포 또는 멀티 레포",
+          "description": "하나의 작업 디렉터리에서 단일 레포부터 멀티 레포 워크스페이스까지 — 프론트엔드와 백엔드를 나란히 다룹니다."
+        },
+        {
+          "title": "짧고 안전한 명령",
+          "description": "update, push, status, pull. 브랜치 동기화는 한 단어로 끝나고, worktree 작업은 workbranch가 처리합니다."
+        },
+        {
+          "title": "git worktree를 외울 필요 없음",
+          "description": "복잡한 git worktree 플래그는 그만. workbranch가 전체 라이프사이클을 기억하기 쉬운 명령으로 감쌉니다."
+        },
+        {
+          "title": "관례적인 작업 식별자",
+          "description": "'feat' + 'login'을 입력하면 feat+login 폴더와 feat/login 브랜치가 생깁니다. 경로 안전한 폴더, 관례적인 브랜치."
+        },
+        {
+          "title": "macOS, Linux & WSL",
+          "description": "핵심 명령은 어디서나 동작합니다. macOS에서는 작업별 Finder·IDE·터미널 실행을 한 번에 지원합니다."
+        }
+      ]
+    },
+    "workflow": {
+      "title": "두 가지 워크플로우, 그게 전부",
+      "subtitle": "작고 예측 가능한 명령 세트가 작업 라이프사이클 전체를 커버합니다.",
+      "lifecycle_title": "작업 공간 라이프사이클",
+      "lifecycle_subtitle": "작업 공간을 만들고 제거합니다.",
+      "lifecycle": [
+        {
+          "cmd": "workbranch init",
+          "desc": "설정에서 베이스 worktree 생성 또는 클론"
+        },
+        {
+          "cmd": "workbranch add <task>",
+          "desc": "작업 공간 생성"
+        },
+        {
+          "cmd": "workbranch list",
+          "desc": "레포와 작업 공간 보기"
+        },
+        {
+          "cmd": "workbranch remove <task>",
+          "desc": "작업 worktree와 브랜치 제거"
+        }
+      ],
+      "branch_title": "브랜치 워크플로우",
+      "branch_subtitle": "작업 브랜치를 업데이트하고 푸시하고 살펴봅니다.",
+      "branch": [
+        {
+          "cmd": "workbranch status",
+          "desc": "베이스 diff, 작업 diff, 변경 상태 보기"
+        },
+        {
+          "cmd": "workbranch update <task>",
+          "desc": "작업 브랜치를 베이스와 동기화"
+        },
+        {
+          "cmd": "workbranch push <task>",
+          "desc": "작업 브랜치를 origin에 푸시"
+        },
+        {
+          "cmd": "workbranch pull",
+          "desc": "원격에서 베이스 worktree 갱신"
+        }
+      ]
+    },
+    "cta": {
+      "title": "git worktree와 씨름은 그만",
+      "description": "깔끔하고 격리된 작업 공간을 만들고, 몇 개의 명령만으로 브랜치를 동기화하세요.",
+      "primary": "시작하기",
+      "secondary": "GitHub에서 보기"
+    }
+  },
   "footer": {
     "copyright": "모든 권리 보유."
+  },
+  "products": {
+    "eyebrow": "Built products",
+    "title": "실제로 만든 서비스",
+    "subtitle": "직접 만든 유용한 제품, 오픈소스 도구, 작은 앱들을 하나씩 쌓아갑니다. 첫 번째로 Workbranch를 소개합니다.",
+    "workbranch": {
+      "category": "오픈소스 CLI",
+      "status": "사용 가능",
+      "platforms": "macOS · Linux · WSL",
+      "title": "workbranch",
+      "description": "단일 레포든 여러 레포든 Git worktree 작업 공간을 만들고, update, status, pull, push를 짧은 명령으로 처리하는 커맨드라인 앱입니다.",
+      "primary": "Workbranch 보기",
+      "secondary": "GitHub"
+    }
   }
 }

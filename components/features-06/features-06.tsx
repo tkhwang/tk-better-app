@@ -1,76 +1,124 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot, Code2, Sparkles } from "lucide-react";
+import { ArrowRight, GitBranch, Github, TerminalSquare } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
-const ExpertiseSection = () => {
+const ProductsSection = () => {
   const { t } = useTranslation();
 
-  const expertiseIcons = [
-    <Bot key="bot" className="w-6 h-6" />,
-    <Code2 key="code" className="w-6 h-6" />,
-    <Sparkles key="sparkles" className="w-6 h-6" />,
-  ];
-
-  // We can't easily map over t('expertise.items') if it's an array in json but i18next returns it differently depending on config.
-  // Standard way is to use returnObjects: true or just iterate if we know the count.
-  const items = t("expertise.items", { returnObjects: true }) as Array<{
-    category: string;
-    title: string;
-    description: string;
-    link: string;
-  }>;
-
   return (
-    <div id="expertise" className="py-24 px-6 bg-muted/30">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            {t("expertise.title")}
-          </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-            {t("expertise.subtitle")}
+    <section id="projects" className="relative overflow-hidden bg-muted/30 px-6 py-24">
+      <div className="mx-auto max-w-screen-xl">
+        <div className="mb-14 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+              {t("products.eyebrow")}
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight text-balance md:text-5xl">
+              {t("products.title")}
+            </h2>
+          </div>
+          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground md:text-right">
+            {t("products.subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {Array.isArray(items) &&
-            items.map((item, index) => (
-              <div
-                key={index}
-                className="group p-8 rounded-2xl border border-border/50 bg-background hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {expertiseIcons.length > 0 &&
-                    expertiseIcons[index % expertiseIcons.length]}
-                </div>
-                <span className="uppercase font-semibold text-xs tracking-wider text-muted-foreground">
-                  {item.category}
+        <article className="grid overflow-hidden rounded-[2rem] bg-background shadow-[0_24px_80px_rgba(0,0,0,0.08)] ring-1 ring-border/60 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="flex flex-col justify-between gap-12 p-8 md:p-10 lg:p-12">
+            <div>
+              <div className="mb-8 flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                  {t("products.workbranch.status")}
                 </span>
-                <h4 className="my-3 text-2xl font-bold tracking-tight">
-                  {item.title}
-                </h4>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {item.description}
-                </p>
-                <Button
-                  variant="ghost"
-                  asChild
-                  className="group/btn p-0 hover:bg-transparent text-primary font-semibold"
-                >
-                  <Link href={item.link}>
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
+                <span className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
+                  {t("products.workbranch.category")}
+                </span>
               </div>
-            ))}
-        </div>
+
+              <div className="mb-7 flex items-center gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-muted text-foreground shadow-inner">
+                  <GitBranch className="h-7 w-7" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    {t("products.workbranch.platforms")}
+                  </p>
+                  <h3 className="mt-1 text-3xl font-bold tracking-tight md:text-4xl">
+                    {t("products.workbranch.title")}
+                  </h3>
+                </div>
+              </div>
+
+              <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
+                {t("products.workbranch.description")}
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Button asChild className="h-11 rounded-full px-5 active:scale-95">
+                <Link href="/product/workbranch">
+                  {t("products.workbranch.primary")}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="h-11 rounded-full bg-background px-5 shadow-none active:scale-95"
+              >
+                <Link
+                  href="https://github.com/tkhwang/workbranch"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Github className="mr-2 h-4 w-4" />
+                  {t("products.workbranch.secondary")}
+                </Link>
+              </Button>
+            </div>
+          </div>
+
+          <div className="bg-foreground p-6 text-background md:p-8 lg:p-10">
+            <div className="mb-5 flex items-center justify-between border-b border-background/15 pb-4">
+              <div className="flex items-center gap-2">
+                <span className="h-3 w-3 rounded-full bg-red-400" />
+                <span className="h-3 w-3 rounded-full bg-yellow-300" />
+                <span className="h-3 w-3 rounded-full bg-green-400" />
+              </div>
+              <div className="flex items-center gap-2 font-mono text-xs text-background/60">
+                <TerminalSquare className="h-4 w-4" />
+                workbranch
+              </div>
+            </div>
+
+            <div className="space-y-4 font-mono text-sm leading-relaxed">
+              <div className="rounded-2xl bg-background/[0.06] p-4 ring-1 ring-background/10">
+                <p className="text-background/45">$ workbranch add</p>
+                <p className="mt-2 text-background">feat+login created</p>
+                <p className="text-background/60">2 repos linked as task worktrees</p>
+              </div>
+              <div className="rounded-2xl bg-background/[0.06] p-4 ring-1 ring-background/10">
+                <p className="text-background/45">$ workbranch status</p>
+                <div className="mt-3 grid gap-2 text-background/70 sm:grid-cols-3">
+                  <span>base clean</span>
+                  <span>task dirty</span>
+                  <span>push ready</span>
+                </div>
+              </div>
+              <div className="rounded-2xl bg-background text-foreground p-4">
+                <p className="font-mono text-sm text-muted-foreground">$ workbranch push feat+login</p>
+                <p className="mt-2 font-sans text-lg font-semibold tracking-tight">
+                  branch published to origin
+                </p>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default ExpertiseSection;
+export default ProductsSection;

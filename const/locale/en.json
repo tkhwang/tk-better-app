@@ -1,7 +1,7 @@
 {
   "nav": {
     "home": "Home",
-    "projects": "Projects",
+    "projects": "Products",
     "blog": "Blog"
   },
   "hero": {
@@ -41,7 +41,121 @@
     "contact": "Contact Me",
     "github": "Follow on GitHub"
   },
+  "workbranch": {
+    "hero": {
+      "badge": "Open Source · CLI",
+      "title": "Git worktree task spaces, without the ceremony",
+      "subtitle": "workbranch creates one task folder per feature, works across one repo or many, and keeps branch sync commands short and safe — so you never have to memorize git worktree again.",
+      "cta_install": "Install",
+      "cta_github": "Star on GitHub",
+      "terminal_title": "workbranch — quick start"
+    },
+    "install": {
+      "title": "Get started in seconds",
+      "subtitle": "Install with Homebrew or the curl script. Runs on macOS, Linux, and WSL.",
+      "brew_label": "Homebrew",
+      "brew_note": "Recommended · installs published releases",
+      "curl_label": "curl installer",
+      "curl_note": "Tracks the latest main",
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "features": {
+      "title": "Why workbranch",
+      "subtitle": "Everything you need to run parallel tasks without the git worktree headache.",
+      "items": [
+        {
+          "title": "One folder per task",
+          "description": "Every feature gets its own task workspace with linked worktrees. Switch context by changing directories, not by stashing."
+        },
+        {
+          "title": "Single repo or many",
+          "description": "Drive one repo or a whole multi-repo workspace from a single task directory — frontend and backend, side by side."
+        },
+        {
+          "title": "Short, safe commands",
+          "description": "update, push, status, pull. Branch sync stays a single word while workbranch handles the worktree plumbing."
+        },
+        {
+          "title": "No git worktree to memorize",
+          "description": "Skip the raw git worktree flags. workbranch wraps the whole lifecycle in commands you can actually remember."
+        },
+        {
+          "title": "Conventional task identity",
+          "description": "Answer 'feat' + 'login' and get a feat+login folder with a feat/login branch. Path-safe folders, conventional branches."
+        },
+        {
+          "title": "macOS, Linux & WSL",
+          "description": "Core commands run everywhere. macOS adds one-key Finder, IDE, and terminal launchers for each task."
+        }
+      ]
+    },
+    "workflow": {
+      "title": "Two workflows, that's it",
+      "subtitle": "A small, predictable command set covers the whole task lifecycle.",
+      "lifecycle_title": "Workspace lifecycle",
+      "lifecycle_subtitle": "Create and remove task workspaces.",
+      "lifecycle": [
+        {
+          "cmd": "workbranch init",
+          "desc": "Create or clone base worktrees from config"
+        },
+        {
+          "cmd": "workbranch add <task>",
+          "desc": "Create a task workspace"
+        },
+        {
+          "cmd": "workbranch list",
+          "desc": "Show repos and task workspaces"
+        },
+        {
+          "cmd": "workbranch remove <task>",
+          "desc": "Remove task worktrees and branches"
+        }
+      ],
+      "branch_title": "Branch workflow",
+      "branch_subtitle": "Update, push, and inspect task branches.",
+      "branch": [
+        {
+          "cmd": "workbranch status",
+          "desc": "Show base diff, task diff, and dirty state"
+        },
+        {
+          "cmd": "workbranch update <task>",
+          "desc": "Sync a task branch with its base"
+        },
+        {
+          "cmd": "workbranch push <task>",
+          "desc": "Push the task branch to origin"
+        },
+        {
+          "cmd": "workbranch pull",
+          "desc": "Refresh base worktrees from remote"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Stop fighting git worktree",
+      "description": "Spin up clean, isolated task spaces and keep your branches in sync with a handful of commands.",
+      "primary": "Get started",
+      "secondary": "View on GitHub"
+    }
+  },
   "footer": {
     "copyright": "All rights reserved."
+  },
+  "products": {
+    "eyebrow": "Built products",
+    "title": "Services I've actually built",
+    "subtitle": "A growing lineup of useful products, open-source tools, and small apps. Workbranch is the first one in the collection.",
+    "workbranch": {
+      "category": "Open source CLI",
+      "status": "Available now",
+      "platforms": "macOS · Linux · WSL",
+      "title": "workbranch",
+      "description": "A command-line app for creating Git worktree task spaces across one repo or many, with short commands for update, status, pull, and push.",
+      "primary": "Explore Workbranch",
+      "secondary": "GitHub"
+    }
   }
 }

@@ -1,0 +1,54 @@
+"use client";
+
+import { useState } from "react";
+import { Check, Copy } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { cn } from "@/lib/utils";
+
+interface CommandBlockProps {
+  command: string;
+  className?: string;
+}
+
+const CommandBlock = ({ command, className }: CommandBlockProps) => {
+  const { t } = useTranslation();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(command);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard API unavailable (e.g. non-secure context) — fail silently.
+    }
+  };
+
+  return (
+    <div
+      className={cn(
+        "group flex items-center gap-3 rounded-xl border border-border/60 bg-muted/40 px-4 py-3 font-mono text-sm backdrop-blur-sm",
+        className
+      )}
+    >
+      <span className="select-none text-muted-foreground">$</span>
+      <code className="flex-1 overflow-x-auto whitespace-nowrap text-foreground">
+        {command}
+      </code>
+      <button
+        type="button"
+        onClick={handleCopy}
+        aria-label={copied ? t("workbranch.install.copied") : t("workbranch.install.copy")}
+        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-background hover:text-primary"
+      >
+        {copied ? (
+          <Check className="h-4 w-4 text-emerald-500" />
+        ) : (
+          <Copy className="h-4 w-4" />
+        )}
+      </button>
+    </div>
+  );
+};
+
+export default CommandBlock;
