@@ -1,15 +1,15 @@
 {
   "nav": {
     "home": "Home",
-    "projects": "Projects",
+    "projects": "Products",
     "blog": "Blog"
   },
   "hero": {
-    "badge": "AI-Powered Fullstack Developer",
-    "title": "Building the Future with AI Agents & Fullstack Excellence",
-    "subtitle": "Specializing in AI agent orchestration, modern fullstack architectures, and creating helpful, delightful digital experiences.",
-    "cta_primary": "View My Work",
-    "cta_secondary": "Get in Touch"
+    "badge": "Personal portfolio",
+    "title": "tkBetter.app",
+    "subtitle": "A small collection of apps, open-source tools, and experiments I work on.",
+    "cta_primary": "View projects",
+    "cta_secondary": "Contact"
   },
   "expertise": {
     "title": "Core Expertise",
@@ -36,12 +36,187 @@
     ]
   },
   "cta": {
-    "title": "Let's Build Something Amazing",
-    "description": "Whether you have a specific AI agent idea or need a comprehensive fullstack solution, I'm here to bring it to life.",
+    "title": "Want to talk?",
+    "description": "If you have a useful tool or product idea, feel free to reach out.",
     "contact": "Contact Me",
     "github": "Follow on GitHub"
   },
+  "workbranch": {
+    "hero": {
+      "badge": "Open Source · CLI",
+      "name": "workbranch",
+      "tagline": "Task-based Git worktrees, made easy.",
+      "subtitle": "Create isolated task folders, keep base branches fresh, and move branch work from start to finish with commands you can remember.",
+      "cta_install": "Install workbranch",
+      "cta_github": "GitHub",
+      "terminal_title": "workbranch — quick start"
+    },
+    "install": {
+      "title": "Install",
+      "subtitle": "Choose Homebrew for released builds, or run the install script directly.",
+      "brew_label": "Homebrew",
+      "brew_note": "Recommended · installs published releases",
+      "script_label": "Install Script",
+      "script_note": "Installs from the public repository script",
+      "curl_label": "Install Script",
+      "curl_note": "Installs from the public repository script",
+      "copy": "Copy",
+      "copied": "Copied"
+    },
+    "features": {
+      "title": "What workbranch does",
+      "subtitle": "Four small workflows for task workspaces, branch sync, combined flows, and local tools.",
+      "groups": [
+        {
+          "title": "Workspace lifecycle",
+          "description": "Set up the worktree environment.",
+          "commands": [
+            {
+              "cmd": "workbranch init",
+              "desc": "Create or clone the shared base worktrees from project config."
+            },
+            {
+              "cmd": "workbranch add",
+              "desc": "Create one task folder with linked worktrees for every configured repo."
+            },
+            {
+              "cmd": "workbranch remove",
+              "desc": "Remove a task workspace, its worktrees, and local task branches."
+            }
+          ],
+          "note": "Each task becomes a small mono-repo workspace, so an AI agent can use frontend and backend in the same session."
+        },
+        {
+          "title": "Branch workflow",
+          "description": "Pull fresh base branches, update task branches, push work, and land finished changes without memorizing worktree plumbing.",
+          "commands": [
+            {
+              "cmd": "workbranch push",
+              "desc": "Push base branches or a specific task branch to origin."
+            },
+            {
+              "cmd": "workbranch pull",
+              "desc": "Pull remote base branches into the local _base repos."
+            },
+            {
+              "cmd": "workbranch update",
+              "desc": "Merge local base changes into one task workspace or every task workspace."
+            },
+            {
+              "cmd": "workbranch land",
+              "desc": "Fast-forward finished task work back into local base branches."
+            }
+          ]
+        },
+        {
+          "title": "Combined flow",
+          "description": "Run the common multi-step flows — refresh, finalize, prune — with one command.",
+          "commands": [
+            {
+              "cmd": "workbranch refresh",
+              "desc": "Pull base branches, then update every task workspace."
+            },
+            {
+              "cmd": "workbranch refresh <task>",
+              "desc": "Pull base branches, then update one task workspace."
+            },
+            {
+              "cmd": "workbranch finalize <task>",
+              "desc": "Pull base branches, update one task, then land it into local base branches."
+            },
+            {
+              "cmd": "workbranch prune",
+              "desc": "Remove clean task workspaces already merged into local base branches."
+            }
+          ]
+        },
+        {
+          "title": "Tool commands",
+          "description": "Open the whole task workspace in your editor or terminal without finding each repo by hand.",
+          "commands": [
+            {
+              "cmd": "workbranch ide <task>",
+              "desc": "Open the task repo worktrees in the configured IDE."
+            },
+            {
+              "cmd": "workbranch terminal <task>",
+              "desc": "Open the task repo worktrees in the configured terminal."
+            }
+          ]
+        }
+      ]
+    },
+    "workflow": {
+      "title": "Two workflows, that's it",
+      "subtitle": "A small, predictable command set covers the whole task lifecycle.",
+      "lifecycle_title": "Workspace lifecycle",
+      "lifecycle_subtitle": "Create and remove task workspaces.",
+      "lifecycle": [
+        {
+          "cmd": "workbranch init",
+          "desc": "Create or clone the shared base worktrees from project config."
+        },
+        {
+          "cmd": "workbranch add",
+          "desc": "Create one task folder with linked worktrees for every configured repo."
+        },
+        {
+          "cmd": "workbranch remove",
+          "desc": "Remove a task workspace, its worktrees, and local task branches."
+        }
+      ],
+      "branch_title": "Branch workflow",
+      "branch_subtitle": "Update, push, and inspect task branches.",
+      "branch": [
+        {
+          "cmd": "workbranch push",
+          "desc": "Push base branches or a specific task branch to origin."
+        },
+        {
+          "cmd": "workbranch pull",
+          "desc": "Pull remote base branches into the local _base repos."
+        },
+        {
+          "cmd": "workbranch update",
+          "desc": "Merge local base changes into task workspaces."
+        },
+        {
+          "cmd": "workbranch land",
+          "desc": "Fast-forward finished task work back into local base branches."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Stop fighting git worktree",
+      "description": "Spin up clean, isolated task spaces and keep your branches in sync with a handful of commands.",
+      "primary": "Get started",
+      "secondary": "View on GitHub"
+    },
+    "structure": {
+      "title": "How workbranch organizes your repos",
+      "subtitle": "Keep shared base worktrees in _base/, then create one folder per task with linked worktrees for each repo.",
+      "window_title": "repo layout",
+      "base_label": "base main worktree",
+      "base_desc": "Shared base checkout for each repo, usually tracking main.",
+      "task_label": "task linked worktree",
+      "task_desc": "Per-task linked checkout for each repo and task branch."
+    }
+  },
   "footer": {
     "copyright": "All rights reserved."
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "Useful tools",
+    "subtitle": "Small apps and open-source tools I maintain.",
+    "workbranch": {
+      "category": "Open source CLI",
+      "status": "Available now",
+      "platforms": "macOS · Linux · WSL",
+      "title": "workbranch",
+      "description": "A small CLI for creating task-based Git worktree spaces across one repo or many repos.",
+      "primary": "Open Workbranch",
+      "secondary": "GitHub"
+    }
   }
 }

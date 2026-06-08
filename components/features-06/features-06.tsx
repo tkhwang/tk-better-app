@@ -1,76 +1,79 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Bot, Code2, Sparkles } from "lucide-react";
+import { WORKBRANCH } from "@/const/workbranch";
+import { ArrowRight, GitBranch, Github } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 
-const ExpertiseSection = () => {
+const ProductsSection = () => {
   const { t } = useTranslation();
 
-  const expertiseIcons = [
-    <Bot key="bot" className="w-6 h-6" />,
-    <Code2 key="code" className="w-6 h-6" />,
-    <Sparkles key="sparkles" className="w-6 h-6" />,
-  ];
-
-  // We can't easily map over t('expertise.items') if it's an array in json but i18next returns it differently depending on config.
-  // Standard way is to use returnObjects: true or just iterate if we know the count.
-  const items = t("expertise.items", { returnObjects: true }) as Array<{
-    category: string;
-    title: string;
-    description: string;
-    link: string;
-  }>;
-
   return (
-    <div id="expertise" className="py-24 px-6 bg-muted/30">
-      <div className="max-w-screen-xl mx-auto">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
-            {t("expertise.title")}
+    <section id="projects" className="relative overflow-hidden bg-muted/30 px-6 py-24">
+      <div className="mx-auto max-w-screen-xl">
+        <div className="mb-10 max-w-2xl">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">
+            {t("products.eyebrow")}
+          </p>
+          <h2 className="text-4xl font-bold tracking-tight text-balance md:text-5xl">
+            {t("products.title")}
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
-            {t("expertise.subtitle")}
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+            {t("products.subtitle")}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {Array.isArray(items) &&
-            items.map((item, index) => (
-              <div
-                key={index}
-                className="group p-8 rounded-2xl border border-border/50 bg-background hover:border-primary/50 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5"
-              >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {expertiseIcons.length > 0 &&
-                    expertiseIcons[index % expertiseIcons.length]}
-                </div>
-                <span className="uppercase font-semibold text-xs tracking-wider text-muted-foreground">
-                  {item.category}
+        <article className="flex flex-col gap-6 rounded-[1.75rem] border border-border/60 bg-background p-7 shadow-sm md:flex-row md:items-center md:justify-between md:p-8">
+          <div className="flex gap-5">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-muted text-foreground">
+              <GitBranch className="h-6 w-6" />
+            </div>
+            <div>
+              <div className="mb-3 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                  {t("products.workbranch.status")}
                 </span>
-                <h4 className="my-3 text-2xl font-bold tracking-tight">
-                  {item.title}
-                </h4>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  {item.description}
-                </p>
-                <Button
-                  variant="ghost"
-                  asChild
-                  className="group/btn p-0 hover:bg-transparent text-primary font-semibold"
-                >
-                  <Link href={item.link}>
-                    Learn More
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </Link>
-                </Button>
+                <span className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-semibold text-muted-foreground">
+                  {t("products.workbranch.category")}
+                </span>
               </div>
-            ))}
-        </div>
+
+              <h3 className="text-2xl font-bold tracking-tight">
+                {t("products.workbranch.title")}
+              </h3>
+              <p className="mt-2 max-w-2xl text-base leading-7 text-muted-foreground">
+                {t("products.workbranch.description")}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex shrink-0 flex-wrap gap-3 md:justify-end">
+            <Button asChild className="h-11 rounded-full px-5 active:scale-95">
+              <Link href="/product/workbranch">
+                {t("products.workbranch.primary")}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className="h-11 rounded-full bg-background px-5 shadow-none active:scale-95"
+            >
+              <Link
+                href={WORKBRANCH.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="mr-2 h-4 w-4" />
+                {t("products.workbranch.secondary")}
+              </Link>
+            </Button>
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 };
 
-export default ExpertiseSection;
+export default ProductsSection;

@@ -29,10 +29,10 @@ export const NavMenu = (props: NavigationMenuProps) => {
         <NavigationMenuItem>
           <NavigationMenuLink asChild>
             <Link
-              href="#expertise"
+              href="/#projects"
               className="text-sm font-medium hover:text-primary transition-colors"
             >
-              {t("expertise.title")}
+              {t("nav.projects")}
             </Link>
           </NavigationMenuLink>
         </NavigationMenuItem>

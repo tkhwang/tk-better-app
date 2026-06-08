@@ -1,14 +1,14 @@
 {
   "nav": {
     "home": "홈",
-    "projects": "프로젝트",
+    "projects": "서비스",
     "blog": "블로그"
   },
   "hero": {
-    "badge": "AI 활용 풀스택 개발자",
-    "title": "AI 에이전트와 풀스택 기술로 더 나은 미래를 만듭니다",
-    "subtitle": "AI 에이전트 오케스트레이션, 현대적인 풀스택 아키텍처, 그리고 도움이 되고 즐거운 디지털 경험을 만드는 데 전문성이 있습니다.",
-    "cta_primary": "작업물 보기",
+    "badge": "개인 포트폴리오",
+    "title": "직접 만들고 관리하는 것들",
+    "subtitle": "작은 앱, 오픈소스 도구, 실험적인 프로젝트를 모아둔 공간입니다.",
+    "cta_primary": "프로젝트 보기",
     "cta_secondary": "연락하기"
   },
   "expertise": {
@@ -36,12 +36,187 @@
     ]
   },
   "cta": {
-    "title": "함께 놀라운 것을 만들어봐요",
-    "description": "특정한 AI 에이전트 아이디어가 있거나 종합적인 풀스택 솔루션이 필요하시다면, 제가 실현해 드릴 수 있습니다.",
+    "title": "이야기해볼까요?",
+    "description": "유용한 도구나 제품 아이디어가 있다면 편하게 알려주세요.",
     "contact": "연락하기",
     "github": "GitHub 팔로우"
   },
+  "workbranch": {
+    "hero": {
+      "badge": "오픈소스 · CLI",
+      "name": "workbranch",
+      "tagline": "Task-based Git worktrees, made easy.",
+      "subtitle": "격리된 작업 폴더를 만들고, 베이스 브랜치를 최신으로 유지하고, 시작부터 정리까지 기억하기 쉬운 명령으로 진행합니다.",
+      "cta_install": "workbranch 설치",
+      "cta_github": "GitHub",
+      "terminal_title": "workbranch — 빠른 시작"
+    },
+    "install": {
+      "title": "설치",
+      "subtitle": "릴리스 빌드는 Homebrew로, 바로 설치하려면 install script를 사용하세요.",
+      "brew_label": "Homebrew",
+      "brew_note": "권장 · 정식 릴리스 설치",
+      "script_label": "Install Script",
+      "script_note": "공개 저장소의 설치 스크립트 실행",
+      "curl_label": "Install Script",
+      "curl_note": "공개 저장소의 설치 스크립트 실행",
+      "copy": "복사",
+      "copied": "복사됨"
+    },
+    "features": {
+      "title": "workbranch 기능",
+      "subtitle": "task workspace, branch sync, combined flow, local tool 실행을 네 가지 흐름으로 정리합니다.",
+      "groups": [
+        {
+          "title": "Workspace lifecycle",
+          "description": "worktree 환경 구축",
+          "commands": [
+            {
+              "cmd": "workbranch init",
+              "desc": "project config 기준으로 공유 base worktree를 만들거나 clone합니다."
+            },
+            {
+              "cmd": "workbranch add",
+              "desc": "설정된 모든 repo의 linked worktree를 하나의 task folder 아래에 만듭니다."
+            },
+            {
+              "cmd": "workbranch remove",
+              "desc": "task workspace, worktree, local task branch를 제거합니다."
+            }
+          ],
+          "note": "각 task를 작은 mono-repo workspace처럼 구성해서, AI agent가 같은 session에서 frontend와 backend를 함께 다룰 수 있습니다."
+        },
+        {
+          "title": "Branch workflow",
+          "description": "base branch를 가져오고, task branch를 update/push/land하는 흐름을 worktree 세부 명령 없이 처리합니다.",
+          "commands": [
+            {
+              "cmd": "workbranch push",
+              "desc": "base branch 또는 특정 task branch를 origin에 push합니다."
+            },
+            {
+              "cmd": "workbranch pull",
+              "desc": "remote base branch를 local _base repo로 pull합니다."
+            },
+            {
+              "cmd": "workbranch update",
+              "desc": "local base 변경사항을 하나의 task workspace 또는 모든 task workspace에 merge합니다."
+            },
+            {
+              "cmd": "workbranch land",
+              "desc": "완료된 task 작업을 local base branch로 fast-forward 반영합니다."
+            }
+          ]
+        },
+        {
+          "title": "Combined flow",
+          "description": "refresh, finalize, prune처럼 자주 반복하는 여러 단계의 흐름을 한 명령으로 실행합니다.",
+          "commands": [
+            {
+              "cmd": "workbranch refresh",
+              "desc": "base branch를 pull한 뒤 모든 task workspace를 update합니다."
+            },
+            {
+              "cmd": "workbranch refresh <task>",
+              "desc": "base branch를 pull한 뒤 하나의 task workspace만 update합니다."
+            },
+            {
+              "cmd": "workbranch finalize <task>",
+              "desc": "base branch를 pull하고 task 하나를 update한 뒤 local base branch로 반영합니다."
+            },
+            {
+              "cmd": "workbranch prune",
+              "desc": "local base branch에 이미 merge된 clean task workspace를 제거합니다."
+            }
+          ]
+        },
+        {
+          "title": "Tool commands",
+          "description": "각 repo 위치를 직접 찾지 않고, task workspace 전체를 editor나 terminal에서 바로 엽니다.",
+          "commands": [
+            {
+              "cmd": "workbranch ide <task>",
+              "desc": "설정된 IDE로 task repo worktree들을 엽니다."
+            },
+            {
+              "cmd": "workbranch terminal <task>",
+              "desc": "설정된 terminal로 task repo worktree들을 엽니다."
+            }
+          ]
+        }
+      ]
+    },
+    "workflow": {
+      "title": "두 가지 워크플로우, 그게 전부",
+      "subtitle": "작고 예측 가능한 명령 세트가 작업 라이프사이클 전체를 커버합니다.",
+      "lifecycle_title": "Workspace lifecycle",
+      "lifecycle_subtitle": "작업 공간을 만들고 제거합니다.",
+      "lifecycle": [
+        {
+          "cmd": "workbranch init",
+          "desc": "project config 기준으로 공유 base worktree를 만들거나 clone합니다."
+        },
+        {
+          "cmd": "workbranch add",
+          "desc": "설정된 모든 repo의 linked worktree를 하나의 task folder 아래에 만듭니다."
+        },
+        {
+          "cmd": "workbranch remove",
+          "desc": "task workspace, worktree, local task branch를 제거합니다."
+        }
+      ],
+      "branch_title": "Branch workflow",
+      "branch_subtitle": "작업 브랜치를 업데이트하고 푸시하고 살펴봅니다.",
+      "branch": [
+        {
+          "cmd": "workbranch push",
+          "desc": "base branch 또는 특정 task branch를 origin에 push합니다."
+        },
+        {
+          "cmd": "workbranch pull",
+          "desc": "remote base branch를 local _base repo로 pull합니다."
+        },
+        {
+          "cmd": "workbranch update",
+          "desc": "local base 변경사항을 task workspace에 merge합니다."
+        },
+        {
+          "cmd": "workbranch land",
+          "desc": "완료된 task 작업을 local base branch로 fast-forward 반영합니다."
+        }
+      ]
+    },
+    "cta": {
+      "title": "git worktree와 씨름은 그만",
+      "description": "깔끔하고 격리된 작업 공간을 만들고, 몇 개의 명령만으로 브랜치를 동기화하세요.",
+      "primary": "시작하기",
+      "secondary": "GitHub에서 보기"
+    },
+    "structure": {
+      "title": "workbranch가 repo를 구성하는 방식",
+      "subtitle": "공유 base worktree는 _base/에 두고, task마다 하나의 폴더를 만들어 각 repo의 linked worktree를 함께 둡니다.",
+      "window_title": "repo layout",
+      "base_label": "base main worktree",
+      "base_desc": "각 repo의 공유 base checkout입니다. 보통 main을 추적합니다.",
+      "task_label": "task linked worktree",
+      "task_desc": "task별로 만들어지는 각 repo의 linked checkout과 task branch입니다."
+    }
+  },
   "footer": {
     "copyright": "모든 권리 보유."
+  },
+  "products": {
+    "eyebrow": "Products",
+    "title": "유용한 도구",
+    "subtitle": "직접 만들고 관리하는 작은 앱과 오픈소스 도구입니다.",
+    "workbranch": {
+      "category": "오픈소스 CLI",
+      "status": "사용 가능",
+      "platforms": "macOS · Linux · WSL",
+      "title": "workbranch",
+      "description": "단일 레포부터 여러 레포까지 task 기반 Git worktree 공간을 만드는 작은 CLI입니다.",
+      "primary": "Workbranch 열기",
+      "secondary": "GitHub"
+    }
   }
 }
