@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Mail, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import DotPattern from "@/components/ui/dot-pattern";
 
@@ -21,10 +21,6 @@ const CTASection = () => {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button size="lg" className="rounded-full px-8 h-12 gap-2">
-            <Mail className="w-5 h-5" />
-            {t("cta.contact")}
-          </Button>
           <Button
             variant="outline"
             size="lg"

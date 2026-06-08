@@ -46,4 +46,7 @@ next-env.d.ts
 .yoyo/
 
 # AI : oh-my-code
-.omc
+.omc/
+.omx/
+
+.superset/

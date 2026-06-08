@@ -27,12 +27,12 @@ const CommandBlock = ({ command, className }: CommandBlockProps) => {
   return (
     <div
       className={cn(
-        "group flex items-center gap-3 rounded-xl border border-border/60 bg-muted/40 px-4 py-3 font-mono text-sm backdrop-blur-sm",
+        "group flex items-start gap-3 rounded-xl border border-border/60 bg-muted/40 px-4 py-3 font-mono text-sm backdrop-blur-sm",
         className
       )}
     >
-      <span className="select-none text-muted-foreground">$</span>
-      <code className="flex-1 overflow-x-auto whitespace-nowrap text-foreground">
+      <span className="mt-0.5 select-none text-muted-foreground">$</span>
+      <code className="min-w-0 flex-1 whitespace-pre-wrap break-words text-foreground [overflow-wrap:anywhere]">
         {command}
       </code>
       <button

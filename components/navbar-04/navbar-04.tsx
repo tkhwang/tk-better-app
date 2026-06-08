@@ -8,7 +8,7 @@ import Link from "next/link";
 import { Globe } from "lucide-react";
 
 const Navbar04Page = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
     const languages = Object.keys(i18n.options.resources ?? {});
@@ -39,10 +39,6 @@ const Navbar04Page = () => {
           >
             <Globe className="w-4 h-4" />
             {i18n.language.toUpperCase()}
-          </Button>
-
-          <Button size="sm" className="hidden sm:inline-flex rounded-full px-5">
-            {t("cta.contact")}
           </Button>
 
           {/* Mobile Menu */}

@@ -1,36 +1,38 @@
 "use client";
 
-import {
-  Boxes,
-  FolderTree,
-  GitBranch,
-  Layers,
-  MonitorSmartphone,
-  Tags,
-} from "lucide-react";
+import { GitBranch, GitMerge, Layers3, SquareTerminal } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-const featureIcons = [
-  <FolderTree key="folder" className="h-6 w-6" />,
-  <Layers key="layers" className="h-6 w-6" />,
+interface CommandItem {
+  cmd: string;
+  desc: string;
+}
+
+interface FeatureGroup {
+  title: string;
+  description: string;
+  note?: string;
+  commands: CommandItem[];
+}
+
+const icons = [
+  <Layers3 key="lifecycle" className="h-6 w-6" />,
   <GitBranch key="branch" className="h-6 w-6" />,
-  <Boxes key="boxes" className="h-6 w-6" />,
-  <Tags key="tags" className="h-6 w-6" />,
-  <MonitorSmartphone key="platform" className="h-6 w-6" />,
+  <GitMerge key="combined" className="h-6 w-6" />,
+  <SquareTerminal key="tool" className="h-6 w-6" />,
 ];
 
 const WorkbranchFeatures = () => {
   const { t } = useTranslation();
 
-  const items = t("workbranch.features.items", { returnObjects: true }) as Array<{
-    title: string;
-    description: string;
-  }>;
+  const groups = t("workbranch.features.groups", {
+    returnObjects: true,
+  }) as FeatureGroup[];
 
   return (
-    <section className="bg-muted/30 px-6 py-24">
+    <section className="bg-muted/30 px-6 py-20 md:py-24">
       <div className="mx-auto max-w-screen-xl">
-        <div className="mb-16 text-center">
+        <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
             {t("workbranch.features.title")}
           </h2>
@@ -39,23 +41,46 @@ const WorkbranchFeatures = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {Array.isArray(items) &&
-            items.map((item, index) => (
-              <div
-                key={index}
-                className="group rounded-2xl border border-border/50 bg-background p-7 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5"
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {Array.isArray(groups) &&
+            groups.map((group, index) => (
+              <article
+                key={group.title}
+                className="rounded-2xl border border-border/50 bg-background p-7 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110">
-                  {featureIcons[index % featureIcons.length]}
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  {icons[index % icons.length]}
                 </div>
-                <h3 className="mb-2 text-lg font-bold tracking-tight">
-                  {item.title}
-                </h3>
-                <p className="leading-relaxed text-muted-foreground">
-                  {item.description}
+
+                <h3 className="text-xl font-bold tracking-tight">{group.title}</h3>
+                <p className="mt-2 min-h-12 text-sm leading-6 text-muted-foreground">
+                  {group.description}
                 </p>
-              </div>
+
+                <ul className="mt-6 space-y-3">
+                  {group.commands.map((command) => (
+                    <li
+                      key={command.cmd}
+                      className="rounded-xl border border-border/50 bg-muted/30 p-4"
+                    >
+                      <code className="font-mono text-sm font-semibold text-primary">
+                        {command.cmd}
+                      </code>
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">
+                        {command.desc}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+
+                {group.note ? (
+                  <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 p-4">
+                    <p className="text-sm leading-6 text-foreground/80">
+                      {group.note}
+                    </p>
+                  </div>
+                ) : null}
+              </article>
             ))}
         </div>
       </div>

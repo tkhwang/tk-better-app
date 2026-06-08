@@ -2,7 +2,7 @@
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { BackgroundPattern } from "./background-pattern";
 import { useTranslation } from "react-i18next";
@@ -37,13 +37,6 @@ const Hero06 = () => {
             <Link href="/#projects">
               {t("hero.cta_primary")} <ArrowUpRight className="ml-2 !h-5 !w-5" />
             </Link>
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            className="rounded-full text-base px-8 h-12 shadow-none backdrop-blur-sm bg-background/50"
-          >
-            <Mail className="ml-0 mr-2 !h-5 !w-5" /> {t("hero.cta_secondary")}
           </Button>
         </div>
       </div>

@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import WorkbranchHero from "@/components/workbranch/workbranch-hero";
 import WorkbranchInstall from "@/components/workbranch/workbranch-install";
+import WorkbranchStructure from "@/components/workbranch/workbranch-structure";
 import WorkbranchFeatures from "@/components/workbranch/workbranch-features";
-import WorkbranchWorkflow from "@/components/workbranch/workbranch-workflow";
-import WorkbranchCTA from "@/components/workbranch/workbranch-cta";
 
 export const metadata: Metadata = {
-  title: "workbranch — Git worktree task spaces, without the ceremony",
+  title: "workbranch — Git worktree task spaces",
   description:
-    "workbranch is an open-source CLI that creates one task folder per feature, works across one repo or many, and keeps your git worktree branch sync commands short and safe.",
+    "workbranch is an open-source CLI for managing git worktree task spaces across one repo or many repos.",
 };
 
 export default function WorkbranchProductPage() {
@@ -16,9 +15,8 @@ export default function WorkbranchProductPage() {
     <main className="flex w-full flex-col">
       <WorkbranchHero />
       <WorkbranchInstall />
+      <WorkbranchStructure />
       <WorkbranchFeatures />
-      <WorkbranchWorkflow />
-      <WorkbranchCTA />
     </main>
   );
 }
