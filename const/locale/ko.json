@@ -151,10 +151,40 @@
       "subtitle": "작고 예측 가능한 명령 세트가 작업 라이프사이클 전체를 커버합니다.",
       "lifecycle_title": "Workspace lifecycle",
       "lifecycle_subtitle": "작업 공간을 만들고 제거합니다.",
-      "lifecycle": [],
+      "lifecycle": [
+        {
+          "cmd": "workbranch init",
+          "desc": "project config 기준으로 공유 base worktree를 만들거나 clone합니다."
+        },
+        {
+          "cmd": "workbranch add",
+          "desc": "설정된 모든 repo의 linked worktree를 하나의 task folder 아래에 만듭니다."
+        },
+        {
+          "cmd": "workbranch remove",
+          "desc": "task workspace, worktree, local task branch를 제거합니다."
+        }
+      ],
       "branch_title": "Branch workflow",
       "branch_subtitle": "작업 브랜치를 업데이트하고 푸시하고 살펴봅니다.",
-      "branch": []
+      "branch": [
+        {
+          "cmd": "workbranch push",
+          "desc": "base branch 또는 특정 task branch를 origin에 push합니다."
+        },
+        {
+          "cmd": "workbranch pull",
+          "desc": "remote base branch를 local _base repo로 pull합니다."
+        },
+        {
+          "cmd": "workbranch update",
+          "desc": "local base 변경사항을 task workspace에 merge합니다."
+        },
+        {
+          "cmd": "workbranch land",
+          "desc": "완료된 task 작업을 local base branch로 fast-forward 반영합니다."
+        }
+      ]
     },
     "cta": {
       "title": "git worktree와 씨름은 그만",

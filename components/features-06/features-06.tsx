@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { WORKBRANCH } from "@/const/workbranch";
 import { ArrowRight, GitBranch, Github } from "lucide-react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
@@ -60,7 +61,7 @@ const ProductsSection = () => {
               className="h-11 rounded-full bg-background px-5 shadow-none active:scale-95"
             >
               <Link
-                href="https://github.com/tkhwang/workbranch"
+                href={WORKBRANCH.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
               >

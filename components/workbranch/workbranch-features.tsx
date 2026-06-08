@@ -22,12 +22,46 @@ const icons = [
   <SquareTerminal key="tool" className="h-6 w-6" />,
 ];
 
+const isCommandItem = (value: unknown): value is CommandItem => {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const item = value as Record<string, unknown>;
+  return typeof item.cmd === "string" && typeof item.desc === "string";
+};
+
+const isFeatureGroup = (value: unknown): value is FeatureGroup => {
+  if (!value || typeof value !== "object") {
+    return false;
+  }
+
+  const group = value as Record<string, unknown>;
+  return (
+    typeof group.title === "string" &&
+    typeof group.description === "string" &&
+    (group.note === undefined || typeof group.note === "string") &&
+    Array.isArray(group.commands) &&
+    group.commands.every(isCommandItem)
+  );
+};
+
 const WorkbranchFeatures = () => {
   const { t } = useTranslation();
 
-  const groups = t("workbranch.features.groups", {
+  const rawGroups = t("workbranch.features.groups", {
     returnObjects: true,
-  }) as FeatureGroup[];
+  });
+  const groups: FeatureGroup[] = Array.isArray(rawGroups) && rawGroups.every(isFeatureGroup)
+    ? rawGroups
+    : [];
+
+  if (!groups.length && (!Array.isArray(rawGroups) || rawGroups.length > 0)) {
+    console.warn(
+      'Missing or invalid translation for key "workbranch.features.groups"',
+      rawGroups,
+    );
+  }
 
   return (
     <section className="bg-muted/30 px-6 py-20 md:py-24">
@@ -42,8 +76,7 @@ const WorkbranchFeatures = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {Array.isArray(groups) &&
-            groups.map((group, index) => (
+          {groups.map((group, index) => (
               <article
                 key={group.title}
                 className="rounded-2xl border border-border/50 bg-background p-7 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/5"

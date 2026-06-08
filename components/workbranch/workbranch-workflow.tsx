@@ -8,6 +8,15 @@ interface CommandRow {
   desc: string;
 }
 
+const getCommandRows = (key: string, value: unknown): CommandRow[] => {
+  if (Array.isArray(value)) {
+    return value as CommandRow[];
+  }
+
+  console.warn(`Missing or invalid translation for key "${key}"`, value);
+  return [];
+};
+
 const CommandList = ({
   icon,
   title,
@@ -48,12 +57,14 @@ const CommandList = ({
 const WorkbranchWorkflow = () => {
   const { t } = useTranslation();
 
-  const lifecycle = t("workbranch.workflow.lifecycle", {
+  const lifecycleKey = "workbranch.workflow.lifecycle";
+  const branchKey = "workbranch.workflow.branch";
+  const lifecycle = getCommandRows(lifecycleKey, t(lifecycleKey, {
     returnObjects: true,
-  }) as CommandRow[];
-  const branch = t("workbranch.workflow.branch", {
+  }));
+  const branch = getCommandRows(branchKey, t(branchKey, {
     returnObjects: true,
-  }) as CommandRow[];
+  }));
 
   return (
     <section className="px-6 py-24">
@@ -72,13 +83,13 @@ const WorkbranchWorkflow = () => {
             icon={<FolderGit2 className="h-5 w-5" />}
             title={t("workbranch.workflow.lifecycle_title")}
             subtitle={t("workbranch.workflow.lifecycle_subtitle")}
-            rows={Array.isArray(lifecycle) ? lifecycle : []}
+            rows={lifecycle}
           />
           <CommandList
             icon={<GitPullRequestArrow className="h-5 w-5" />}
             title={t("workbranch.workflow.branch_title")}
             subtitle={t("workbranch.workflow.branch_subtitle")}
-            rows={Array.isArray(branch) ? branch : []}
+            rows={branch}
           />
         </div>
       </div>

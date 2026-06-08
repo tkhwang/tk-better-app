@@ -151,10 +151,40 @@
       "subtitle": "A small, predictable command set covers the whole task lifecycle.",
       "lifecycle_title": "Workspace lifecycle",
       "lifecycle_subtitle": "Create and remove task workspaces.",
-      "lifecycle": [],
+      "lifecycle": [
+        {
+          "cmd": "workbranch init",
+          "desc": "Create or clone the shared base worktrees from project config."
+        },
+        {
+          "cmd": "workbranch add",
+          "desc": "Create one task folder with linked worktrees for every configured repo."
+        },
+        {
+          "cmd": "workbranch remove",
+          "desc": "Remove a task workspace, its worktrees, and local task branches."
+        }
+      ],
       "branch_title": "Branch workflow",
       "branch_subtitle": "Update, push, and inspect task branches.",
-      "branch": []
+      "branch": [
+        {
+          "cmd": "workbranch push",
+          "desc": "Push base branches or a specific task branch to origin."
+        },
+        {
+          "cmd": "workbranch pull",
+          "desc": "Pull remote base branches into the local _base repos."
+        },
+        {
+          "cmd": "workbranch update",
+          "desc": "Merge local base changes into task workspaces."
+        },
+        {
+          "cmd": "workbranch land",
+          "desc": "Fast-forward finished task work back into local base branches."
+        }
+      ]
     },
     "cta": {
       "title": "Stop fighting git worktree",
