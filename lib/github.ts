@@ -6,6 +6,9 @@ export interface RepoStats {
   tags: string[];
 }
 
+/** Longest a page build waits on GitHub before falling back to "—". */
+const TIMEOUT_MS = 5000;
+
 const headers = {
   Accept: "application/vnd.github+json",
   "User-Agent": "tkbetter.app",
@@ -19,10 +22,12 @@ export async function getRepoStats(repo: string): Promise<RepoStats> {
   const [repoRes, releasesRes] = await Promise.allSettled([
     fetch(`https://api.github.com/repos/${repo}`, {
       headers,
+      signal: AbortSignal.timeout(TIMEOUT_MS),
       next: { revalidate: 3600 },
     }),
     fetch(`https://api.github.com/repos/${repo}/releases?per_page=20`, {
       headers,
+      signal: AbortSignal.timeout(TIMEOUT_MS),
       next: { revalidate: 3600 },
     }),
   ]);

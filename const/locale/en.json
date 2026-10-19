@@ -3,7 +3,8 @@
     "home": "Home",
     "projects": "Products",
     "blog": "Blog",
-    "language": "Language"
+    "language": "Language",
+    "menu": "Menu"
   },
   "hero": {
     "eyebrow": "human + AI workflow",

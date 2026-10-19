@@ -74,7 +74,7 @@ const SiteNav = () => {
         <button
           type="button"
           aria-expanded={open}
-          aria-label="Menu"
+          aria-label={t("nav.menu")}
           onClick={() => setOpen((value) => !value)}
           className="flex size-11 cursor-pointer flex-col items-center justify-center gap-[5px] rounded-[10px] bg-card shadow-[var(--shadow-ring)] md:hidden"
         >
