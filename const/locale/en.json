@@ -21,7 +21,7 @@
   },
   "products": {
     "eyebrow": "products",
-    "title": "Plan together.\nHand off.\nCheck together.",
+    "title": "You lead, AI sharpens.\nHand off.\nCheck together.",
     "subtitle": "Plans start from your intent and taste, and the work you hand off comes back to you at each stage. Each tool covers a different point in that flow, and any one works on its own.",
     "items": {
       "workbranch": {
@@ -471,7 +471,7 @@
         "tagline": "From intent to signoff, *one stage at a time.*",
         "subtitle": "Agent skills for Claude Code, Codex, and other skill-aware agents. The main piece is tk workflow: a staged, document-driven way to take one change from intent to signoff. It runs with one agent, and other agents join for review and debate when you ask.",
         "platforms": "Claude Code · Codex · Grok · any skill-aware agent",
-        "figure_alt": "tk workflow: five stages (intent, plan, implement, verify, signoff) run left to right with a human approval gate between each. Intents are permanent, tasks are per piece of work, specs describe current behaviour."
+        "figure_alt": "tk workflow: five stages (intent, plan, implement, verify, signoff) run left to right with a human approval gate between each, in three parts: you lead and AI sharpens (intent, plan), hand off (implement), check together (verify, signoff). Intents are permanent, tasks are per piece of work, specs describe current behaviour."
       },
       "features": {
         "eyebrow": "What it is",
@@ -652,7 +652,7 @@
       "plate": {
         "label": "tk workflow",
         "right": "readme hero",
-        "caption": "Five stages run left to right with a human approval gate between each. Intents are permanent, tasks are per piece of work, specs describe current behaviour."
+        "caption": "Five stages run left to right with a human approval gate between each, in three parts: you lead and AI sharpens (intent, plan), hand off (implement), check together (verify, signoff). Intents are permanent, tasks are per piece of work, specs describe current behaviour."
       }
     }
   }

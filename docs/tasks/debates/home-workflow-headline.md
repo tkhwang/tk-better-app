@@ -77,3 +77,4 @@ tkBetter.app 홈의 제품 섹션 제목(현재 "작업 공간, 의도, 그리�
 ## Decision Log
 
 - 2026-10-19 · Q1 홈 제품 섹션 제목 → C「함께 계획하고, 맡기고, 함께 검증합니다.」/ "Plan together. Hand off. Check together." · 사람의 결정으로 3번 선택(agent가 구현하는 마디를 제목에 둠). EN은 문장마다 줄바꿈(locale의 `\n` + `whitespace-pre-line`)으로 "Hand / off." 끊김을 막음. 부제는 제목과 겹치지 않게 의도·취향과 "맡긴 일은 단계마다 사람에게 돌아옴"으로, role은 Tasteful Intent만「의도와 취향 / Intent & taste」.
+- 2026-10-20 · Q1 제목 첫 마디 수정 → 「방향은 내가, 보강은 AI가. / 맡기고, 함께 검증합니다.」/ "You lead, AI sharpens. / Hand off. / Check together." · 사람의 결정. "Plan together"의 "함께"가 반반 공동 작업으로 읽혀, 사람이 먼저 의도와 취향으로 방향을 정하고 AI가 보강한다는 순서와 주도권을 첫 마디에 담음(위 "뒤집힐 조건"의 사람 주도 출발점). 둘째·셋째 마디와 부제는 유지. KO는 첫 마디 뒤에서 줄바꿈(`\n`). skills README 그림과 사이트 skills hero에도 같은 세 마디를 단계 묶음으로 표시.

@@ -127,7 +127,7 @@ export const PRODUCTS: Record<ProductSlug, ProductConfig> = {
       en: "/products/skills/hero-en.svg",
       ko: "/products/skills/hero-ko.svg",
       width: 1200,
-      height: 580,
+      height: 650,
     },
     facts: [
       { kind: "stars" },
