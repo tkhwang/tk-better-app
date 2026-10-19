@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1200" height="352" viewBox="0 0 1200 352"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Tasteful Intent — 취향 담은 의도</title>
+  <desc id="desc">Human 공간에 의도를 기록하고 AI가 만든 Markdown 폴더를 별도 AI 공간에서 여는 로컬 데스크톱 앱. 오른쪽에는 Human과 AI 공간 전환, 폴더, 문서 목록, 본문으로 구성된 3-pane workspace가 있다.</desc>
+
+  <rect width="1200" height="352" rx="24" fill="#13244B"/>
+
+  <!-- title block -->
+  <g id="title-block" transform="translate(72 0)"
+     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif">
+    <text x="2" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="17" letter-spacing="3.5" fill="#9AA5CE">MACOS · TAURI 2 · MARKDOWN</text>
+
+    <text x="0" y="156" font-size="54" font-weight="700" letter-spacing="-1" fill="#FDF4E2">Tasteful Intent</text>
+
+    <!-- motif: terracotta hand-drawn ellipse around 취향 담은 의도 -->
+    <g transform="translate(500 135) rotate(-3)">
+      <text x="0" y="8" text-anchor="middle" font-size="21" font-weight="600" fill="#E9DDC4">취향 담은 의도</text>
+      <path d="M82 -13 C 48 -31, -58 -29, -88 -8 C -108 8, -58 27, 8 24 C 58 21, 88 7, 78 -5"
+            fill="none" stroke="#C1734B" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <text x="2" y="218" font-size="26" fill="#E9DDC4">나의 의도와 취향을 먼저 기록하고,</text>
+    <text x="2" y="256" font-size="26" fill="#E9DDC4">AI가 만든 결과를 확인하는 Markdown 메모 앱</text>
+
+    <text x="2" y="308" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="18" fill="#9AA5CE">Human 원본  ·  AI 폴더 탭  ·  로컬 Markdown</text>
+  </g>
+
+  <!-- workspace proof: mini 3-pane window -->
+  <g id="project-proof" transform="translate(656 42)">
+    <rect x="0" y="4" width="484" height="252" rx="14" fill="#0A1530" opacity="0.6"/>
+    <rect x="0" y="0" width="484" height="252" rx="14" fill="#FCF8F0" stroke="#E3DACA" stroke-width="1.5"/>
+
+    <!-- window chrome -->
+    <circle cx="22" cy="19" r="5" fill="#DCCFBC"/>
+    <circle cx="40" cy="19" r="5" fill="#DCCFBC"/>
+    <circle cx="58" cy="19" r="5" fill="#DCCFBC"/>
+    <line x1="1" y1="36" x2="483" y2="36" stroke="#EDE4D3" stroke-width="1.5"/>
+
+    <!-- pane separators -->
+    <line x1="100" y1="36" x2="100" y2="251" stroke="#EDE4D3" stroke-width="1.5"/>
+    <line x1="238" y1="36" x2="238" y2="251" stroke="#EDE4D3" stroke-width="1.5"/>
+
+    <!-- folder pane: Human → AI space switcher (앱과 동일한 lucide Brain / Bot) -->
+    <g id="space-switcher">
+      <rect x="8" y="46" width="36" height="26" rx="7" fill="#B5524A" opacity="0.12"/>
+      <g transform="translate(16.4 49.4) scale(0.8)" fill="none" stroke="#B5524A"
+         stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 18V5"/>
+        <path d="M15 13a4.17 4.17 0 0 1-3-4 4.17 4.17 0 0 1-3 4"/>
+        <path d="M17.598 6.5A3 3 0 1 0 12 5a3 3 0 1 0-5.598 1.5"/>
+        <path d="M17.997 5.125a4 4 0 0 1 2.526 5.77"/>
+        <path d="M18 18a4 4 0 0 0 2-7.464"/>
+        <path d="M19.967 17.483A4 4 0 1 1 12 18a4 4 0 1 1-7.967-.517"/>
+        <path d="M6 18a4 4 0 0 1-2-7.464"/>
+        <path d="M6.003 5.125a4 4 0 0 0-2.526 5.77"/>
+      </g>
+      <g stroke="#97907F" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="48" y1="59" x2="58" y2="59"/>
+        <path d="M54.5 55 L 59 59 L 54.5 63"/>
+      </g>
+      <g transform="translate(64 49.4) scale(0.8)" fill="none" stroke="#97907F"
+         stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 8V4H8"/>
+        <rect x="4" y="8" width="16" height="12" rx="2"/>
+        <path d="M2 14h2"/>
+        <path d="M20 14h2"/>
+        <path d="M15 13v2"/>
+        <path d="M9 13v2"/>
+      </g>
+      <line x1="1" y1="82" x2="99" y2="82" stroke="#EDE4D3" stroke-width="1.5"/>
+    </g>
+
+    <!-- folder rows -->
+    <g fill="#C9BEA9">
+      <rect x="18" y="96" width="13" height="10" rx="2.5"/>
+      <rect x="38" y="98" width="42" height="6" rx="3"/>
+      <rect x="18" y="124" width="13" height="10" rx="2.5" fill="#B4A78D"/>
+      <rect x="38" y="126" width="50" height="6" rx="3" fill="#B4A78D"/>
+      <rect x="30" y="152" width="13" height="10" rx="2.5"/>
+      <rect x="50" y="154" width="34" height="6" rx="3"/>
+      <rect x="18" y="180" width="13" height="10" rx="2.5"/>
+      <rect x="38" y="182" width="46" height="6" rx="3"/>
+    </g>
+
+    <!-- document list pane (100..238) -->
+    <g>
+      <rect x="114" y="52" width="100" height="7" rx="3.5" fill="#B4A992"/>
+      <rect x="114" y="68" width="58" height="5.5" rx="2.75" fill="#D5CBB8"/>
+
+      <rect x="106" y="88" width="126" height="46" rx="9" fill="#F0E5D0"/>
+      <rect x="114" y="100" width="96" height="7" rx="3.5" fill="#7E7460"/>
+      <rect x="114" y="116" width="52" height="5.5" rx="2.75" fill="#BBAE94"/>
+
+      <rect x="114" y="152" width="104" height="7" rx="3.5" fill="#B4A992"/>
+      <rect x="114" y="168" width="56" height="5.5" rx="2.75" fill="#D5CBB8"/>
+
+      <rect x="114" y="192" width="88" height="7" rx="3.5" fill="#B4A992"/>
+      <rect x="114" y="208" width="62" height="5.5" rx="2.75" fill="#D5CBB8"/>
+    </g>
+
+    <!-- content pane -->
+    <g id="content-pane">
+      <!-- current mode icon control: Edit → View → Split -->
+      <g transform="translate(438 48)">
+        <rect width="28" height="28" rx="7" fill="#EFE3CD" stroke="#E0D5C2" stroke-width="1.5"/>
+        <g transform="translate(6 6)" fill="none" stroke="#6B6355" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.5 2.5 13.5 5.5"/>
+          <path d="M3 13 4 9 11.5 1.5a2.1 2.1 0 0 1 3 3L7 12Z"/>
+          <path d="M2 15h12"/>
+        </g>
+      </g>
+
+      <!-- memo: graphite strokes with terracotta intent mark -->
+      <g transform="translate(268 108)" stroke="#4E483F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M0 8 c 7 -8, 12 2, 20 -4 c 6 -4, 11 3, 19 -2 l 118 -9"/>
+        <path d="M4 46 c 7 -8, 12 2, 20 -4 c 6 -4, 11 3, 19 -2 l 100 -8"/>
+        <path d="M14 92 c 6 -7, 11 2, 18 -3 l 74 -7"/>
+      </g>
+      <path d="M400 186 C 386 164, 296 164, 274 186 C 258 202, 296 222, 348 218 C 388 215, 410 200, 402 190"
+            fill="none" stroke="#C1734B" stroke-width="4.5" stroke-linecap="round"/>
+    </g>
+
+    <!-- caption -->
+    <text x="242" y="292" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+          font-size="18" fill="#9AA5CE">⌘1 폴더  ·  ⌘2 글만 남기기</text>
+  </g>
+<g transform="translate(1078 292)">
+    <path d="M0 26 A26 26 0 0 1 52 26 L52 44 A9.5 8 0 0 1 33 44 A7 6 0 0 0 19 44 A9.5 8 0 0 1 0 44 Z" fill="#F4EAD5"/>
+    <path d="M0 34 Q26 30 52 34 L52 44 A9.5 8 0 0 1 33 44 A7 6 0 0 0 19 44 A9.5 8 0 0 1 0 44 Z" fill="#40649A"/>
+    <ellipse cx="19" cy="20" rx="3.2" ry="5" fill="#40649A"/>
+    <ellipse cx="33" cy="20" rx="3.2" ry="5" fill="#40649A"/>
+    <ellipse cx="26" cy="28" rx="2.8" ry="3.4" fill="#40649A"/>
+  </g>
+</svg>

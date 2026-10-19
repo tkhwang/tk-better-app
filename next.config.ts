@@ -1,14 +1,14 @@
 import type { NextConfig } from "next";
 
+const productShortcuts = ["workbranch", "tasteful-intent", "skills"] as const;
+
 const nextConfig: NextConfig = {
   async redirects() {
-    return [
-      {
-        source: "/workbranch",
-        destination: "/product/workbranch",
-        permanent: false,
-      },
-    ];
+    return productShortcuts.map((slug) => ({
+      source: `/${slug}`,
+      destination: `/product/${slug}`,
+      permanent: false,
+    }));
   },
 };
 
