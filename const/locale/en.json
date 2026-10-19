@@ -20,8 +20,8 @@
   },
   "products": {
     "eyebrow": "products",
-    "title": "Space, intent, and review.",
-    "subtitle": "workbranch gives each task its own space, Tasteful Intent keeps your intent in your own words, and tk workflow runs the change in stages with a human gate at each. Each works on its own.",
+    "title": "Plan together.\nHand off.\nCheck together.",
+    "subtitle": "Plans start from your intent and taste, and the work you hand off comes back to you at each stage. Each tool covers a different point in that flow, and any one works on its own.",
     "items": {
       "workbranch": {
         "category": "CLI + macOS Companion",
@@ -41,7 +41,7 @@
         "description": "Write your intent in your own words and keep it as local Markdown. Open what AI makes in a separate workspace without replacing the original.",
         "primary": "Open Tasteful Intent",
         "secondary": "GitHub",
-        "role": "Intent"
+        "role": "Intent & taste"
       },
       "skills": {
         "category": "Agent skills",

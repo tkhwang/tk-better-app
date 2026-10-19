@@ -20,8 +20,8 @@
   },
   "products": {
     "eyebrow": "products",
-    "title": "작업 공간, 의도, 그리고 검토.",
-    "subtitle": "workbranch는 task마다 작업 공간을 따로 주고, Tasteful Intent는 의도를 나의 언어로 남기고, tk workflow는 단계마다 사람이 승인하며 변경을 끝까지 끌고 갑니다. 각각 따로 써도 됩니다.",
+    "title": "함께 계획하고, 맡기고, 함께 검증합니다.",
+    "subtitle": "계획은 나의 의도와 취향에서 시작하고, agent에게 맡긴 일은 단계마다 사람에게 돌아옵니다. 세 도구는 이 흐름의 서로 다른 지점을 받치며, 각각 따로 써도 됩니다.",
     "items": {
       "workbranch": {
         "category": "CLI + macOS Companion",
@@ -41,7 +41,7 @@
         "description": "나의 언어로 의도를 쓰고 로컬 Markdown으로 보관합니다. AI가 만든 결과는 원본을 건드리지 않는 별도 작업 공간에서 엽니다.",
         "primary": "Tasteful Intent 열기",
         "secondary": "GitHub",
-        "role": "의도"
+        "role": "의도와 취향"
       },
       "skills": {
         "category": "Agent skills",

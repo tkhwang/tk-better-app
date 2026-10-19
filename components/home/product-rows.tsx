@@ -14,7 +14,8 @@ const ProductRows = () => {
     <section id="products" className="scroll-mt-4 bg-step py-[88px] max-md:py-16">
       <div className="page">
         <div className="flex flex-wrap items-end justify-between gap-x-12 gap-y-4">
-          <h2 className="heading m-0 max-w-[13ch] text-[clamp(32px,4vw,48px)] ko:max-w-none">
+          {/* Line breaks come from the locale string ("\n"). */}
+          <h2 className="heading m-0 text-[clamp(32px,4vw,48px)] whitespace-pre-line">
             {t("products.title")}
           </h2>
           <p className="m-0 max-w-[46ch] text-[17px] leading-relaxed text-dim">
