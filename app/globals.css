@@ -1,122 +1,385 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* `ko:` applies a utility only while the page language is Korean. */
+@custom-variant ko (&:lang(ko));
+
+/*
+  Design tokens: "Quiet".
+  A light ground with one stepped section tone, white cards with soft
+  layered shadows, and a single cobalt accent. Light only.
+*/
+:root {
+  --bg: #fafaf9;
+  --step: #f1f1ee;
+  --card: #ffffff;
+  --panel: #f6f6f3;
+  --ink: #141414;
+  --dim: #55554f;
+  --faint: #66665f;
+  --faint2: #6e6e67;
+  --line: #e7e7e3;
+  --line2: #d9d9d3;
+  --accent: #2f54eb;
+  --accent-ink: #ffffff;
+
+  --run: #15803d;
+  --wait: #a16207;
+  --idle: #8a8a84;
+  --done: #0f766e;
+  --red: #b91c1c;
+
+  --term-bg: #16171b;
+  --term-text: #d4d7dd;
+  --term-muted: #8b9099;
+  --term-cmd: #8ecf7a;
+  --term-str: #e6c060;
+
+  --shadow-card: 0 1px 2px rgb(20 20 20 / 0.05), 0 16px 36px -16px rgb(20 20 20 / 0.16);
+  --shadow-card-hover: 0 1px 2px rgb(20 20 20 / 0.06), 0 22px 44px -18px rgb(20 20 20 / 0.24);
+  --shadow-ring: 0 0 0 1px rgb(20 20 20 / 0.12), 0 1px 2px rgb(20 20 20 / 0.06);
+
+  --gut: 32px;
+  --max: 1160px;
+  color-scheme: light;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --gut: 20px;
+  }
+}
+
+/* Dark mock panels keep readable status and accent colors. */
+.term {
+  --accent: #8ea6ff;
+  --run: #6bcb8b;
+  --wait: #e2b33c;
+  --done: #5cc9be;
+  --red: #f08a8a;
+  --line: rgb(255 255 255 / 0.08);
+  --line2: rgb(255 255 255 / 0.14);
+}
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
+  --color-bg: var(--bg);
+  --color-step: var(--step);
   --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
+  --color-panel: var(--panel);
+  --color-ink: var(--ink);
+  --color-dim: var(--dim);
+  --color-faint: var(--faint);
+  --color-faint2: var(--faint2);
+  --color-line: var(--line);
+  --color-line2: var(--line2);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-run: var(--run);
+  --color-wait: var(--wait);
+  --color-idle: var(--idle);
+  --color-done: var(--done);
+  --color-red: var(--red);
+  --color-term-bg: var(--term-bg);
+  --color-term-text: var(--term-text);
+  --color-term-muted: var(--term-muted);
+  --color-term-cmd: var(--term-cmd);
+  --color-term-str: var(--term-str);
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
+  /* shadcn aliases, so the remaining ui/* primitives follow the palette */
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--card);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--card);
+  --color-secondary: var(--step);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--step);
+  --color-muted-foreground: var(--faint);
+  --color-destructive: var(--red);
+  --color-border: var(--line);
+  --color-input: var(--line2);
+  --color-ring: var(--accent);
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --font-sans: var(--font-instrument), var(--font-kr), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), var(--font-kr), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-line;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  /* Korean breaks between words, not inside them. */
+  html:lang(ko) body {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* The centered column every section lives in. */
+  .page {
+    width: 100%;
+    max-width: calc(var(--max) + var(--gut) * 2);
+    margin-inline: auto;
+    padding-inline: var(--gut);
+  }
+
+  /* Small mono line above a heading. */
+  .eyebrow {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--dim);
+  }
+
+  .display {
+    font-weight: 600;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    color: var(--ink);
+  }
+
+  .heading {
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.08;
+    color: var(--ink);
+  }
+
+  /* Hangul comes from Noto Sans KR, which wants looser tracking. */
+  .display:lang(ko),
+  .heading:lang(ko) {
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+
+  .display em,
+  .heading em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  .lede {
+    max-width: 56ch;
+    font-size: 19px;
+    line-height: 1.6;
+    color: var(--dim);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      box-shadow 0.15s ease,
+      transform 0.12s ease;
+  }
+
+  .btn:active {
+    transform: scale(0.97);
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--card);
+  }
+
+  .btn-primary:hover {
+    background: #2b2b2a;
+  }
+
+  .btn-secondary {
+    background: var(--card);
+    color: var(--ink);
+    box-shadow: var(--shadow-ring);
+  }
+
+  .btn-secondary:hover {
+    box-shadow:
+      0 0 0 1px rgb(20 20 20 / 0.22),
+      0 2px 6px rgb(20 20 20 / 0.08);
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: 20px;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* A card that is one big link: it rises a little on hover. */
+  .card-link {
+    position: relative;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .card-link:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .card-link:has(a:focus-visible) {
+    box-shadow:
+      0 0 0 2px var(--accent),
+      var(--shadow-card);
+  }
+
+  .card-link:has(a:focus-visible) a:focus-visible {
+    outline: none;
+  }
+
+  /* Artwork with its own rounded corners: the shadow follows the shape. */
+  .figure-shadow {
+    filter: drop-shadow(0 1px 1px rgb(20 20 20 / 0.06)) drop-shadow(0 18px 28px rgb(20 20 20 / 0.14));
+  }
+
+  /* Pill segmented control: EN | KO, install tabs. */
+  .seg {
+    display: inline-flex;
+    gap: 2px;
+    padding: 3px;
+    border-radius: 999px;
+    background: #ecece8;
+  }
+
+  .seg button {
+    min-width: 44px;
+    min-height: 32px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--dim);
+    font: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease;
+  }
+
+  .seg button:hover {
+    color: var(--ink);
+  }
+
+  .seg button[aria-pressed="true"],
+  .seg button[aria-selected="true"] {
+    background: var(--card);
+    color: var(--ink);
+    font-weight: 600;
+    box-shadow: 0 1px 2px rgb(20 20 20 / 0.12);
+  }
+
+  /* Smaller version inside decorative mock panels. */
+  .seg-sm button {
+    min-width: 0;
+    min-height: 0;
+    padding: 2px 8px;
+    font-size: 10.5px;
+  }
+
+  .dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex: 0 0 auto;
+  }
+
+  .dot-hollow {
+    background: none;
+    box-shadow: inset 0 0 0 2px currentColor;
+  }
+
+  .pulse-soft {
+    animation: pulse-soft 2.2s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn,
+    .card-link {
+      transition: none;
+    }
+
+    .btn:active,
+    .card-link:hover {
+      transform: none;
+    }
+
+    .pulse-soft {
+      animation: none;
+    }
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
   }
 }

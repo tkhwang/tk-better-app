@@ -2,221 +2,657 @@
   "nav": {
     "home": "Home",
     "projects": "Products",
-    "blog": "Blog"
+    "blog": "Blog",
+    "language": "Language"
   },
   "hero": {
-    "badge": "Personal portfolio",
-    "title": "tkBetter.app",
-    "subtitle": "A small collection of apps, open-source tools, and experiments I work on.",
-    "cta_primary": "View projects",
-    "cta_secondary": "Contact"
-  },
-  "expertise": {
-    "title": "Core Expertise",
-    "subtitle": "Combining cutting-edge AI with robust engineering to build what matters.",
-    "items": [
-      {
-        "category": "AI Development",
-        "title": "AI Agent Systems",
-        "description": "Designing and deploying autonomous AI agents that solve complex problems, automate workflows, and enhance human productivity using LLMs.",
-        "link": "#"
-      },
-      {
-        "category": "Engineering",
-        "title": "Fullstack Architecture",
-        "description": "Crafting scalable, high-performance web applications with Next.js, TypeScript, and modern backend ecosystems like Nest.js or Node.js.",
-        "link": "#"
-      },
-      {
-        "category": "Product",
-        "title": "Helpful & Fun Items",
-        "description": "Building tools and applications that aren't just functional, but bring joy and solve real everyday problems in creative ways.",
-        "link": "#"
-      }
-    ]
-  },
-  "cta": {
-    "title": "Want to talk?",
-    "description": "If you have a useful tool or product idea, feel free to reach out.",
-    "contact": "Contact Me",
-    "github": "Follow on GitHub"
-  },
-  "workbranch": {
-    "hero": {
-      "badge": "Open Source · CLI",
-      "name": "workbranch",
-      "tagline": "Task-based Git worktrees, made easy.",
-      "subtitle": "Create isolated task folders, keep base branches fresh, and move branch work from start to finish with commands you can remember.",
-      "cta_install": "Install workbranch",
-      "cta_github": "GitHub",
-      "terminal_title": "workbranch — quick start"
-    },
-    "install": {
-      "title": "Install",
-      "subtitle": "Choose Homebrew for released builds, or run the install script directly.",
-      "brew_label": "Homebrew",
-      "brew_note": "Recommended · installs published releases",
-      "script_label": "Install Script",
-      "script_note": "Installs from the public repository script",
-      "curl_label": "Install Script",
-      "curl_note": "Installs from the public repository script",
-      "copy": "Copy",
-      "copied": "Copied"
-    },
-    "features": {
-      "title": "What workbranch does",
-      "subtitle": "Four small workflows for task workspaces, branch sync, combined flows, and local tools.",
-      "groups": [
-        {
-          "title": "Workspace lifecycle",
-          "description": "Set up the worktree environment.",
-          "commands": [
-            {
-              "cmd": "workbranch init",
-              "desc": "Create or clone the shared base worktrees from project config."
-            },
-            {
-              "cmd": "workbranch add",
-              "desc": "Create one task folder with linked worktrees for every configured repo."
-            },
-            {
-              "cmd": "workbranch remove",
-              "desc": "Remove a task workspace, its worktrees, and local task branches."
-            }
-          ],
-          "note": "Each task becomes a small mono-repo workspace, so an AI agent can use frontend and backend in the same session."
-        },
-        {
-          "title": "Branch workflow",
-          "description": "Pull fresh base branches, update task branches, push work, and land finished changes without memorizing worktree plumbing.",
-          "commands": [
-            {
-              "cmd": "workbranch push",
-              "desc": "Push base branches or a specific task branch to origin."
-            },
-            {
-              "cmd": "workbranch pull",
-              "desc": "Pull remote base branches into the local _base repos."
-            },
-            {
-              "cmd": "workbranch update",
-              "desc": "Merge local base changes into one task workspace or every task workspace."
-            },
-            {
-              "cmd": "workbranch land",
-              "desc": "Fast-forward finished task work back into local base branches."
-            }
-          ]
-        },
-        {
-          "title": "Combined flow",
-          "description": "Run the common multi-step flows — refresh, finalize, prune — with one command.",
-          "commands": [
-            {
-              "cmd": "workbranch refresh",
-              "desc": "Pull base branches, then update every task workspace."
-            },
-            {
-              "cmd": "workbranch refresh <task>",
-              "desc": "Pull base branches, then update one task workspace."
-            },
-            {
-              "cmd": "workbranch finalize <task>",
-              "desc": "Pull base branches, update one task, then land it into local base branches."
-            },
-            {
-              "cmd": "workbranch prune",
-              "desc": "Remove clean task workspaces already merged into local base branches."
-            }
-          ]
-        },
-        {
-          "title": "Tool commands",
-          "description": "Open the whole task workspace in your editor or terminal without finding each repo by hand.",
-          "commands": [
-            {
-              "cmd": "workbranch ide <task>",
-              "desc": "Open the task repo worktrees in the configured IDE."
-            },
-            {
-              "cmd": "workbranch terminal <task>",
-              "desc": "Open the task repo worktrees in the configured terminal."
-            }
-          ]
-        }
-      ]
-    },
-    "workflow": {
-      "title": "Two workflows, that's it",
-      "subtitle": "A small, predictable command set covers the whole task lifecycle.",
-      "lifecycle_title": "Workspace lifecycle",
-      "lifecycle_subtitle": "Create and remove task workspaces.",
-      "lifecycle": [
-        {
-          "cmd": "workbranch init",
-          "desc": "Create or clone the shared base worktrees from project config."
-        },
-        {
-          "cmd": "workbranch add",
-          "desc": "Create one task folder with linked worktrees for every configured repo."
-        },
-        {
-          "cmd": "workbranch remove",
-          "desc": "Remove a task workspace, its worktrees, and local task branches."
-        }
-      ],
-      "branch_title": "Branch workflow",
-      "branch_subtitle": "Update, push, and inspect task branches.",
-      "branch": [
-        {
-          "cmd": "workbranch push",
-          "desc": "Push base branches or a specific task branch to origin."
-        },
-        {
-          "cmd": "workbranch pull",
-          "desc": "Pull remote base branches into the local _base repos."
-        },
-        {
-          "cmd": "workbranch update",
-          "desc": "Merge local base changes into task workspaces."
-        },
-        {
-          "cmd": "workbranch land",
-          "desc": "Fast-forward finished task work back into local base branches."
-        }
-      ]
-    },
-    "cta": {
-      "title": "Stop fighting git worktree",
-      "description": "Spin up clean, isolated task spaces and keep your branches in sync with a handful of commands.",
-      "primary": "Get started",
-      "secondary": "View on GitHub"
-    },
-    "structure": {
-      "title": "How workbranch organizes your repos",
-      "subtitle": "Keep shared base worktrees in _base/, then create one folder per task with linked worktrees for each repo.",
-      "window_title": "repo layout",
-      "base_label": "base main worktree",
-      "base_desc": "Shared base checkout for each repo, usually tracking main.",
-      "task_label": "task linked worktree",
-      "task_desc": "Per-task linked checkout for each repo and task branch."
-    }
+    "eyebrow": "human + AI workflow",
+    "title": "A better workflow for collaborating *with AI agents*.",
+    "subtitle": "Intent and decisions stay with you; agents do the work in between, with a clear handoff at every step. I build this workflow in the open as three pieces you can use together or alone: isolated task spaces, intent in your own words, and staged runs with a human gate at each stage.",
+    "meta": "Open source · macOS first · built in the open on",
+    "meta_link": "github.com/tkhwang →",
+    "primary": "Explore the workflow"
   },
   "footer": {
-    "copyright": "All rights reserved."
+    "copyright": "All rights reserved.",
+    "elsewhere": "Elsewhere",
+    "tagline": "An open-source workflow for effective collaboration between people and AI agents."
   },
   "products": {
-    "eyebrow": "Products",
-    "title": "Useful tools",
-    "subtitle": "Small apps and open-source tools I maintain.",
+    "eyebrow": "products",
+    "title": "Space, intent, and review.",
+    "subtitle": "workbranch gives each task its own space, Tasteful Intent keeps your intent in your own words, and tk workflow runs the change in stages with a human gate at each. Each works on its own.",
+    "items": {
+      "workbranch": {
+        "category": "CLI + macOS Companion",
+        "status": "Available now",
+        "platforms": "macOS · Linux · MIT",
+        "title": "workbranch",
+        "description": "One task folder per feature across one repo or many. Refresh, land, and push with short commands, and see which AI agent is waiting on you from the menu bar.",
+        "primary": "Open workbranch",
+        "secondary": "GitHub",
+        "role": "Task space"
+      },
+      "tasteful-intent": {
+        "category": "macOS app",
+        "status": "Available now",
+        "platforms": "macOS · Apple silicon & Intel · Tauri 2",
+        "title": "Tasteful Intent",
+        "description": "Write your intent in your own words and keep it as local Markdown. Open what AI makes in a separate workspace without replacing the original.",
+        "primary": "Open Tasteful Intent",
+        "secondary": "GitHub",
+        "role": "Intent"
+      },
+      "skills": {
+        "category": "Agent skills",
+        "status": "Available now",
+        "platforms": "Claude Code · Codex · Grok",
+        "title": "skills · tk workflow",
+        "description": "A staged, document-driven way to take one change from intent to signoff. One agent runs it; others join for review and debate when you ask.",
+        "primary": "Open skills",
+        "secondary": "GitHub",
+        "role": "Staged runs & review"
+      }
+    },
+    "open": "open",
+    "ev": {
+      "install": "install",
+      "platforms": "runs on",
+      "status": "status"
+    }
+  },
+  "product": {
+    "common": {
+      "copy": "copy",
+      "copied": "copied",
+      "github": "GitHub →",
+      "plate_hint": "README hero · follows the language toggle",
+      "figure": "fig",
+      "facts": "at a glance",
+      "install_cta": "install",
+      "github_cta": "view on github"
+    },
     "workbranch": {
-      "category": "Open source CLI",
-      "status": "Available now",
-      "platforms": "macOS · Linux · WSL",
-      "title": "workbranch",
-      "description": "A small CLI for creating task-based Git worktree spaces across one repo or many repos.",
-      "primary": "Open Workbranch",
-      "secondary": "GitHub"
+      "hero": {
+        "badge": "Open source · CLI + macOS Companion",
+        "name": "workbranch",
+        "tagline": "One task folder per feature. *Every repo in one place.*",
+        "subtitle": "Manage Git worktree task spaces without memorizing git worktree commands. Create a task folder across one repo or many, keep base branches fresh with short, safe commands, and see which AI agent is waiting on you from the menu bar.",
+        "platforms": "macOS · Linux · MIT · Companion for macOS",
+        "figure_alt": "workbranch creates one task folder across multiple repositories, and Companion shows each task's AI agent sessions in waiting-on-you, running, and turn-ended columns."
+      },
+      "features": {
+        "eyebrow": "What it does",
+        "title": "Create with the CLI. Watch with Companion.",
+        "subtitle": "The CLI runs the Git and worktree flow. Companion reads what the agents report and shows it in the menu bar. Nothing else changes about how you work.",
+        "items": [
+          {
+            "title": "One task folder, every repo",
+            "description": "workbranch add login creates feat-login/ with a linked worktree for each configured repo, while _base/ keeps the shared base checkouts. The task root is where your AI agent runs; the repos live underneath it.",
+            "points": [
+              "Works with one repo or many, so an agent can touch frontend and backend in one session",
+              "workbranch init registers the project and can create the first task on the spot",
+              "Stacked on a feature base? add asks only for the task name and derives feature-cpq-login/"
+            ]
+          },
+          {
+            "title": "Refresh every repo in one command",
+            "description": "pull brings the bases from their remotes, update applies them to a task, and refresh does both. Before an agent starts, one command puts every repo in the task on the latest base.",
+            "points": [
+              "update and refresh stop on a dirty worktree instead of merging over your changes",
+              "workbranch stash keeps changes under the current branch, not the stash list every worktree shares",
+              "finalize runs pull → update → land in one go"
+            ]
+          },
+          {
+            "title": "Two ways to ship",
+            "description": "What push publishes depends on your base. On main, push the task branch and open a PR. On a feature branch, land the stacked task into it and push the base.",
+            "points": [
+              "Feature flow: workbranch push feat-login",
+              "Stacked flow: workbranch land feat-login-part1, then workbranch push",
+              "prune removes clean task workspaces already merged into local bases"
+            ]
+          },
+          {
+            "title": "See which agent is waiting on you",
+            "description": "Workbranch Companion is a macOS menu bar app. It reads hook observations from Claude Code, Codex, and Grok Build and places each task on a board: waiting on you, running, or turn ended and ready for review.",
+            "points": [
+              "Task cards show IDE, Terminal, and Finder launchers plus each repo's branch and Git facts without expanding",
+              "Click a card for recent commits and session details; double-click opens the task in your IDE",
+              "Base repositories show branch, dirty state, and ahead/behind counts with PULL, PUSH, or CHECK guidance"
+            ]
+          },
+          {
+            "title": "Token usage, read locally",
+            "description": "A usage summary above the board shows Claude Code and Codex side by side: plan limits with time to reset, today's tokens, and the last seven days. Companion reads only local files and never signs in.",
+            "points": [
+              "Pick what shows beside the menu bar icon, as used or remaining percent",
+              "Usage view adds a shared 14-day daily chart and a last-7-days table",
+              "Opt in to Live Claude Limits to refresh while a Claude Code session is open"
+            ]
+          },
+          {
+            "title": "Works with the agents you already run",
+            "description": "Install hooks for Claude Code or Codex with one command and review the provider's hook trust. Grok Build needs explicit trust: inspect the plugin source first, then install with --trust.",
+            "points": [
+              "No TASK-WORKBRANCH.md reporting required; runtime snapshots come from hooks",
+              "Companion onboarding can install the CLI with Homebrew and connect agents for you",
+              "One update action upgrades the CLI before Companion"
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "title": "Commands",
+        "subtitle": "A small, predictable set covers the whole task lifecycle.",
+        "groups": [
+          {
+            "title": "Workspace lifecycle",
+            "description": "Set up the project, create tasks, and check on them.",
+            "items": [
+              {
+                "cmd": "workbranch init",
+                "desc": "Create or clone base worktrees from config; can create the first task."
+              },
+              {
+                "cmd": "workbranch add [<task>]",
+                "desc": "Create a task workspace with a linked worktree for every repo."
+              },
+              {
+                "cmd": "workbranch list [--json]",
+                "desc": "Show repos and task workspaces; --json is machine-readable."
+              },
+              {
+                "cmd": "workbranch status",
+                "desc": "Show base remote diff, task diff, and dirty state."
+              },
+              {
+                "cmd": "workbranch doctor [--fix]",
+                "desc": "Diagnose project health; safe fixes prune stale worktrees."
+              }
+            ],
+            "note": "Each task is a small mono-repo workspace, so an AI agent can use frontend and backend in the same session."
+          },
+          {
+            "title": "Branch workflow",
+            "description": "Pull fresh bases, update task branches, push work, and land finished changes.",
+            "items": [
+              {
+                "cmd": "workbranch pull",
+                "desc": "Pull every base from its remote into the local _base repos."
+              },
+              {
+                "cmd": "workbranch update [task]",
+                "desc": "Apply local base updates to one task or every task (no pull)."
+              },
+              {
+                "cmd": "workbranch land <task>",
+                "desc": "Fast-forward task work into local base branches."
+              },
+              {
+                "cmd": "workbranch push [task]",
+                "desc": "Push base branches or a specific task branch to origin."
+              },
+              {
+                "cmd": "workbranch stash / stash pop",
+                "desc": "Set changes aside under the current branch and restore only those."
+              }
+            ]
+          },
+          {
+            "title": "Combined flow",
+            "description": "The common multi-step flows in one command.",
+            "items": [
+              {
+                "cmd": "workbranch refresh [task]",
+                "desc": "Pull base branches, then update one task or every task."
+              },
+              {
+                "cmd": "workbranch finalize <task>",
+                "desc": "Pull base branches, update one task, then land it."
+              },
+              {
+                "cmd": "workbranch prune",
+                "desc": "Remove clean task workspaces already merged into local bases."
+              }
+            ]
+          },
+          {
+            "title": "Tools and Companion",
+            "description": "Open a task where you work, and connect the agents Companion watches.",
+            "items": [
+              {
+                "cmd": "workbranch ide <task>",
+                "desc": "Open the task's repo worktrees in the configured IDE."
+              },
+              {
+                "cmd": "workbranch terminal <task>",
+                "desc": "Open the task root in the configured terminal."
+              },
+              {
+                "cmd": "workbranch noti ...",
+                "desc": "Add, list, or clear task notifications."
+              },
+              {
+                "cmd": "workbranch hooks install --provider claude|codex",
+                "desc": "Install the hooks Companion reads runtime state from."
+              },
+              {
+                "cmd": "workbranch hooks describe --provider grok",
+                "desc": "Inspect the Grok Build plugin source before installing with --trust."
+              }
+            ]
+          }
+        ]
+      },
+      "install": {
+        "title": "Install",
+        "subtitle": "Homebrew installs published releases. The curl installer tracks main.",
+        "tabs": {
+          "cli": {
+            "label": "CLI",
+            "note": "Recommended · Homebrew release"
+          },
+          "companion": {
+            "label": "Companion",
+            "note": "macOS menu bar app · Homebrew cask"
+          },
+          "script": {
+            "label": "Install script",
+            "note": "Tracks main from the public repository"
+          }
+        }
+      },
+      "cta": {
+        "title": "Stop fighting git worktree",
+        "description": "Spin up clean, isolated task spaces, keep them on the latest base, and know which agent needs you next.",
+        "primary": "Get started",
+        "secondary": "View on GitHub"
+      },
+      "facts": [
+        "github stars",
+        "latest cli release",
+        "companion release",
+        "agents · claude · codex · grok"
+      ],
+      "plate": {
+        "label": "the task folder and the companion board",
+        "right": "readme hero",
+        "caption": "The CLI creates one task folder per feature with a linked worktree per repo. Companion reads hook observations and shows which agent is waiting on you."
+      }
+    },
+    "tasteful-intent": {
+      "hero": {
+        "badge": "macOS app · Local Markdown",
+        "name": "Tasteful Intent",
+        "tagline": "Write the intent in your own words. *Keep it as local Markdown.*",
+        "subtitle": "Prompts change from one request to the next. Your intent and taste last longer. Tasteful Intent keeps that source in a Human workspace and opens what AI makes in a separate AI workspace, without replacing the original.",
+        "platforms": "macOS · Apple silicon & Intel · Tauri 2 · signed and notarized",
+        "figure_alt": "Tasteful Intent, a local Markdown app with separate Human and AI workspaces."
+      },
+      "features": {
+        "eyebrow": "What it does",
+        "title": "Intent first. Results kept apart.",
+        "subtitle": "The app does not run an LLM or copy your notes into its own database. It works directly with the folders you select.",
+        "items": [
+          {
+            "title": "Human workspace: your originals",
+            "description": "Write Human notes with CodeMirror 6 and GFM rendering. Autosave every 500 ms, atomic writes, and external-change protection keep the file safe. The filename is the document title.",
+            "points": [
+              "New documents start with created and updated timestamps and an empty body",
+              "Create, rename, move, and send files or folders to the Trash from keyboard-accessible context menus",
+              "Sort by latest update or title; switch the list between Full, Medium, and Simple density"
+            ]
+          },
+          {
+            "title": "AI workspace: results, kept apart",
+            "description": "Open multiple AI folders as tabs. Pin frequent roots with a one- or two-character label and restore each folder's document session when you come back.",
+            "points": [
+              "AI folders allow Markdown editing and new documents, but no other structural file operations",
+              "Closing a tab changes only app settings; it never deletes the folder or its files",
+              "Scanning respects .gitignore and .ignore and skips hidden paths and symlinks"
+            ]
+          },
+          {
+            "title": "Edit → View → Split",
+            "description": "Keep several documents open and move each one through Edit, View, and Split. Human documents start in Edit; AI documents start in View.",
+            "points": [
+              "⌘F or Ctrl+F finds text in the current document with highlighted matches in every mode",
+              "Root-relative local images render up to 10 MiB",
+              "Export the current rendered document as a PDF"
+            ]
+          },
+          {
+            "title": "Local by design",
+            "description": "Every selected root is canonicalized and file operations stay inside that boundary. Human deletion uses the macOS Trash instead of permanent removal. Settings live in the OS app-data directory.",
+            "points": [
+              "No built-in LLM runtime, no accounts, no sync",
+              "Nothing is copied into an app database; the Markdown files are the source",
+              "Workspace-wide search, tags, and backlinks are outside the current scope"
+            ]
+          },
+          {
+            "title": "Small, finished details",
+            "description": "Three panes, two panes, or content-only mode. English and Korean UI, four themes, four Human/AI color palettes, and two writing typefaces.",
+            "points": [
+              "⌘1 toggles the folder pane, ⌘2 toggles content-only mode",
+              "Signed and notarized DMGs for Apple silicon and Intel on every release",
+              "Built with Tauri 2 and Rust, React 19, TypeScript, and CodeMirror 6"
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "title": "At a glance",
+        "subtitle": "Shortcuts, modes, boundaries, and the stack underneath.",
+        "groups": [
+          {
+            "title": "Shortcuts",
+            "description": "The few keys worth remembering.",
+            "items": [
+              {
+                "cmd": "⌘F / Ctrl+F",
+                "desc": "Find in the current document, with matches highlighted in Edit, View, and Split."
+              },
+              {
+                "cmd": "⌘1",
+                "desc": "Toggle the folder pane."
+              },
+              {
+                "cmd": "⌘2",
+                "desc": "Toggle content-only mode."
+              }
+            ]
+          },
+          {
+            "title": "Document modes and layouts",
+            "description": "Each open document keeps its own mode.",
+            "items": [
+              {
+                "cmd": "Edit",
+                "desc": "CodeMirror 6 editor. Human documents start here."
+              },
+              {
+                "cmd": "View",
+                "desc": "GFM rendering with local images. AI documents start here."
+              },
+              {
+                "cmd": "Split",
+                "desc": "Editor and rendered view side by side."
+              },
+              {
+                "cmd": "Three panes · Two panes · Content-only",
+                "desc": "Folders, document list, and content, or just the content."
+              }
+            ]
+          },
+          {
+            "title": "Boundaries",
+            "description": "What the app will and will not do with your files.",
+            "items": [
+              {
+                "cmd": "Human folder",
+                "desc": "Full file operations: create, rename, move, Trash. Autosave with atomic writes."
+              },
+              {
+                "cmd": "AI folders",
+                "desc": "Edit Markdown and create new Markdown documents only."
+              },
+              {
+                "cmd": "Out of scope",
+                "desc": "Workspace-wide search, tags, Markdown toolbar, attachments, wiki links, sync, accounts, built-in LLM."
+              }
+            ],
+            "note": "Settings are stored under bundle ID app.tkbetter.intentmemo in the OS app-data directory."
+          },
+          {
+            "title": "Stack",
+            "description": "A desktop shell with a strict filesystem boundary.",
+            "items": [
+              {
+                "cmd": "Tauri 2 · Rust",
+                "desc": "Desktop shell and filesystem boundary."
+              },
+              {
+                "cmd": "React 19 · TypeScript",
+                "desc": "Interface, with Biome and Vitest for checks and tests."
+              },
+              {
+                "cmd": "CodeMirror 6 · react-markdown · remark-gfm",
+                "desc": "Editing and rendering."
+              },
+              {
+                "cmd": "Release Please",
+                "desc": "Versioned releases with signed DMGs and a Homebrew cask update."
+              }
+            ]
+          }
+        ]
+      },
+      "install": {
+        "title": "Install",
+        "subtitle": "Install the signed macOS app with Homebrew, or download a DMG from the Releases page.",
+        "tabs": {
+          "cask": {
+            "label": "Homebrew",
+            "note": "Recommended · signed and notarized"
+          },
+          "dmg": {
+            "label": "DMG",
+            "note": "Apple silicon and Intel builds",
+            "description": "Every release attaches signed and notarized DMGs for Apple silicon and Intel, plus updater artifacts.",
+            "action": "Open Releases"
+          }
+        }
+      },
+      "cta": {
+        "title": "Keep the intent. Inspect the result.",
+        "description": "Open the app, choose a language and appearance, connect a folder for your Human notes, and point the AI workspace at a folder of AI-created Markdown.",
+        "primary": "Get started",
+        "secondary": "View on GitHub"
+      },
+      "facts": [
+        "github stars",
+        "latest release",
+        "workspaces · human · ai",
+        "llm runtimes inside"
+      ],
+      "plate": {
+        "label": "human workspace, ai workspace",
+        "right": "readme hero",
+        "caption": "Your originals stay in the Human workspace. AI-created Markdown opens in separate AI folder tabs and never replaces the original."
+      }
+    },
+    "skills": {
+      "hero": {
+        "badge": "Open source · Agent skills",
+        "name": "skills",
+        "tagline": "From intent to signoff, *one stage at a time.*",
+        "subtitle": "Agent skills for Claude Code, Codex, and other skill-aware agents. The main piece is tk workflow: a staged, document-driven way to take one change from intent to signoff. It runs with one agent, and other agents join for review and debate when you ask.",
+        "platforms": "Claude Code · Codex · Grok · any skill-aware agent",
+        "figure_alt": "tk workflow: five stages (intent, plan, implement, verify, signoff) run left to right with a human approval gate between each. Intents are permanent, tasks are per piece of work, specs describe current behaviour."
+      },
+      "features": {
+        "eyebrow": "What it is",
+        "title": "Five stages. Files are the state.",
+        "subtitle": "Each stage reads a document and writes a document. Where work stands is derived from docs/, never from conversation memory, so any session can pick it up.",
+        "items": [
+          {
+            "title": "Files are the state",
+            "description": "Intents are permanent, one per change. plan.md and todo.md live only for the current piece of work and are emptied at signoff. Specs describe how each module behaves now, in timeless language.",
+            "points": [
+              "docs/intents/<MODULE><NNN>-<slug>.md holds why, what, non-goals, R-numbered requirements, and the outcome",
+              "docs/tasks/ holds the plan, the todo list, and each peer's reviews and debates",
+              "tk-setup explores the repo once and writes docs/agents/tk-workflow.md"
+            ]
+          },
+          {
+            "title": "A human gate at every stage",
+            "description": "A stage saves its artifact, prints a summary, and ends the turn. The next stage starts only on an explicit next. Hedged answers are not approval; the driver asks again.",
+            "points": [
+              "tk-intent interviews you against the code and numbers requirements R1, R2, …",
+              "tk-plan turns the intent into vertical slices, each Backend → Frontend, with an R-id coverage matrix",
+              "tk-implement checks boxes with evidence and runs a tk-verify checkpoint after every sub-phase"
+            ]
+          },
+          {
+            "title": "Multi-agent review and debate",
+            "description": "Say review or debate and other agents (claude, codex, grok) read the artifact or argue one open decision. They run headless, read-only, one process each. Their answers land in files, and one agent still does all the editing.",
+            "points": [
+              "tk-multi-review triages findings into patches, tk-grill questions, or deferred notes",
+              "tk-multi-debate runs two written rounds, then the human decides through tk-grill",
+              "Inside herdr the peers run in a sibling pane so you can watch; outside, they run directly"
+            ]
+          },
+          {
+            "title": "The agent never commits",
+            "description": "It reads git, it does not write it. Commits, pushes, and branches are yours. tk-verify runs typecheck, lint with warnings failing, format check, tests, and the plan's behaviour checks before signoff.",
+            "points": [
+              "tk-signoff traces every R-id through plan, diff, and verification, then decides Go or No-Go",
+              "On Go it appends the intent Outcome, updates module specs, and empties docs/tasks/",
+              "Git history is the archive"
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "title": "Skills",
+        "subtitle": "One hub, five stages, one interviewer, and two multi-agent helpers.",
+        "groups": [
+          {
+            "title": "Workflow",
+            "description": "The staged flow, driven by tk-workflow.",
+            "items": [
+              {
+                "cmd": "tk-setup",
+                "desc": "Once per repo. Writes docs/agents/tk-workflow.md: layout, docs paths, module codes, verify commands, peers."
+              },
+              {
+                "cmd": "tk-workflow",
+                "desc": "Hub. Derives the current stage from the files and routes to the next skill."
+              },
+              {
+                "cmd": "tk-intent  [0]",
+                "desc": "Reads your intent draft against the code, asks the important gaps, numbers requirements."
+              },
+              {
+                "cmd": "tk-plan  [1]",
+                "desc": "plan.md + todo.md: vertical slices, R-id coverage, no open decisions."
+              },
+              {
+                "cmd": "tk-implement  [2]",
+                "desc": "Works todo.md in order with evidence; stops per sub-phase (auto), per slice, or at the end (all)."
+              },
+              {
+                "cmd": "tk-verify  [3]",
+                "desc": "Typecheck, lint, format, tests, and behaviour checks, recorded per R-id."
+              },
+              {
+                "cmd": "tk-signoff  [4]",
+                "desc": "Traces every R-id. Go: outcome appended, specs updated, tasks emptied."
+              }
+            ]
+          },
+          {
+            "title": "Multi-agent",
+            "description": "Other agents join as read-only peers. The orchestrator stays the one agent that edits.",
+            "items": [
+              {
+                "cmd": "tk-multi-review",
+                "desc": "claude, codex, and grok review the artifact awaiting approval, each in its own process."
+              },
+              {
+                "cmd": "tk-multi-debate",
+                "desc": "Peers argue one open decision in two written rounds; the human decides through tk-grill."
+              },
+              {
+                "cmd": "claude -p · codex exec -s read-only · grok -p",
+                "desc": "How peers run: headless, read-only, a self-contained prompt file in, an answer file out."
+              }
+            ],
+            "note": "Which agents take part is a Peers table that tk-setup writes from what is installed."
+          },
+          {
+            "title": "Driver words",
+            "description": "After the first stage command in a session, plain words keep the flow moving.",
+            "items": [
+              {
+                "cmd": "next",
+                "desc": "Approve the current artifact and start the next stage."
+              },
+              {
+                "cmd": "revise: …",
+                "desc": "Send the artifact back with a change request."
+              },
+              {
+                "cmd": "slice · all",
+                "desc": "Let tk-implement stop per slice, or run to the end."
+              },
+              {
+                "cmd": "review · debate",
+                "desc": "Bring in the peer agents at this gate."
+              },
+              {
+                "cmd": "status · stop",
+                "desc": "Show where the work stands, or end the flow."
+              }
+            ]
+          },
+          {
+            "title": "Other",
+            "description": "Pieces that work on their own.",
+            "items": [
+              {
+                "cmd": "tk-grill",
+                "desc": "Asks the unresolved decisions in a document one at a time, with a recommendation, and patches the answers in."
+              },
+              {
+                "cmd": "npx skills update",
+                "desc": "Update installed skills later."
+              },
+              {
+                "cmd": "./link.sh",
+                "desc": "Develop: symlink the cloned repo into ~/.agents, ~/.claude, and ~/.codex skills."
+              }
+            ]
+          }
+        ]
+      },
+      "install": {
+        "title": "Install",
+        "subtitle": "User-level, for every supported agent. Then run /tk-setup in a project, write your first intent, and run /tk-intent.",
+        "tabs": {
+          "all": {
+            "label": "All skills",
+            "note": "Every skill in the repo, user-level"
+          },
+          "workflow": {
+            "label": "tk workflow only",
+            "note": "The ten skills that make up the flow"
+          },
+          "update": {
+            "label": "Update",
+            "note": "Pull the latest versions later"
+          }
+        }
+      },
+      "cta": {
+        "title": "Let the files hold the state",
+        "description": "Write the intent, approve each stage, and keep commits in your own hands. Review and debate are one word away when you want a second opinion.",
+        "primary": "Get started",
+        "secondary": "View on GitHub"
+      },
+      "facts": [
+        "github stars",
+        "skills",
+        "stages · intent → signoff",
+        "peer agents · claude · codex · grok"
+      ],
+      "plate": {
+        "label": "tk workflow",
+        "right": "readme hero",
+        "caption": "Five stages run left to right with a human approval gate between each. Intents are permanent, tasks are per piece of work, specs describe current behaviour."
+      }
     }
   }
 }

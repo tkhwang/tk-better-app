@@ -1,11 +1,11 @@
-import ExpertiseSection from "@/components/features-06/features-06";
-import Hero06 from "@/components/hero-06/hero-06";
+import HomeHero from "@/components/home/home-hero";
+import ProductRows from "@/components/home/product-rows";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col w-full">
-      <Hero06 />
-      <ExpertiseSection />
+    <main>
+      <HomeHero />
+      <ProductRows />
     </main>
   );
 }
