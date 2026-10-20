@@ -127,11 +127,11 @@ export const PRODUCTS: Record<ProductSlug, ProductConfig> = {
       en: "/products/skills/hero-en.svg",
       ko: "/products/skills/hero-ko.svg",
       width: 1200,
-      height: 650,
+      height: 710,
     },
     facts: [
       { kind: "stars" },
-      { kind: "static", value: "10" },
+      { kind: "static", value: "11" },
       { kind: "static", value: "5" },
       { kind: "static", value: "3" },
     ],
@@ -145,7 +145,7 @@ export const PRODUCTS: Record<ProductSlug, ProductConfig> = {
         id: "workflow",
         kind: "command",
         command:
-          "npx skills add tkhwang/skills -s tk-setup,tk-workflow,tk-intent,tk-grill,tk-plan,tk-implement,tk-verify,tk-signoff,tk-multi-review,tk-multi-debate -g",
+          "npx skills add tkhwang/skills -s tk-setup,tk-workflow,tk-intent,tk-grill,tk-check,tk-plan,tk-implement,tk-verify,tk-signoff,tk-multi-review,tk-multi-debate -g",
       },
       {
         id: "update",

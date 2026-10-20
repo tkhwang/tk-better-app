@@ -18,7 +18,7 @@ const stages = [
   { n: "[0]", name: "tk-intent", out: "R1 … Rn" },
   { n: "[1]", name: "tk-plan", out: "slices · coverage" },
   { n: "[2]", name: "tk-implement", out: "backend → frontend" },
-  { n: "[3]", name: "tk-verify", out: "tsc · lint · tests" },
+  { n: "[3]", name: "tk-verify", out: "audit · R-ids" },
   { n: "[4]", name: "tk-signoff", out: "go / no-go" },
 ] as const;
 

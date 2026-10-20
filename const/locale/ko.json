@@ -471,7 +471,7 @@
         "tagline": "의도에서 signoff까지, *한 단계씩.*",
         "subtitle": "Claude Code, Codex 등 skill을 지원하는 agent를 위한 skill 모음입니다. 중심은 tk workflow로, 하나의 변경을 의도에서 signoff까지 끌고 가는 문서 기반 단계 워크플로우입니다. agent 하나로 돌고, 원하면 다른 agent가 리뷰와 토론에 들어옵니다.",
         "platforms": "Claude Code · Codex · Grok · skill을 지원하는 모든 agent",
-        "figure_alt": "tk workflow: intent, plan, implement, verify, signoff 다섯 단계가 왼쪽에서 오른쪽으로 진행되고, 단계 사이마다 사람이 승인합니다. 방향은 내가 정하고 AI가 보강하며(intent, plan), 구현은 맡기고(implement), 결과는 함께 검증합니다(verify, signoff). intent는 영구 문서, tasks는 작업 단위 문서, specs는 현재 동작을 기술합니다."
+        "figure_alt": "tk workflow: intent, plan, implement, verify, signoff 다섯 단계가 왼쪽에서 오른쪽으로 진행되고, 단계 사이마다 사람이 승인합니다. 방향은 내가 정하고 AI가 보강하며(intent, plan), 구현은 맡기고(implement), 결과는 함께 검증합니다(verify, signoff). tk-check가 implement와 verify를 위해 repo의 typecheck, lint, format, 테스트, build를 돌립니다. intent는 영구 문서, tasks는 작업 단위 문서, specs는 현재 동작을 기술합니다."
       },
       "features": {
         "eyebrow": "무엇인가",
@@ -493,7 +493,7 @@
             "points": [
               "tk-intent는 코드와 대조해 인터뷰하고 요구사항에 R1, R2, … 번호를 붙입니다",
               "tk-plan은 intent를 세로 슬라이스로 바꿉니다. 슬라이스 안은 Backend → Frontend, R-id 커버리지 매트릭스 포함",
-              "tk-implement는 증거와 함께 체크하고 소단계마다 tk-verify 체크포인트를 돌립니다"
+              "tk-implement는 증거와 함께 체크하고 소단계마다 tk-check 체크포인트를 돌려 실패를 고칩니다"
             ]
           },
           {
@@ -507,7 +507,7 @@
           },
           {
             "title": "agent는 commit하지 않음",
-            "description": "git은 읽기만 합니다. commit, push, branch는 사람이 합니다. tk-verify는 signoff 전에 typecheck, lint(warning도 실패), format 검사, 테스트, plan의 동작 검증을 실행합니다.",
+            "description": "git은 읽기만 합니다. commit, push, branch는 사람이 합니다. tk-check는 체크포인트마다 typecheck, lint(warning도 실패), format 검사, 테스트를 돌리고, 실패는 도구를 끄지 않고 고칩니다. signoff 전에는 tk-verify가 plan의 동작 검증과 함께 다시 돌리고 작업을 감사합니다.",
             "points": [
               "tk-signoff는 모든 R-id를 plan, diff, 검증 결과로 추적해 Go / No-Go를 결정합니다",
               "Go면 intent에 Outcome을 추가하고 모듈 spec을 갱신하고 docs/tasks/를 비웁니다",
@@ -518,7 +518,7 @@
       },
       "reference": {
         "title": "Skill 목록",
-        "subtitle": "허브 하나, 다섯 단계, 인터뷰어 하나, multi-agent 도우미 둘.",
+        "subtitle": "허브 하나, 다섯 단계, 인터뷰어 하나, 점검 하나, multi-agent 도우미 둘.",
         "groups": [
           {
             "title": "Workflow",
@@ -542,11 +542,11 @@
               },
               {
                 "cmd": "tk-implement  [2]",
-                "desc": "todo.md를 순서대로 증거와 함께 구현. 소단계마다(auto), slice마다, 또는 끝까지(all)."
+                "desc": "todo.md를 순서대로 증거와 함께 구현하고 소단계마다 tk-check 체크포인트. 끝까지(all) 또는 slice마다 멈춤."
               },
               {
                 "cmd": "tk-verify  [3]",
-                "desc": "typecheck, lint, format, 테스트, 동작 검증을 R-id별로 기록합니다."
+                "desc": "tk-check(report 모드)와 동작 검증을 돌리고 task, R-id, 테스트를 감사해 R-id별로 기록합니다."
               },
               {
                 "cmd": "tk-signoff  [4]",
@@ -590,6 +590,10 @@
                 "desc": "tk-implement를 slice마다 멈추거나 끝까지 돌립니다."
               },
               {
+                "cmd": "점검 / check",
+                "desc": "현재 변경에 tk-check를 돌리고 실패를 고칩니다."
+              },
+              {
                 "cmd": "리뷰 · 토론",
                 "desc": "이 단계에서 peer agent를 불러옵니다."
               },
@@ -606,6 +610,10 @@
               {
                 "cmd": "tk-grill",
                 "desc": "문서의 미결 결정을 추천안과 함께 한 번에 하나씩 묻고 답을 문서에 반영합니다."
+              },
+              {
+                "cmd": "tk-check",
+                "desc": "변경에 repo의 typecheck, lint, format 검사, 테스트, build를 돌리고 실패를 고칩니다. eslint-disable, @ts-ignore, 테스트 skip으로 통과시키지 않습니다."
               },
               {
                 "cmd": "npx skills update",
@@ -629,7 +637,7 @@
           },
           "workflow": {
             "label": "tk workflow만",
-            "note": "흐름을 이루는 skill 열 개"
+            "note": "흐름을 이루는 skill 열한 개"
           },
           "update": {
             "label": "갱신",
@@ -652,7 +660,7 @@
       "plate": {
         "label": "tk workflow",
         "right": "readme hero",
-        "caption": "다섯 단계가 왼쪽에서 오른쪽으로 진행되고 단계 사이마다 사람이 승인합니다. 방향은 내가 정하고 AI가 보강하며(intent, plan), 구현은 맡기고(implement), 결과는 함께 검증합니다(verify, signoff). intent는 영구 문서, tasks는 작업 단위 문서, specs는 현재 동작을 기술합니다."
+        "caption": "다섯 단계가 왼쪽에서 오른쪽으로 진행되고 단계 사이마다 사람이 승인합니다. 방향은 내가 정하고 AI가 보강하며(intent, plan), 구현은 맡기고(implement), 결과는 함께 검증합니다(verify, signoff). tk-check가 implement와 verify를 위해 repo의 검사를 돌립니다. intent는 영구 문서, tasks는 작업 단위 문서, specs는 현재 동작을 기술합니다."
       }
     }
   }

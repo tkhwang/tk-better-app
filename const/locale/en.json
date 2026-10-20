@@ -471,7 +471,7 @@
         "tagline": "From intent to signoff, *one stage at a time.*",
         "subtitle": "Agent skills for Claude Code, Codex, and other skill-aware agents. The main piece is tk workflow: a staged, document-driven way to take one change from intent to signoff. It runs with one agent, and other agents join for review and debate when you ask.",
         "platforms": "Claude Code · Codex · Grok · any skill-aware agent",
-        "figure_alt": "tk workflow: five stages (intent, plan, implement, verify, signoff) run left to right with a human approval gate between each, in three parts: you lead and AI sharpens (intent, plan), hand off (implement), check together (verify, signoff). Intents are permanent, tasks are per piece of work, specs describe current behaviour."
+        "figure_alt": "tk workflow: five stages (intent, plan, implement, verify, signoff) run left to right with a human approval gate between each, in three parts: you lead and AI sharpens (intent, plan), hand off (implement), check together (verify, signoff). tk-check runs the repo's typecheck, lint, format, tests and build for implement and verify. Intents are permanent, tasks are per piece of work, specs describe current behaviour."
       },
       "features": {
         "eyebrow": "What it is",
@@ -493,7 +493,7 @@
             "points": [
               "tk-intent interviews you against the code and numbers requirements R1, R2, …",
               "tk-plan turns the intent into vertical slices, each Backend → Frontend, with an R-id coverage matrix",
-              "tk-implement checks boxes with evidence and runs a tk-verify checkpoint after every sub-phase"
+              "tk-implement checks boxes with evidence and runs a tk-check checkpoint after every sub-phase, fixing what fails"
             ]
           },
           {
@@ -507,7 +507,7 @@
           },
           {
             "title": "The agent never commits",
-            "description": "It reads git, it does not write it. Commits, pushes, and branches are yours. tk-verify runs typecheck, lint with warnings failing, format check, tests, and the plan's behaviour checks before signoff.",
+            "description": "It reads git, it does not write it. Commits, pushes, and branches are yours. tk-check runs typecheck, lint with warnings failing, format check, and tests at every checkpoint, and fixes what fails without silencing the tools. Before signoff, tk-verify runs them again with the plan's behaviour checks and audits the work.",
             "points": [
               "tk-signoff traces every R-id through plan, diff, and verification, then decides Go or No-Go",
               "On Go it appends the intent Outcome, updates module specs, and empties docs/tasks/",
@@ -518,7 +518,7 @@
       },
       "reference": {
         "title": "Skills",
-        "subtitle": "One hub, five stages, one interviewer, and two multi-agent helpers.",
+        "subtitle": "One hub, five stages, one interviewer, one checker, and two multi-agent helpers.",
         "groups": [
           {
             "title": "Workflow",
@@ -542,11 +542,11 @@
               },
               {
                 "cmd": "tk-implement  [2]",
-                "desc": "Works todo.md in order with evidence; stops per sub-phase (auto), per slice, or at the end (all)."
+                "desc": "Works todo.md in order with evidence and a tk-check checkpoint at every sub-phase; runs to the end (all) or stops per slice."
               },
               {
                 "cmd": "tk-verify  [3]",
-                "desc": "Typecheck, lint, format, tests, and behaviour checks, recorded per R-id."
+                "desc": "tk-check in report mode plus behaviour checks, then an audit of tasks, R-ids, and tests, recorded per R-id."
               },
               {
                 "cmd": "tk-signoff  [4]",
@@ -590,6 +590,10 @@
                 "desc": "Let tk-implement stop per slice, or run to the end."
               },
               {
+                "cmd": "check",
+                "desc": "Run tk-check on the current change and fix what fails."
+              },
+              {
                 "cmd": "review · debate",
                 "desc": "Bring in the peer agents at this gate."
               },
@@ -606,6 +610,10 @@
               {
                 "cmd": "tk-grill",
                 "desc": "Asks the unresolved decisions in a document one at a time, with a recommendation, and patches the answers in."
+              },
+              {
+                "cmd": "tk-check",
+                "desc": "Runs the repo's typecheck, lint, format check, tests, and build on the change, and fixes what fails, never with eslint-disable, @ts-ignore, or skipped tests."
               },
               {
                 "cmd": "npx skills update",
@@ -629,7 +637,7 @@
           },
           "workflow": {
             "label": "tk workflow only",
-            "note": "The ten skills that make up the flow"
+            "note": "The eleven skills that make up the flow"
           },
           "update": {
             "label": "Update",
@@ -652,7 +660,7 @@
       "plate": {
         "label": "tk workflow",
         "right": "readme hero",
-        "caption": "Five stages run left to right with a human approval gate between each, in three parts: you lead and AI sharpens (intent, plan), hand off (implement), check together (verify, signoff). Intents are permanent, tasks are per piece of work, specs describe current behaviour."
+        "caption": "Five stages run left to right with a human approval gate between each, in three parts: you lead and AI sharpens (intent, plan), hand off (implement), check together (verify, signoff). tk-check runs the repo's checks for implement and verify. Intents are permanent, tasks are per piece of work, specs describe current behaviour."
       }
     }
   }
