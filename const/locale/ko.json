@@ -692,7 +692,7 @@
             "description": "layouts/main-dev.json은 Herdr의 main layout 클론으로, 각 block이 이 repo의 mod를 가리킵니다. ./sync.sh apply는 layout, settings, keys, mod를 ~/.config/herdr-app에 복사하고, ./sync.sh backup은 앱에서 바꾼 것을 다시 repo로 복사합니다.",
             "points": [
               "apply가 바꾸는 모든 파일은 먼저 ~/.config/herdr-app.bak-<time>-<pid>/로 옮깁니다",
-              "복사본은 앱 폴더 옆에 staging하고 herdr-app check를 통과한 뒤 들어갑니다. 하나라도 거부되면 아무것도 설치하지 않습니다",
+              "복사본은 앱 폴더 옆에 staging합니다. herdr-app CLI가 설치되어 있으면 바뀐 mod마다 herdr-app check를 통과한 뒤 들어가고, 하나라도 거부되면 아무것도 설치하지 않습니다",
               "sync.sh에 적힌 mod와 파일만 다룹니다. 앱 폴더의 다른 mod는 그대로 둡니다"
             ]
           },
@@ -765,7 +765,7 @@
               },
               {
                 "cmd": "herdr-app check <mod>",
-                "desc": "apply가 바뀐 mod마다 들어가기 전에 실행하는 검사."
+                "desc": "herdr-app CLI가 설치되어 있을 때 apply가 바뀐 mod마다 들어가기 전에 실행하는 검사. CLI가 없으면 검사 없이 설치됩니다."
               },
               {
                 "cmd": "HERDR_APP_HOME=<dir> ./sync.sh apply",

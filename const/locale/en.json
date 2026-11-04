@@ -692,7 +692,7 @@
             "description": "layouts/main-dev.json is a clone of Herdr's main layout whose blocks point at the mods here. ./sync.sh apply copies the layout, settings, keys, and mods into ~/.config/herdr-app; ./sync.sh backup copies them back after you change something in the app.",
             "points": [
               "Every file apply replaces is moved to ~/.config/herdr-app.bak-<time>-<pid>/ first",
-              "Copies are staged beside the app folder and checked with herdr-app check before any goes in; one rejected mod installs nothing",
+              "Copies are staged beside the app folder; with the herdr-app CLI installed, every changed mod passes herdr-app check before any goes in, and one rejected mod installs nothing",
               "Only the mods and files named in sync.sh are touched; other mods in the app folder stay as they are"
             ]
           },
@@ -765,7 +765,7 @@
               },
               {
                 "cmd": "herdr-app check <mod>",
-                "desc": "What apply runs on every changed mod before it goes in."
+                "desc": "What apply runs on every changed mod before it goes in, when the herdr-app CLI is installed; without it, mods install unchecked."
               },
               {
                 "cmd": "HERDR_APP_HOME=<dir> ./sync.sh apply",
