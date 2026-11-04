@@ -9,7 +9,7 @@
   "hero": {
     "eyebrow": "human + AI workflow",
     "title": "A better workflow for collaborating *with AI agents*.",
-    "subtitle": "Intent and decisions stay with you; agents do the work in between, with a clear handoff at every step. I build this workflow in the open as three pieces you can use together or alone: isolated task spaces, intent in your own words, and staged runs with a human gate at each stage.",
+    "subtitle": "Intent and decisions stay with you; agents do the work in between, with a clear handoff at every step. I build this workflow in the open as four pieces you can use together or alone: isolated task spaces, intent in your own words, staged runs with a human gate at each stage, and a window that shows what every agent is doing.",
     "meta": "Open source · macOS first · built in the open on",
     "meta_link": "github.com/tkhwang →",
     "primary": "Explore the workflow"
@@ -53,6 +53,16 @@
         "primary": "Open skills",
         "secondary": "GitHub",
         "role": "Staged runs & review"
+      },
+      "herdr-mods": {
+        "category": "Herdr layout + mods",
+        "status": "Available now",
+        "platforms": "Herdr app · macOS · Apache-2.0 / MIT",
+        "title": "tkhwang-herdr-mods",
+        "description": "My Herdr window, kept as files: a layout, Herdr's own mods with small marked patches, and third-party mods with their licenses. One script applies it and backs it up.",
+        "primary": "Open herdr-mods",
+        "secondary": "GitHub",
+        "role": "Agent window"
       }
     },
     "open": "open",
@@ -661,6 +671,237 @@
         "label": "tk workflow",
         "right": "readme hero",
         "caption": "Five stages run left to right with a human approval gate between each, in three parts: you lead and AI sharpens (intent, plan), hand off (implement), check together (verify, signoff). tk-check runs the repo's checks for implement and verify. Intents are permanent, tasks are per piece of work, specs describe current behaviour."
+      }
+    },
+    "herdr-mods": {
+      "hero": {
+        "badge": "Open source · Herdr layout + mods",
+        "name": "tkhwang-herdr-mods",
+        "tagline": "One window for every agent. *Kept as files.*",
+        "subtitle": "The Herdr app is where the agents run. These mods make its window show what matters: branch and PR status per space, agents grouped under their space with status glows, yellow agent tabs, a commit graph, and a Changes panel with an AI commit message and a Push button. The layout and every patched mod live in one repo; one script applies them and backs them up.",
+        "platforms": "Herdr app · macOS · Apache-2.0 · third-party mods under their own licenses",
+        "figure_alt": "A schematic of the Herdr window that layouts/main-dev.json builds: better-spaces and agents-dev in the sidebar, tabs-dev as the tab bar, git-graph, better-changes and files-dev stacked in the side panel, and a terminal running ./sync.sh apply in the center."
+      },
+      "features": {
+        "eyebrow": "What it changes",
+        "title": "One layout. Patched mods. One sync script.",
+        "subtitle": "Herdr keeps its layout and mods in ~/.config/herdr-app. This repo holds copies of the ones I changed, each patch marked with a comment, and sync.sh moves them in and out.",
+        "items": [
+          {
+            "title": "The window, as files",
+            "description": "layouts/main-dev.json is a clone of Herdr's main layout whose blocks point at the mods here. ./sync.sh apply copies the layout, settings, keys, and mods into ~/.config/herdr-app; ./sync.sh backup copies them back after you change something in the app.",
+            "points": [
+              "Every file apply replaces is moved to ~/.config/herdr-app.bak-<time>-<pid>/ first",
+              "Copies are staged beside the app folder; with the herdr-app CLI installed, every changed mod passes herdr-app check before any goes in, and one rejected mod installs nothing",
+              "Only the mods and files named in sync.sh are touched; other mods in the app folder stay as they are"
+            ]
+          },
+          {
+            "title": "Spaces and agents, with status you can see",
+            "description": "better-spaces shows branch and PR status per space, nested worktrees, and dev server ports. agents-dev groups agents under their space. Both glow green when an agent is done and orange when it is blocked, and breathe while it works; the current space is tinted cyan.",
+            "points": [
+              "better-spaces is munza/herdr-mods with the status glows of filipores/herdr-spaces-status merged in",
+              "agents-dev steps each agent row in under its space header, so the space reads as the heading",
+              "A space in a workbranch wrapper folder, not a repo itself, shows no branch or PR"
+            ]
+          },
+          {
+            "title": "A tab bar that points at the agents",
+            "description": "tabs-dev tints any tab with an agent yellow and keeps every tab at least 180px wide. Git and Markdown buttons open git-graph in the side panel and a Markdown preview in the center, a 3 | 2 column switch zooms the agent pane, and the + menu gets Open with Zed.",
+            "points": [
+              "2 columns folds the shell column away and keeps the file panel; 3 columns unzooms only what it zoomed",
+              "The Markdown button renders the file Files previews or Changes picked, one viewer tab per space",
+              "herdr-open-with-zed opens the focused terminal's folder in zed, else zeditor, else open -a Zed"
+            ]
+          },
+          {
+            "title": "Changes, with an AI message and a Push button",
+            "description": "better-changes groups staged and unstaged files, shows inline or side-by-side diffs, and in a folder of repos adds a repo picker. A sparkle Message button writes the commit message from the staged diff and the last 8 messages; Push sends HEAD to its upstream and shows how far ahead it is.",
+            "points": [
+              "Message runs claude -p with no tools and the sonnet model, so the staged diff goes to Anthropic through your Claude Code login; change AI_COMMAND for codex or grok",
+              "Push never forces; a rejected push shows git's reason as a note, and the button is off on a detached HEAD or without a remote",
+              "The buttons keep their look while the panel rereads git, and a press during that runs as soon as it ends"
+            ]
+          },
+          {
+            "title": "A commit graph and a Markdown preview",
+            "description": "git-graph draws the focused repo's history after VS Code's Git Graph: colored lanes, branch and tag labels, an uncommitted row, details and diffs, and a right-click menu that asks before it acts. In a folder of repos it shows a Manygit list instead. markdown-browser renders the picked Markdown file in a center tab.",
+            "points": [
+              "Six review fixes are patched in: non-ASCII file names, untracked diffs, a refresh after git add, prompts off for fetch and pull, dialogs that stay open, no double start",
+              "git reaches the network only on Fetch, Pull, Push, or deleting a remote branch; the mod asks GitHub's releases API once a day, which Stop checking turns off",
+              "Herdr stops a command after 30 s, so a slow fetch or push can fail there"
+            ]
+          },
+          {
+            "title": "Patches you can find, licenses you can read",
+            "description": "Every change to an upstream mod is marked with a comment, so grep -rn \"status glow\" mods finds all of it. Clones of Herdr's own mods get no updates: after Herdr changes one, clone it again and re-apply the marked patch. Each third-party mod keeps its license file; the two without one are downloaded by apply at pinned commits.",
+            "points": [
+              "18 markers, among them dev ports, status glow, current highlight, tab kind, view mode, ai message, push button, and review fixes",
+              "markdown.js is one file kept in tabs-dev, files-dev, and better-changes: change all three together",
+              "copy-on-select and the Catppuccin themes are fetched at pinned commits, the themes checked by sha256"
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "title": "Mods and commands",
+        "subtitle": "What each command does, what each mod changes, and what reaches the network.",
+        "groups": [
+          {
+            "title": "Sync",
+            "description": "Two commands. Copies, not symlinks.",
+            "items": [
+              {
+                "cmd": "./sync.sh apply",
+                "desc": "Copy the layout, settings, keys, and mods into ~/.config/herdr-app. Replaced files go to a .bak folder beside it."
+              },
+              {
+                "cmd": "./sync.sh backup",
+                "desc": "Copy the live mods and files back into the repo after changing a mod or the layout in the app."
+              },
+              {
+                "cmd": "herdr-app do layout.switch '{\"name\":\"main-dev\"}'",
+                "desc": "Pick the layout from a shell; ⌘⇧L does the same in the app."
+              },
+              {
+                "cmd": "herdr-app check <mod>",
+                "desc": "What apply runs on every changed mod before it goes in, when the herdr-app CLI is installed; without it, mods install unchecked."
+              },
+              {
+                "cmd": "HERDR_APP_HOME=<dir> ./sync.sh apply",
+                "desc": "Point at another app folder than ~/.config/herdr-app."
+              }
+            ],
+            "note": "Files are copied, not linked: the app rewrites the layout file as the window is used, so a link would keep the repo dirty."
+          },
+          {
+            "title": "Mods in the layout",
+            "description": "Eight mods fill the blocks of layouts/main-dev.json.",
+            "items": [
+              {
+                "cmd": "better-spaces",
+                "desc": "Spaces list: branch and PR status, nested worktrees, dev ports, status glows, a cyan current space."
+              },
+              {
+                "cmd": "agents-dev",
+                "desc": "Agents list: grouped under their space, nested rows, the same glows and highlight."
+              },
+              {
+                "cmd": "tabs-dev",
+                "desc": "Tab bar: yellow agent tabs, 180px minimum width, Git and Markdown buttons, a 3 | 2 column switch."
+              },
+              {
+                "cmd": "herdr-open-with-zed",
+                "desc": "+ menu: Open with Zed for the focused terminal's folder."
+              },
+              {
+                "cmd": "files-dev",
+                "desc": "Side panel, Files: the previewed file feeds the Markdown button."
+              },
+              {
+                "cmd": "better-changes",
+                "desc": "Side panel, Changes: staged/unstaged groups, diffs, a repo picker, AI commit messages, Push."
+              },
+              {
+                "cmd": "git-graph",
+                "desc": "Side panel, Git: a commit graph, or a Manygit list in a folder of repos."
+              },
+              {
+                "cmd": "markdown-browser",
+                "desc": "Center tab: a native Markdown preview of the picked file; ⌘⇧O opens it in the default app."
+              }
+            ]
+          },
+          {
+            "title": "What runs, and what reaches the network",
+            "description": "Read before you apply.",
+            "items": [
+              {
+                "cmd": "better-spaces",
+                "desc": "Runs git, hc, and gh; PR status uses your local gh login."
+              },
+              {
+                "cmd": "better-changes · Message",
+                "desc": "Runs claude -p; the staged diff goes to Anthropic through your Claude Code login."
+              },
+              {
+                "cmd": "better-changes · Push",
+                "desc": "Runs git push with your git credentials. Never forces."
+              },
+              {
+                "cmd": "git-graph",
+                "desc": "Network only on Fetch, Pull, Push, or deleting a remote branch, plus GitHub's releases API once a day."
+              },
+              {
+                "cmd": "markdown-browser",
+                "desc": "No network. Default app opens through sh, realpath, and open."
+              }
+            ],
+            "note": "Herdr stops a command after 30 s, so a slow fetch or push in git-graph can fail."
+          },
+          {
+            "title": "Fallbacks, downloads, and updating",
+            "description": "What stays installed, what apply fetches, and how to take an upstream update.",
+            "items": [
+              {
+                "cmd": "spaces-dev · changes-dev",
+                "desc": "Clones of Herdr's own mods with the dev ports and wrapper repos patches. Put either back in the layout to switch."
+              },
+              {
+                "cmd": "copy-on-select",
+                "desc": "jspoynor/herdr-copy-on-select, fetched by apply at a pinned commit: copies a terminal selection on mouse release."
+              },
+              {
+                "cmd": "Catppuccin themes",
+                "desc": "Mocha in dark mode, Latte in light mode, a #60b9fc accent. Fetched at a pinned commit and checked by sha256."
+              },
+              {
+                "cmd": "grep -rn \"status glow\" mods",
+                "desc": "Find every line of one patch. Each marker names a patch."
+              },
+              {
+                "cmd": "mod.clone",
+                "desc": "The -dev mods are clones of Herdr's 0.1.11 mods (files-dev 0.1.12) and get no updates: clone again, re-apply the marked patch."
+              }
+            ],
+            "note": "markdown.js is one file kept in tabs-dev, files-dev, and better-changes: change all three together."
+          }
+        ]
+      },
+      "install": {
+        "title": "Install",
+        "subtitle": "Clone and apply, restart Herdr once so it sees the new mod folders, then pick the main-dev layout.",
+        "tabs": {
+          "apply": {
+            "label": "Apply",
+            "note": "Clone, then copy into ~/.config/herdr-app · replaced files go to a .bak folder"
+          },
+          "layout": {
+            "label": "Pick the layout",
+            "note": "After the first apply and a restart · ⌘⇧L does the same"
+          },
+          "backup": {
+            "label": "Back up",
+            "note": "After changing a mod or the layout in the app · app folder → repo"
+          }
+        }
+      },
+      "cta": {
+        "title": "Keep the window in a repo",
+        "description": "Clone it, run apply, and your Herdr window shows branch, PR, and agent status at a glance. Change a mod in the app, run backup, and commit.",
+        "primary": "Get started",
+        "secondary": "View on GitHub"
+      },
+      "facts": [
+        "github stars",
+        "mods in the repo",
+        "upstreams · herdr + 7 repos",
+        "sync commands · apply · backup"
+      ],
+      "plate": {
+        "label": "the window and its mods",
+        "right": "readme hero",
+        "caption": "The Herdr window that layouts/main-dev.json builds, in Catppuccin Mocha. Each block carries the name of the mod that fills it: better-spaces and agents-dev in the sidebar, tabs-dev as the tab bar, git-graph, better-changes, and files-dev in the side panel. The center pane runs ./sync.sh apply."
       }
     }
   }
