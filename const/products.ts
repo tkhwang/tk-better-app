@@ -1,4 +1,4 @@
-export type ProductSlug = "workbranch" | "tasteful-intent" | "skills";
+export type ProductSlug = "workbranch" | "tasteful-intent" | "skills" | "herdr-mods";
 
 export type LocalizedAsset = {
   en: string;
@@ -154,6 +154,45 @@ export const PRODUCTS: Record<ProductSlug, ProductConfig> = {
       },
     ],
   },
+  "herdr-mods": {
+    slug: "herdr-mods",
+    path: "/product/herdr-mods",
+    repo: "tkhwang/tkhwang-herdr-mods",
+    repoUrl: `${GITHUB}/tkhwang-herdr-mods`,
+    releasesUrl: `${GITHUB}/tkhwang-herdr-mods`,
+    heroCommand:
+      "git clone https://github.com/tkhwang/tkhwang-herdr-mods && cd tkhwang-herdr-mods && ./sync.sh apply",
+    heroFigure: {
+      en: "/products/herdr-mods/hero-en.svg",
+      ko: "/products/herdr-mods/hero-ko.svg",
+      width: 1200,
+      height: 720,
+    },
+    facts: [
+      { kind: "stars" },
+      { kind: "static", value: "10" },
+      { kind: "static", value: "8" },
+      { kind: "static", value: "2" },
+    ],
+    install: [
+      {
+        id: "apply",
+        kind: "command",
+        command:
+          "git clone https://github.com/tkhwang/tkhwang-herdr-mods && cd tkhwang-herdr-mods && ./sync.sh apply",
+      },
+      {
+        id: "layout",
+        kind: "command",
+        command: `herdr-app do layout.switch '{"name":"main-dev"}'`,
+      },
+      {
+        id: "backup",
+        kind: "command",
+        command: "./sync.sh backup",
+      },
+    ],
+  },
 };
 
 /** Display order on the home page. */
@@ -161,4 +200,5 @@ export const PRODUCT_ORDER: ProductSlug[] = [
   "workbranch",
   "tasteful-intent",
   "skills",
+  "herdr-mods",
 ];

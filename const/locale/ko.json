@@ -9,7 +9,7 @@
   "hero": {
     "eyebrow": "사람과 AI의 workflow",
     "title": "AI 에이전트와 *효과적으로* 협업하는 workflow.",
-    "subtitle": "의도와 결정은 사람이, 그 사이의 작업은 agent가 맡고, 단계마다 넘겨받는 지점을 분명히 합니다. 이 workflow를 세 가지 오픈소스로 공개해 만들고 있습니다: 격리된 task 공간, 나의 언어로 쓰는 의도, 단계마다 사람이 승인하는 실행. 함께 써도, 따로 써도 됩니다.",
+    "subtitle": "의도와 결정은 사람이, 그 사이의 작업은 agent가 맡고, 단계마다 넘겨받는 지점을 분명히 합니다. 이 workflow를 네 가지 오픈소스로 공개해 만들고 있습니다: 격리된 task 공간, 나의 언어로 쓰는 의도, 단계마다 사람이 승인하는 실행, 그리고 모든 agent의 상태가 보이는 창. 함께 써도, 따로 써도 됩니다.",
     "meta": "오픈소스 · macOS 우선 · 공개 저장소에서 개발",
     "meta_link": "github.com/tkhwang →",
     "primary": "workflow 살펴보기"
@@ -22,7 +22,7 @@
   "products": {
     "eyebrow": "products",
     "title": "방향은 내가, 보강은 AI가.\n맡기고, 함께 검증합니다.",
-    "subtitle": "계획은 나의 의도와 취향에서 시작하고, agent에게 맡긴 일은 단계마다 사람에게 돌아옵니다. 세 도구는 이 흐름의 서로 다른 지점을 받치며, 각각 따로 써도 됩니다.",
+    "subtitle": "계획은 나의 의도와 취향에서 시작하고, agent에게 맡긴 일은 단계마다 사람에게 돌아옵니다. 네 도구는 이 흐름의 서로 다른 지점을 받치며, 각각 따로 써도 됩니다.",
     "items": {
       "workbranch": {
         "category": "CLI + macOS Companion",
@@ -53,6 +53,16 @@
         "primary": "skills 열기",
         "secondary": "GitHub",
         "role": "단계별 실행과 검토"
+      },
+      "herdr-mods": {
+        "category": "Herdr layout + mods",
+        "status": "사용 가능",
+        "platforms": "Herdr app · macOS · Apache-2.0 / MIT",
+        "title": "tkhwang-herdr-mods",
+        "description": "내 Herdr 창을 파일로 보관합니다. layout 하나, 작은 패치를 표시해 둔 Herdr 자체 mod의 클론, 라이선스를 함께 둔 third-party mod. 스크립트 하나로 적용하고 백업합니다.",
+        "primary": "herdr-mods 열기",
+        "secondary": "GitHub",
+        "role": "agent 창"
       }
     },
     "open": "열기",
@@ -661,6 +671,237 @@
         "label": "tk workflow",
         "right": "readme hero",
         "caption": "다섯 단계가 왼쪽에서 오른쪽으로 진행되고 단계 사이마다 사람이 승인합니다. 방향은 내가 정하고 AI가 보강하며(intent, plan), 구현은 맡기고(implement), 결과는 함께 검증합니다(verify, signoff). tk-check가 implement와 verify를 위해 repo의 검사를 돌립니다. intent는 영구 문서, tasks는 작업 단위 문서, specs는 현재 동작을 기술합니다."
+      }
+    },
+    "herdr-mods": {
+      "hero": {
+        "badge": "오픈소스 · Herdr layout + mods",
+        "name": "tkhwang-herdr-mods",
+        "tagline": "모든 agent가 보이는 창 하나. *파일로 보관합니다.*",
+        "subtitle": "Herdr app은 agent가 실행되는 곳입니다. 이 mod들은 그 창에 중요한 것이 보이게 합니다: space마다 branch와 PR 상태, space 아래 묶인 agent와 상태 glow, 노란 agent tab, commit graph, AI commit message와 Push 버튼이 있는 Changes panel. layout과 패치한 mod는 repo 하나에 있고, 스크립트 하나로 적용하고 백업합니다.",
+        "platforms": "Herdr app · macOS · Apache-2.0 · third-party mod는 각자의 라이선스",
+        "figure_alt": "layouts/main-dev.json이 만드는 Herdr 창의 구성도: sidebar의 better-spaces와 agents-dev, tab bar의 tabs-dev, side panel에 쌓인 git-graph, better-changes, files-dev, 그리고 가운데에서 ./sync.sh apply를 실행하는 terminal."
+      },
+      "features": {
+        "eyebrow": "무엇을 바꾸나",
+        "title": "layout 하나. 패치한 mod. sync 스크립트 하나.",
+        "subtitle": "Herdr는 layout과 mod를 ~/.config/herdr-app에 둡니다. 이 repo는 그중 내가 바꾼 것의 복사본을 담고, 패치마다 주석으로 표시하고, sync.sh가 넣고 꺼냅니다.",
+        "items": [
+          {
+            "title": "창을 파일로",
+            "description": "layouts/main-dev.json은 Herdr의 main layout 클론으로, 각 block이 이 repo의 mod를 가리킵니다. ./sync.sh apply는 layout, settings, keys, mod를 ~/.config/herdr-app에 복사하고, ./sync.sh backup은 앱에서 바꾼 것을 다시 repo로 복사합니다.",
+            "points": [
+              "apply가 바꾸는 모든 파일은 먼저 ~/.config/herdr-app.bak-<time>-<pid>/로 옮깁니다",
+              "복사본은 앱 폴더 옆에 staging하고 herdr-app check를 통과한 뒤 들어갑니다. 하나라도 거부되면 아무것도 설치하지 않습니다",
+              "sync.sh에 적힌 mod와 파일만 다룹니다. 앱 폴더의 다른 mod는 그대로 둡니다"
+            ]
+          },
+          {
+            "title": "space와 agent, 상태가 보이게",
+            "description": "better-spaces는 space마다 branch와 PR 상태, 중첩된 worktree, dev server port를 보여줍니다. agents-dev는 agent를 space 아래로 묶습니다. 둘 다 agent가 끝나면 초록, 막히면 주황으로 빛나고, 작업 중에는 숨 쉬듯 깜빡입니다. 현재 space는 cyan으로 표시합니다.",
+            "points": [
+              "better-spaces는 munza/herdr-mods에 filipores/herdr-spaces-status의 상태 glow를 합친 것입니다",
+              "agents-dev는 agent 행을 space header 아래로 들여 써서 space가 제목으로 읽히게 합니다",
+              "repo가 아닌 workbranch wrapper 폴더의 space는 branch와 PR을 표시하지 않습니다"
+            ]
+          },
+          {
+            "title": "agent를 가리키는 tab bar",
+            "description": "tabs-dev는 agent가 있는 tab을 노랗게 칠하고 모든 tab을 최소 180px 너비로 유지합니다. Git과 Markdown 버튼은 git-graph를 side panel에, Markdown preview를 가운데에 열고, 3 | 2 column 스위치는 agent pane을 확대하고, + 메뉴에는 Open with Zed가 들어갑니다.",
+            "points": [
+              "2 column은 shell column을 접고 file panel은 남깁니다. 3 column은 자기가 확대한 것만 되돌립니다",
+              "Markdown 버튼은 Files가 미리 보는 파일이나 Changes에서 고른 파일을 space마다 viewer tab 하나로 렌더링합니다",
+              "herdr-open-with-zed는 포커스된 terminal의 폴더를 zed, 없으면 zeditor, 없으면 open -a Zed로 엽니다"
+            ]
+          },
+          {
+            "title": "Changes에 AI message와 Push 버튼",
+            "description": "better-changes는 staged와 unstaged 파일을 묶고, inline 또는 side-by-side diff를 보여주고, repo가 여러 개인 폴더에서는 repo picker를 더합니다. 반짝이 Message 버튼은 staged diff와 최근 commit message 8개로 commit message를 쓰고, Push는 HEAD를 upstream으로 보내며 몇 commit 앞서 있는지 보여줍니다.",
+            "points": [
+              "Message는 도구 없이 sonnet model로 claude -p를 실행하므로 staged diff가 Claude Code 로그인을 통해 Anthropic으로 갑니다. codex나 grok은 AI_COMMAND를 바꾸세요",
+              "Push는 force하지 않습니다. 거부된 push는 git의 이유를 메모로 보여주고, detached HEAD나 remote가 없으면 버튼이 꺼집니다",
+              "panel이 git을 다시 읽는 동안에도 버튼은 모양을 유지하고, 그때 누르면 끝나는 즉시 실행됩니다"
+            ]
+          },
+          {
+            "title": "commit graph와 Markdown preview",
+            "description": "git-graph는 포커스된 repo의 이력을 VS Code의 Git Graph처럼 그립니다: 색이 있는 lane, branch와 tag label, uncommitted 행, 상세와 diff, 그리고 실행 전에 묻는 우클릭 메뉴. repo가 여러 개인 폴더에서는 Manygit 목록을 대신 보여줍니다. markdown-browser는 고른 Markdown 파일을 가운데 tab에 렌더링합니다.",
+            "points": [
+              "리뷰에서 나온 수정 여섯 개를 패치했습니다: non-ASCII 파일명, untracked diff, git add 후 갱신, fetch·pull의 prompt 끄기, 열린 채 유지되는 dialog, 중복 시작 방지",
+              "git은 Fetch, Pull, Push, remote branch 삭제에서만 네트워크를 쓰고, mod는 하루 한 번 GitHub releases API를 확인합니다. Stop checking으로 끌 수 있습니다",
+              "Herdr는 명령을 30초 뒤 멈추므로 느린 fetch나 push는 거기서 실패할 수 있습니다"
+            ]
+          },
+          {
+            "title": "찾을 수 있는 패치, 읽을 수 있는 라이선스",
+            "description": "upstream mod에 가한 모든 변경은 주석으로 표시해서 grep -rn \"status glow\" mods로 전부 찾습니다. Herdr 자체 mod의 클론은 업데이트를 받지 않습니다. Herdr가 mod를 바꾸면 다시 클론하고 표시된 패치를 다시 적용합니다. third-party mod는 각자 라이선스 파일을 함께 두고, 라이선스가 없는 둘은 apply가 고정된 commit에서 내려받습니다.",
+            "points": [
+              "마커 18개: dev ports, status glow, current highlight, tab kind, view mode, ai message, push button, review fixes 등",
+              "markdown.js는 tabs-dev, files-dev, better-changes에 같은 파일 하나로 있습니다. 셋을 함께 바꿉니다",
+              "copy-on-select와 Catppuccin theme은 고정된 commit에서 받고, theme은 sha256으로 확인합니다"
+            ]
+          }
+        ]
+      },
+      "reference": {
+        "title": "mod와 명령어",
+        "subtitle": "각 명령이 하는 일, 각 mod가 바꾸는 것, 그리고 무엇이 네트워크에 닿는지.",
+        "groups": [
+          {
+            "title": "Sync",
+            "description": "명령 두 개. symlink가 아닌 복사.",
+            "items": [
+              {
+                "cmd": "./sync.sh apply",
+                "desc": "layout, settings, keys, mod를 ~/.config/herdr-app에 복사합니다. 바뀌는 파일은 옆의 .bak 폴더로 갑니다."
+              },
+              {
+                "cmd": "./sync.sh backup",
+                "desc": "앱에서 mod나 layout을 바꾼 뒤 live mod와 파일을 repo로 다시 복사합니다."
+              },
+              {
+                "cmd": "herdr-app do layout.switch '{\"name\":\"main-dev\"}'",
+                "desc": "shell에서 layout을 고릅니다. 앱에서는 ⌘⇧L이 같은 일을 합니다."
+              },
+              {
+                "cmd": "herdr-app check <mod>",
+                "desc": "apply가 바뀐 mod마다 들어가기 전에 실행하는 검사."
+              },
+              {
+                "cmd": "HERDR_APP_HOME=<dir> ./sync.sh apply",
+                "desc": "~/.config/herdr-app 대신 다른 앱 폴더를 가리킵니다."
+              }
+            ],
+            "note": "파일은 link가 아니라 복사입니다. 앱이 창을 쓰는 동안 layout 파일을 다시 쓰므로 link면 repo가 계속 dirty 상태가 됩니다."
+          },
+          {
+            "title": "layout 안의 mod",
+            "description": "mod 여덟 개가 layouts/main-dev.json의 block을 채웁니다.",
+            "items": [
+              {
+                "cmd": "better-spaces",
+                "desc": "Spaces 목록: branch와 PR 상태, 중첩 worktree, dev port, 상태 glow, cyan 현재 space."
+              },
+              {
+                "cmd": "agents-dev",
+                "desc": "Agents 목록: space 아래로 묶고, 들여 쓴 행, 같은 glow와 강조."
+              },
+              {
+                "cmd": "tabs-dev",
+                "desc": "Tab bar: 노란 agent tab, 최소 180px 너비, Git과 Markdown 버튼, 3 | 2 column 스위치."
+              },
+              {
+                "cmd": "herdr-open-with-zed",
+                "desc": "+ 메뉴: 포커스된 terminal 폴더를 Open with Zed."
+              },
+              {
+                "cmd": "files-dev",
+                "desc": "Side panel의 Files: 미리 보는 파일을 Markdown 버튼에 넘깁니다."
+              },
+              {
+                "cmd": "better-changes",
+                "desc": "Side panel의 Changes: staged/unstaged 묶음, diff, repo picker, AI commit message, Push."
+              },
+              {
+                "cmd": "git-graph",
+                "desc": "Side panel의 Git: commit graph, repo가 여러 개인 폴더에서는 Manygit 목록."
+              },
+              {
+                "cmd": "markdown-browser",
+                "desc": "가운데 tab: 고른 파일의 native Markdown preview. ⌘⇧O는 기본 앱으로 엽니다."
+              }
+            ]
+          },
+          {
+            "title": "무엇이 실행되고, 무엇이 네트워크에 닿는가",
+            "description": "apply 전에 읽어 두세요.",
+            "items": [
+              {
+                "cmd": "better-spaces",
+                "desc": "git, hc, gh를 실행합니다. PR 상태는 로컬 gh 로그인을 씁니다."
+              },
+              {
+                "cmd": "better-changes · Message",
+                "desc": "claude -p를 실행합니다. staged diff가 Claude Code 로그인을 통해 Anthropic으로 갑니다."
+              },
+              {
+                "cmd": "better-changes · Push",
+                "desc": "내 git credential로 git push를 실행합니다. force는 하지 않습니다."
+              },
+              {
+                "cmd": "git-graph",
+                "desc": "Fetch, Pull, Push, remote branch 삭제에서만 네트워크를 쓰고, GitHub releases API를 하루 한 번 확인합니다."
+              },
+              {
+                "cmd": "markdown-browser",
+                "desc": "네트워크 없음. Default app은 sh, realpath, open으로 엽니다."
+              }
+            ],
+            "note": "Herdr는 명령을 30초 뒤 멈추므로 git-graph의 느린 fetch나 push는 실패할 수 있습니다."
+          },
+          {
+            "title": "fallback, 다운로드, 업데이트",
+            "description": "무엇이 설치된 채 남고, apply가 무엇을 받고, upstream 업데이트는 어떻게 받는지.",
+            "items": [
+              {
+                "cmd": "spaces-dev · changes-dev",
+                "desc": "dev ports와 wrapper repos 패치가 든 Herdr 자체 mod의 클론. layout에 다시 넣으면 전환됩니다."
+              },
+              {
+                "cmd": "copy-on-select",
+                "desc": "jspoynor/herdr-copy-on-select. apply가 고정된 commit에서 받습니다. terminal 선택을 마우스를 놓을 때 복사합니다."
+              },
+              {
+                "cmd": "Catppuccin themes",
+                "desc": "dark mode는 Mocha, light mode는 Latte, accent는 #60b9fc. 고정된 commit에서 받고 sha256으로 확인합니다."
+              },
+              {
+                "cmd": "grep -rn \"status glow\" mods",
+                "desc": "패치 하나의 모든 줄을 찾습니다. 마커 하나가 패치 하나입니다."
+              },
+              {
+                "cmd": "mod.clone",
+                "desc": "-dev mod는 Herdr 0.1.11 mod의 클론(files-dev는 0.1.12)이며 업데이트를 받지 않습니다. 다시 클론하고 표시된 패치를 다시 적용합니다."
+              }
+            ],
+            "note": "markdown.js는 tabs-dev, files-dev, better-changes에 같은 파일 하나로 있습니다. 셋을 함께 바꿉니다."
+          }
+        ]
+      },
+      "install": {
+        "title": "설치",
+        "subtitle": "clone하고 apply한 뒤, Herdr가 새 mod 폴더를 보도록 한 번 재시작하고 main-dev layout을 고릅니다.",
+        "tabs": {
+          "apply": {
+            "label": "Apply",
+            "note": "clone 후 ~/.config/herdr-app에 복사 · 바뀌는 파일은 .bak 폴더로"
+          },
+          "layout": {
+            "label": "layout 고르기",
+            "note": "첫 apply와 재시작 뒤 · ⌘⇧L도 같습니다"
+          },
+          "backup": {
+            "label": "백업",
+            "note": "앱에서 mod나 layout을 바꾼 뒤 · 앱 폴더 → repo"
+          }
+        }
+      },
+      "cta": {
+        "title": "창을 repo에 보관하세요",
+        "description": "clone하고 apply하면 Herdr 창에 branch, PR, agent 상태가 한눈에 보입니다. 앱에서 mod를 바꾸면 backup하고 commit하세요.",
+        "primary": "시작하기",
+        "secondary": "GitHub에서 보기"
+      },
+      "facts": [
+        "github stars",
+        "repo의 mod",
+        "upstream · herdr + repo 7개",
+        "sync 명령 · apply · backup"
+      ],
+      "plate": {
+        "label": "창과 그 mod",
+        "right": "readme hero",
+        "caption": "layouts/main-dev.json이 만드는 Herdr 창, Catppuccin Mocha theme. 각 block에는 그것을 채우는 mod 이름이 붙어 있습니다: sidebar의 better-spaces와 agents-dev, tab bar의 tabs-dev, side panel의 git-graph, better-changes, files-dev. 가운데 pane은 ./sync.sh apply를 실행합니다."
       }
     }
   }

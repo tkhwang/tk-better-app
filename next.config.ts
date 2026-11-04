@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const productShortcuts = ["workbranch", "tasteful-intent", "skills"] as const;
+const productShortcuts = ["workbranch", "tasteful-intent", "skills", "herdr-mods"] as const;
 
 const nextConfig: NextConfig = {
   async redirects() {
